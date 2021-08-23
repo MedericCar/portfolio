@@ -4,7 +4,7 @@ import { CSSTransition } from "react-transition-group";
 
 import './topbar.scss'
 
-export default function Topbar({ darkMode, setDarkMode, toShow }) {
+export default function Topbar({ lightMode, setLightMode, toShow }) {
   return (
     <CSSTransition
       in={toShow}
@@ -17,9 +17,9 @@ export default function Topbar({ darkMode, setDarkMode, toShow }) {
             <h1 color='secondary'>Médéric Carriat</h1>
           </div>
           <div className='center'>
-            <SettingsBrightnessIcon onClick={()=>setDarkMode(!darkMode)}/>
+            <SettingsBrightnessIcon onClick={()=>setLightMode(!lightMode)}/>
           </div>
-          <div className='right'>
+          <div className={`right ${lightMode ? 'light' : ''}`}>
             <a href='#intro'>Home</a>
             <a href='#jobs'>Experience</a>
             <a href='#projects'>Projects</a>

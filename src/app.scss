@@ -1,9 +1,15 @@
 @import "./global.scss";
 
+
 .app{
-  height: 100vh;
+  background-color: $darkBgColor;
+  color: $darkPrimaryColor;
   transition: background-color 1s ease, color 1s ease;
 
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
 
   .sections{
     width: 100vw;
@@ -16,17 +22,15 @@
       display: none;
     }
 
-
     > *{
       width: 100%;
       height: 100%;
       scroll-snap-align: start;
     }
-
   }
 
-  &.dark{
-    background-color: black;
-    color: white;
+  &.light{
+    background-color: $lightBgColor;
+    color: $lightPrimaryColor;
   }
 }

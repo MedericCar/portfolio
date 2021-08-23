@@ -1,8 +1,39 @@
 .intro{
-  background-color: lightcoral;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+  .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  p{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+  }
+
+  .arrow{
+    position: absolute;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, 0%);
+    animation: MoveUpDown 1s linear infinite;;
+  }
+
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
   
 }

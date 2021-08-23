@@ -36,15 +36,20 @@
       
       a{
         display: inline-block;
-        text-decoration: none;
-        color: inherit;
         transition: 0.5s;
       }
 
       a:hover{
-        text-shadow: 0 0 .01px black, 0 0 .01px black, 0 0 .01px black; // hack to get bold without resize
-        // FIXME: change color once theme decided
+        color: $darkSecondaryColor;
       }
+
+      &.light{
+        a:hover{
+          color: $lightSecondaryColor;
+        }
+      }
+
+
     }
   }
 

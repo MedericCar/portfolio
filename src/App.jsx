@@ -9,7 +9,7 @@ import './app.scss'
 
 function App() {
 
-  const [ darkMode, setDarkMode ] = useState(false)
+  const [ lightMode, setLightMode ] = useState(false)
 
   const [ scrollPos, setScrollPos ] = useState(0)
   
@@ -36,11 +36,15 @@ function App() {
   }, []);
 
   return (
-    <div className={`app ${darkMode ? 'dark' : ''}`}>
+    <div className={`app ${lightMode ? 'light' : ''}`}>
       
-      <Topbar darkMode={darkMode} setDarkMode={setDarkMode} toShow={scrollPos >= height / 2}/>
+      <Topbar
+        lightMode={lightMode} 
+        setLightMode={setLightMode}
+        toShow={scrollPos >= height / 2}
+      />
       
-      <div className={`sections ${darkMode ? 'dark' : ''}`}>
+      <div className='sections'>
         <Intro/>
         <Jobs/>
         <Projects/>
