@@ -5,6 +5,7 @@
   width: 100%;
   height: 70px;
   position: fixed;
+  opacity: 0;
   top: 0;
   z-index: 2;
   display: flex;
@@ -45,5 +46,31 @@
         // FIXME: change color once theme decided
       }
     }
+  }
+
+  &.topbar-enter {
+    opacity: 0;
+  }
+
+  &.topbar-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+  }
+
+  &.topbar-exit {
+    opacity: 1;
+  }
+
+  &.topbar-exit-active {
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  &.topbar-exit-done {
+    opacity: 0;
+  }
+
+  &.topbar-enter-done {
+    opacity: 1;
   }
 }

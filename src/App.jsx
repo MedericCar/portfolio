@@ -10,6 +10,7 @@ import './app.scss'
 function App() {
 
   const [ darkMode, setDarkMode ] = useState(false)
+
   const [ scrollPos, setScrollPos ] = useState(0)
   
   useEffect(() => {
@@ -25,18 +26,27 @@ function App() {
     }
   }, [])
 
-  console.log(scrollPos)
 
-    
+  const [height, setHeight] = React.useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleWindowResize = () => setHeight(window.innerHeight);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
-    <div className={`app ${darkMode ? 'dark' : ''}`} >
-      <Topbar darkMode={darkMode} setDarkMode={setDarkMode}/>
+    <div className={`app ${darkMode ? 'dark' : ''}`}>
+      
+      <Topbar darkMode={darkMode} setDarkMode={setDarkMode} toShow={scrollPos >= height / 2}/>
+      
       <div className={`sections ${darkMode ? 'dark' : ''}`}>
         <Intro/>
         <Jobs/>
         <Projects/>
         <Contact/>
       </div>
+    
     </div>
   );
 }
