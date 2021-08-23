@@ -1,5 +1,10 @@
+@import "../../global.scss";
+
 .topbar{
   width: 100%;
-  height: 70px;
-  background-color: magenta;
+  height: $topBarHeight;
+  background-color: $mainColor;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }

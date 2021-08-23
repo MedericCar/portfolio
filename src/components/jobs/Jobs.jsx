@@ -3,8 +3,8 @@ import './jobs.scss'
 
 export default function Jobs() {
   return (
-    <div className='jobs'>
-      
+    <div className='jobs' id='jobs'>
+      jobs
     </div>
   )
 }
