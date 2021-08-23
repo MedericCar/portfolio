@@ -4,7 +4,7 @@ import { CSSTransition } from "react-transition-group";
 
 import './topbar.scss'
 
-export default function Topbar({ lightMode, setLightMode, toShow }) {
+export default function Topbar({ lightMode, toShow }) {
   return (
     <CSSTransition
       in={toShow}
@@ -13,12 +13,11 @@ export default function Topbar({ lightMode, setLightMode, toShow }) {
     >
       <div className='topbar'>
         <div className='wrapper'>
+          
           <div className='left'>
             <h1 color='secondary'>Médéric Carriat</h1>
           </div>
-          <div className='center'>
-            <SettingsBrightnessIcon onClick={()=>setLightMode(!lightMode)}/>
-          </div>
+
           <div className={`right ${lightMode ? 'light' : ''}`}>
             <a href='#intro'>Home</a>
             <a href='#jobs'>Experience</a>

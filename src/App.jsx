@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Switch } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
 
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
@@ -10,6 +13,28 @@ import './app.scss'
 function App() {
 
   const [ lightMode, setLightMode ] = useState(false)
+  const LightSwitch = withStyles({
+    switchBase: {
+      // Controls default (unchecked) color for the thumb
+      color: "#fff"
+    },
+    colorSecondary: {
+      "&$checked": {
+        // Controls checked color for the thumb
+        color: "#fff"
+      }
+    },
+    track: {
+      // Controls default (unchecked) color for the track
+      opacity: 0.2,
+      backgroundColor: "#fff",
+      "$checked$checked + &": {
+        // Controls checked color for the track
+        opacity: 0.7,
+        backgroundColor: "#fff"
+      }
+    }
+  })(Switch);
 
   const [ scrollPos, setScrollPos ] = useState(0)
   
@@ -43,6 +68,10 @@ function App() {
         setLightMode={setLightMode}
         toShow={scrollPos >= height / 2}
       />
+
+      <div className='lightModeSwitch'>
+        <LightSwitch checked={lightMode} onChange={()=>setLightMode(!lightMode)} />
+      </div>
       
       <div className='sections'>
         <Intro/>
