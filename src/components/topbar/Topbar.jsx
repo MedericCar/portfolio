@@ -20,7 +20,7 @@ export default function Topbar({ lightMode, toShow }) {
 
           <div className={`right ${lightMode ? 'light' : ''}`}>
             <a href='#intro'>Home</a>
-            <a href='#jobs'>Experience</a>
+            <a href='#experience'>Experience</a>
             <a href='#projects'>Projects</a>
             <a href='#contact'>Contact</a>
           </div>

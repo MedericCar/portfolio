@@ -2,23 +2,60 @@
 
 .timeline-element{
   border-radius: 50px;
-  position: absolute;
-  padding-top: 10px;
+  height: 10px;
+  position: absolute;  // position is defined according to Timeline data
   overflow: visible;
+  transition: all .2s ease-in-out;
 
   .info{
-    position: absolute;
+    border-left: 1px solid $darkPrimaryColor;
+    z-index: -1;
+    position: relative;
+    left: 7px;
     color: $darkPrimaryColor;
-    top: 10px;
-    padding-top: 5px;
-    padding-left: 5px;
+    height: 100px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 
-    h3{
-      font-size: 15px;
-    }
+    .text{
+      padding-left: 5px;
+      white-space: nowrap;
 
-    p{
-      font-size: 10px;
+      h3{
+        font-size: 15px;
+      }
+
+      h5{
+        font-size: 9px;
+      }
+
+      p{
+        font-size: 10px;
+      }
+
     }
   }
+
+  &.top{
+    top: -15px;
+    .info{
+      top: -75px;
+    }
+  }
+  
+  &.bottom{
+    top: 15px;
+    .info{
+      justify-content: flex-end;
+      top: 0px;
+    }
+  }
+
+  &.center{
+    .info{
+      top: -90px;
+    }
+  }
+
 }

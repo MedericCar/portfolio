@@ -1,5 +1,5 @@
-import React from 'react'
 
+import React from 'react'
 import TimelineElement from './TimelineElement'
 import './timeline.scss'
 
@@ -27,17 +27,16 @@ const addElementsInfo = (experience, tmStart, tmEnd) => {
   });
 }
 
-export default function Timeline({ experience }) {
+export default function Timeline({ experience, setSelected }) {
+
   const [ tmStart, tmEnd ] = getTimelineBounds(experience)
   addElementsInfo(experience, tmStart, tmEnd)
-
-  console.log(experience)
 
   return (
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement data={el} idx={idx}/>
+          <TimelineElement data={el} idx={idx} setSelected={setSelected}/>
         ))
       }
     </div>

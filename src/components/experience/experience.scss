@@ -1,2 +1,23 @@
 .experience{
+
+  h1{
+    position: relative;
+    width: fit-content;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+
+  .experience-description{
+    position: relative;
+    width: fit-content;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 20px;
+    width: 60%;
+    height: 35%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
 }
