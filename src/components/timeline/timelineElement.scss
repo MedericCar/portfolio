@@ -1,0 +1,13 @@
+.timeline-element{
+  border-radius: 50px;
+  width: 20%;
+  position: relative;
+  padding-top: 10px;
+  overflow: visible;
+
+  .toto{
+    position: absolute;
+    color: green;
+    top: 10px;
+  }
+}

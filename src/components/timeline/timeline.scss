@@ -1,0 +1,16 @@
+@import "../../global.scss";
+
+.timeline {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $darkPrimaryColor;
+  border-radius: 50px;
+  overflow: visible;
+  
+}
