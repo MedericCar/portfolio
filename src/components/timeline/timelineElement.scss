@@ -1,13 +1,24 @@
+@import "../../global.scss";
+
 .timeline-element{
   border-radius: 50px;
-  width: 20%;
-  position: relative;
+  position: absolute;
   padding-top: 10px;
   overflow: visible;
 
-  .toto{
+  .info{
     position: absolute;
-    color: green;
+    color: $darkPrimaryColor;
     top: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+    h3{
+      font-size: 15px;
+    }
+
+    p{
+      font-size: 10px;
+    }
   }
 }

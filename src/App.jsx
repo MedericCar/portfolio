@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
-import Jobs from './components/jobs/Jobs';
+import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Topbar from './components/topbar/Topbar';
 import './app.scss'
@@ -75,7 +75,7 @@ function App() {
       
       <div className='sections'>
         <Intro/>
-        <Jobs/>
+        <Experience/>
         <Projects/>
         <Contact/>
       </div>
