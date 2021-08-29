@@ -16,7 +16,7 @@ const getTimelineBounds = (experience) => {
 }
 
 // Compute the percentage of the timeline for each element
-const addElementsInfo = (experience, tmStart, tmEnd) => {
+const computeTimelineLayout = (experience, tmStart, tmEnd) => {
   const tmDuration = (tmEnd - tmStart) / (1000 * 3600 * 24)
 
   experience.forEach(element => {
@@ -27,16 +27,16 @@ const addElementsInfo = (experience, tmStart, tmEnd) => {
   });
 }
 
-export default function Timeline({ experience, setSelected }) {
+export default function Timeline({ experience, selected, setSelected }) {
 
   const [ tmStart, tmEnd ] = getTimelineBounds(experience)
-  addElementsInfo(experience, tmStart, tmEnd)
+  computeTimelineLayout(experience, tmStart, tmEnd)
 
   return (
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement data={el} idx={idx} setSelected={setSelected}/>
+          <TimelineElement data={el} idx={idx} selected={selected} setSelected={setSelected}/>
         ))
       }
     </div>

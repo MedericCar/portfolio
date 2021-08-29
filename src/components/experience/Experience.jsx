@@ -9,6 +9,7 @@ export default function Experience() {
   const [ selected, setSelected ] = useState(-1)
 
   const renderExperience = (selected) => {
+    return;
     if (selected !== -1) {
       return <ExperienceDescription data={experienceData[selected]}/>
     }
@@ -16,8 +17,8 @@ export default function Experience() {
 
   return (
     <div className='experience' id='experience'>
-      <h1>Experience</h1>
-      <Timeline experience={experienceData} setSelected={setSelected}/>
+      <h1 id='title'>Experience</h1>
+      <Timeline experience={experienceData} selected={selected} setSelected={setSelected}/>
       {renderExperience(selected)}
     </div>
   )

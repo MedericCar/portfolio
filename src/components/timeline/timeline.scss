@@ -1,10 +1,6 @@
 @import "../../global.scss";
 
 .timeline {
-  position: relative;
-  left: 50%;
-  top: 30%;
-  transform: translate(-50%, -30%);
   width: 95%;
   background-color: $darkPrimaryColor;
   border-radius: 50px;

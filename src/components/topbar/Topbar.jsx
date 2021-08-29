@@ -1,5 +1,4 @@
 import React from 'react'
-import SettingsBrightnessIcon from '@material-ui/icons/SettingsBrightness';
 import { CSSTransition } from "react-transition-group";
 
 import './topbar.scss'
