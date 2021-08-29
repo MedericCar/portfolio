@@ -12,6 +12,7 @@ import './app.scss'
 
 function App() {
 
+  // FIXME: wrong colors
   const [ lightMode, setLightMode ] = useState(false)
   const LightSwitch = withStyles({
     switchBase: {
@@ -43,7 +44,7 @@ function App() {
     const handleScroll = () => {
         const position = sections.scrollTop
         setScrollPos(position)
-    };
+    }
     sections.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
@@ -55,18 +56,26 @@ function App() {
   const [height, setHeight] = React.useState(window.innerHeight);
 
   useEffect(() => {
-    const handleWindowResize = () => setHeight(window.innerHeight);
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+    const handleWindowResize = () => setHeight(window.innerHeight)
+    window.addEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener("resize", handleWindowResize)
+  }, [])
+
+  const [ activePage, setActivePage ] = useState([false, false, false, false])
+
+  useEffect(() => {
+    const newActivePage = [false, false, false, false]
+    newActivePage[Math.floor(scrollPos / height)] = true 
+    setActivePage(newActivePage)
+  }, [height, scrollPos])
 
   return (
-    <div className={`app ${lightMode ? 'light theme-dark' : 'theme-light'}`}>
+    <div className={`app ${lightMode ? 'theme-dark' : 'theme-light'}`}>
       
       <Topbar
-        lightMode={lightMode} 
-        setLightMode={setLightMode}
         toShow={scrollPos >= height / 2}
+        activePage={activePage}
+        setActivePage={setActivePage}
       />
 
       <div className='lightModeSwitch'>

@@ -29,21 +29,23 @@
       justify-content: space-evenly;
       text-align: center;
       
-      a{
-        display: inline-block;
-        transition: 0.5s;
+      a::after{
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: var(--gray1);
+        transition: all .5s;
       }
 
-      a:hover{
-        color: $darkSecondaryColor;
+      a:hover::after{
+        width: 100%;
+        transition: width .3s;
       }
 
-      &.light{
-        a:hover{
-          color: $lightSecondaryColor;
-        }
+      a.active::after{
+        width: 100%;
       }
-
 
     }
   }

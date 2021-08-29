@@ -31,21 +31,24 @@
         font-size: 13px;
       }
 
-      p{
-        font-family: 'Open Sans';
-        font-size: 11px;
+      p.title{
+        font-size: 12px;
         font-weight: 400;
+        font-family: 'Open Sans';
       }
 
-      ul {
-        text-align: justify;
-        padding-top: 10px;
-        padding-left: 0px;
-        list-style-type: none;
-        font-size: 10px;
+      .description{
+        ul {
+          padding-top: 10px;
+          padding-left: 0px;
+          list-style-type: none;
+          font-size: 11px;
+          font-weight: 400;
+          font-family: 'Open Sans';
 
-        li{
-          padding-top: 5px;
+          li{
+            padding-top: 5px;
+          }
         }
       }
     }

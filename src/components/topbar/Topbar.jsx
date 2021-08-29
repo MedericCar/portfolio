@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState }from 'react'
 import { CSSTransition } from "react-transition-group";
 
 import './topbar.scss'
 
-export default function Topbar({ lightMode, toShow }) {
+//FIXME: can refacto
+export default function Topbar({ toShow, activePage, setActivePage }) {
+
+
   return (
     <CSSTransition
       in={toShow}
@@ -17,11 +20,35 @@ export default function Topbar({ lightMode, toShow }) {
             <h1 color='secondary'>Médéric Carriat</h1>
           </div>
 
-          <div className={`right ${lightMode ? 'light' : ''}`}>
-            <a href='#intro'>Home</a>
-            <a href='#experience'>Experience</a>
-            <a href='#projects'>Projects</a>
-            <a href='#contact'>Contact</a>
+          <div className='right'>
+            <a
+              href='#intro' 
+              onClick={() => setActivePage([true, false, false, false])}
+              className={`${activePage[0] ? 'active' : ''}`}
+            >
+              Home
+            </a>
+            <a
+              href='#experience'
+              onClick={() => setActivePage([false, true, false, false])}
+              className={`${activePage[1] ? 'active' : ''}`}
+            >
+              Experience
+            </a>
+            <a 
+              href='#projects'
+              onClick={() => setActivePage([false, false, true, false])}
+              className={`${activePage[2] ? 'active' : ''}`}
+            >
+              Projects
+            </a>
+            <a
+              href='#contact'
+              onClick={() => setActivePage([false, false, false, true])}
+              className={`${activePage[3] ? 'active' : ''}`}
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>

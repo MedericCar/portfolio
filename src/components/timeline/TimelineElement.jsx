@@ -48,7 +48,7 @@ export default function TimelineElement({ data, idx }) {
         <div className='text'>
           <h3>{data.company}</h3>
           <h5>{renderDate()}</h5>
-          <p>{data.title}</p>
+          <p className='title'>{data.title}</p>
           <CSSTransition
             in={selected === idx}
             timeout={{
@@ -60,7 +60,7 @@ export default function TimelineElement({ data, idx }) {
             onExited={() => setShowDescription(false)}
             unmountOnExit={true}
           >
-            <div>
+            <div className='description'>
               {renderDescription(data, showDescription)}
             </div>
           </CSSTransition>
