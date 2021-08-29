@@ -2,7 +2,7 @@
 
 .timeline-element{
   border-radius: 50px;
-  height: 10px;
+  height: 15px;
   position: absolute;  // position is defined according to Timeline data (added at runtime)
   overflow: visible;
 
@@ -24,15 +24,17 @@
       padding-left: 5px;
 
       h3{
-        font-size: 15px;
+        font-size: 17px;
       }
 
       h5{
-        font-size: 9px;
+        font-size: 13px;
       }
 
       p{
-        font-size: 10px;
+        font-family: 'Open Sans';
+        font-size: 11px;
+        font-weight: 400;
       }
 
       ul {
@@ -83,16 +85,16 @@
   }
 
   &.top{
-    top: -15px;
+    top: -20px;
 
     .info{
-      height: calc(100px - 15px);
+      height: calc(100px - 20px);
       bottom: 0px;
     }
     
     &:hover{
       .info{
-        height: calc(100px - 15px + 200px);
+        height: calc(100px - 20px + 200px);
       }
     }
 
@@ -105,7 +107,7 @@
   }
   
   &.bottom{
-    top: 15px;
+    top: 20px;
     .info{
       justify-content: flex-end;
       top: 0px;

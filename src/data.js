@@ -37,7 +37,7 @@ const experienceData = [
     startDate: new Date(2019, 1, 1),
     endDate: new Date(2019, 5),
     description: [
-      <p>Courses in Machine Learning, signal compression and Software Engineering.</p>,
+      <p>Courses in Machine Learning, Signal Compression and Software Engineering.</p>,
       <p><b>3rd out of 105 teams</b> at the university's <u><a href='https://www.kaggle.com/c/robotsurface/overview'>Kaggle competition</a></u>.</p>
     ],
     color: '#aa00ff',
@@ -92,7 +92,7 @@ const experienceData = [
     startDate: new Date(2021, 3, 15),
     endDate: new Date(2022, 2, 31),
     description: [
-      <p>Research of a web based solution for in real-time transparency.</p>,
+      <p>Research of a web based solution for <b>real-time transparency</b>.</p>,
       <p>Implementation of <u><a href='https://luebke.us/publications/StochasticTransparency_I3D2010.pdf'>Stochastic Transparency</a></u> (Enderton, Eric, et al., 2010) with ThreeJS.</p>,
       <p>Tags: <b>Typescript, GLSL, ThreeJS</b></p>
     ],

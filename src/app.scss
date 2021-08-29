@@ -2,8 +2,27 @@
 
 
 .app{
-  background-color: $darkBgColor;
-  color: $darkPrimaryColor;
+
+  &.theme-light {
+    --bg: #f7f7f7;
+    --gray1: #1c1c1c;
+    --gray2: #585757;
+    --gray3: #969696;
+    --gray4: #e8e8e8;
+    --mabite: #00aaff;
+  }
+  
+  &.theme-dark {
+    --bg: #111111;
+    --gray1: #e7e7e7;
+    --gray2: #b8b8b8;
+    --gray3: #707070;
+    --gray4: #292929;
+    --mabite: #ffaaff;
+  }
+
+  background-color: var(--bg);
+  color: var(--gray1);
   transition: background-color 1s ease, color 1s ease;
 
   a{
@@ -37,8 +56,4 @@
     }
   }
 
-  &.light{
-    background-color: $lightBgColor;
-    color: $lightPrimaryColor;
-  }
 }

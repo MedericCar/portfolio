@@ -61,7 +61,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`app ${lightMode ? 'light' : ''}`}>
+    <div className={`app ${lightMode ? 'light theme-dark' : 'theme-light'}`}>
       
       <Topbar
         lightMode={lightMode} 
