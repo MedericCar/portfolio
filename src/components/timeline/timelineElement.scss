@@ -7,11 +7,11 @@
   overflow: visible;
 
   .info{
-    border-left: 1px solid $darkPrimaryColor;
+    border-left: 1px solid var(--gray1);
     z-index: -1;
     position: absolute;
     left: 7px;
-    color: $darkPrimaryColor;
+    color: var(--gray1);
     height: 100px;
     word-wrap: break-word;
     display: flex;

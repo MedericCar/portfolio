@@ -9,7 +9,12 @@
     --gray2: #585757;
     --gray3: #969696;
     --gray4: #e8e8e8;
-    --mabite: #00aaff;
+    --blue: #0084FF;
+    --green: #00BA34;
+    --orange: #F98600;
+    --red: #E92C2C;
+    --purple: #9a28e6;
+    --yellow: #ffdf00;
   }
   
   &.theme-dark {
@@ -18,7 +23,12 @@
     --gray2: #b8b8b8;
     --gray3: #707070;
     --gray4: #292929;
-    --mabite: #ffaaff;
+    --blue: #168FFF;
+    --green: #17CB49;
+    --orange: #FF9F2D;
+    --red: #F74141;
+    --purple: #aa2efc;
+    --yellow: #e6d328;
   }
 
   background-color: var(--bg);
