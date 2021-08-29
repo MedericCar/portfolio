@@ -59,7 +59,7 @@
 
   &.topbar-enter-active {
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 200ms;
   }
 
   &.topbar-exit {
@@ -68,7 +68,7 @@
 
   &.topbar-exit-active {
     opacity: 0;
-    transition: opacity 300ms;
+    transition: opacity 200ms;
   }
 
   &.topbar-exit-done {

@@ -5,7 +5,6 @@
   height: 10px;
   position: absolute;  // position is defined according to Timeline data
   overflow: visible;
-  transition: all .2s ease-in-out;
 
   .info{
     border-left: 1px solid $darkPrimaryColor;
@@ -35,37 +34,50 @@
       p{
         font-size: 10px;
       }
-
-      .description{
-        opacity: 0;
-        transition: 0.3s;
-      }
-
-      .description.shown{
-        opacity: 1;
-      }
-
     }
+
+    &:hover{
+      height: 200px;
+    }
+
+    .description-enter {
+      opacity: 0;
+    }
+
+    .description-enter-active {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
+
+    .description-enter-done {
+      opacity: 1;
+    }
+
+    .description-exit {
+      opacity: 1;
+    }
+
+    .description-exit-active {
+      opacity: 0;
+      transition: opacity 300ms;
+    }
+
+    .description-exit-done {
+      opacity: 0;
+    }
+
   }
 
   &.top{
     top: -15px;
     .info{
       bottom: 0px;
-
-      &:hover{
-        height: 200px;
-      }
     }
   }
 
   &.center{
     .info{
       bottom: 0px;
-
-      &:hover{
-        height: 200px;
-      }
     }
   }
   
@@ -74,10 +86,6 @@
     .info{
       justify-content: flex-end;
       top: 0px;
-
-      &:hover{
-        height: 200px;
-      }
     }
   }
 
