@@ -16,7 +16,7 @@ export default function Intro() {
 
       <a 
         className='arrow'
-        href='#jobs'
+        href='#experience'
       >
         <ExpandMoreIcon/>
       </a>
