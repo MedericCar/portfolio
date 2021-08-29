@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CSSTransition } from "react-transition-group";
 import './timelineElement.scss'
 
-export default function TimelineElement({ data, idx, selected, setSelected }) {
+export default function TimelineElement({ data, idx }) {
 
   const renderDate = () => {
     const startYear = data.startDate.getFullYear() 
@@ -12,12 +12,15 @@ export default function TimelineElement({ data, idx, selected, setSelected }) {
       : `${startYear} - ${endYear}`
   }
 
-  const renderDescription = (selected, idx, data) => {
-    if (selected === idx) {
-      return data.description
-    }
-    return data.description
+  const renderDescription = (data) => {
+      return (
+        <ul>
+          {data.description.map((el => <li>{el}</li>))}
+        </ul>
+      )
   }
+
+  const [ selected, setSelected ] = useState(-1)
 
   return (
     <div 
@@ -25,24 +28,33 @@ export default function TimelineElement({ data, idx, selected, setSelected }) {
       style={{ 
         background : data.color,
         width: data.width,
-        left: data.start
+        left: data.startPos
       }}
       onMouseOver={() => setSelected(idx)}
       onMouseOut={() => setSelected(-1)}
     >
-      <div className='info'>
+      <div 
+        className='info'
+        style={{
+          width: data.textLim
+        }}
+      >
+
         <div className='text'>
-          {/* <img src={data.logo} alt='logo' width='50'></img> */}
           <h3>{data.company}</h3>
           <h5>{renderDate()}</h5>
           <p>{data.title}</p>
           <CSSTransition
             in={selected === idx}
-            timeout={100}
+            timeout={{
+              enter: 100,
+              exit: 200,
+              }}
             classNames='description'
+            mountOnEnter={true}
             unmountOnExit={true}
           >
-            <p>{renderDescription(selected, idx, data)}</p>
+            {renderDescription(data)}
           </CSSTransition>
         </div>
       </div>

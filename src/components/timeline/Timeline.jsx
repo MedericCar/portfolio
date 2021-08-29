@@ -1,4 +1,3 @@
-
 import React from 'react'
 import TimelineElement from './TimelineElement'
 import './timeline.scss'
@@ -17,17 +16,67 @@ const getTimelineBounds = (experience) => {
 
 // Compute the percentage of the timeline for each element
 const computeTimelineLayout = (experience, tmStart, tmEnd) => {
+
+  const addWidth = (element) => {
+    let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
+    element.width = `${duration / tmDuration * 100}%`
+  }
+
+  const addStartPos = (element) => {
+    let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
+    element.startPos = `${start / tmDuration * 100}%`
+  }
+
+  const addTextLim = (curr, next) => {
+    let start
+    if (!next) {
+      start = (tmEnd - curr.startDate) / (1000 * 3600 * 24)
+    } else {
+      start = (next.startDate - curr.startDate) / (1000 * 3600 * 24)
+    }
+    curr.textLim = `${(start / tmDuration * 100) * 0.9}vw`
+  }
+
+  const addInfo = (l) => {
+    l.sort((curr, next) => (curr.startDate > next.startDate))
+
+    let curr, next;
+    for (let i = 0; i < l.length - 1; i++) {
+      curr = l[i]
+      next = l[i+1]
+      addWidth(curr)
+      addStartPos(curr)
+      addTextLim(curr, next)
+    }
+    addWidth(next)
+    addStartPos(next)
+    addTextLim(next)  // edge case of last item
+  }
+
   const tmDuration = (tmEnd - tmStart) / (1000 * 3600 * 24)
 
-  experience.forEach(element => {
-    let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
-    let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
-    element.width = `${duration / tmDuration * 100}%`
-    element.start = `${start / tmDuration * 100}%`
-  });
+  const upper = experience.filter((el) => (el.position === 'top' || el.position === 'center'))
+  addInfo(upper)
+
+  const lower = experience.filter((el) => (el.position === 'bottom'))
+  addInfo(lower)
+
+  //upper.forEach(element => {
+    //let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
+    //let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
+    //element.width = `${duration / tmDuration * 100}%`
+    //element.start = `${start / tmDuration * 100}%`
+  //});
+
+  //lower.forEach(element => {
+    //let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
+    //let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
+    //element.width = `${duration / tmDuration * 100}%`
+    //element.start = `${start / tmDuration * 100}%`
+  //});
 }
 
-export default function Timeline({ experience, selected, setSelected }) {
+export default function Timeline({ experience }) {
 
   const [ tmStart, tmEnd ] = getTimelineBounds(experience)
   computeTimelineLayout(experience, tmStart, tmEnd)
@@ -36,7 +85,7 @@ export default function Timeline({ experience, selected, setSelected }) {
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement data={el} idx={idx} selected={selected} setSelected={setSelected}/>
+          <TimelineElement data={el} idx={idx}/>
         ))
       }
     </div>

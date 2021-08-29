@@ -12,7 +12,7 @@ const experienceData = [
     startDate: new Date(2017, 9),
     endDate: new Date(2020, 7),
     description: [
-      'bla bla bla',
+      'Courses in programming, mathematics, algorithmics,\n computer architecture.fffffffffffffffffffffffffffffffffffffffffffffffffff',
       'more blabla'
     ],
     color: '#0000ff',
@@ -43,6 +43,18 @@ const experienceData = [
     position: 'bottom'
   },
   {
+    company: 'Tampere University',
+    logo: epita,
+    title: 'Exchange semester',
+    startDate: new Date(2019, 1, 1),
+    endDate: new Date(2019, 5),
+    description: [
+      'bla bla bla'
+    ],
+    color: '#aa00ff',
+    position: 'top'
+  },
+  {
     company: 'ENS - PSL',
     logo: ens,
     title: 'Internship',
@@ -52,7 +64,7 @@ const experienceData = [
       'bla bla bla'
     ],
     color: '#ff0000',
-    position: 'top'
+    position: 'bottom'
   },
   {
     company: 'Factonics',
