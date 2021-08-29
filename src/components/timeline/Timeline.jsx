@@ -60,21 +60,8 @@ const computeTimelineLayout = (experience, tmStart, tmEnd) => {
 
   const lower = experience.filter((el) => (el.position === 'bottom'))
   addInfo(lower)
-
-  //upper.forEach(element => {
-    //let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
-    //let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
-    //element.width = `${duration / tmDuration * 100}%`
-    //element.start = `${start / tmDuration * 100}%`
-  //});
-
-  //lower.forEach(element => {
-    //let duration = (element.endDate - element.startDate) / (1000 * 3600 * 24)
-    //let start = (element.startDate - tmStart) / (1000 * 3600 * 24)
-    //element.width = `${duration / tmDuration * 100}%`
-    //element.start = `${start / tmDuration * 100}%`
-  //});
 }
+
 
 export default function Timeline({ experience }) {
 

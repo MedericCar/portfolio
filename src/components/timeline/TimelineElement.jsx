@@ -12,15 +12,18 @@ export default function TimelineElement({ data, idx }) {
       : `${startYear} - ${endYear}`
   }
 
-  const renderDescription = (data) => {
+  const renderDescription = (data, showDescription) => {
+    if (showDescription) {
       return (
         <ul>
           {data.description.map((el => <li>{el}</li>))}
         </ul>
       )
+    }
   }
 
   const [ selected, setSelected ] = useState(-1)
+  const [ showDescription, setShowDescription ] = useState(false)
 
   return (
     <div 
@@ -30,13 +33,15 @@ export default function TimelineElement({ data, idx }) {
         width: data.width,
         left: data.startPos
       }}
-      onMouseOver={() => setSelected(idx)}
-      onMouseOut={() => setSelected(-1)}
+      onMouseEnter={() => {
+        setSelected(idx)
+        console.log(idx)}}
+      onMouseLeave={() => setSelected(-1)}
     >
       <div 
         className='info'
         style={{
-          width: data.textLim
+          width: '250px'
         }}
       >
 
@@ -47,14 +52,17 @@ export default function TimelineElement({ data, idx }) {
           <CSSTransition
             in={selected === idx}
             timeout={{
-              enter: 100,
+              enter: 300,
               exit: 200,
-              }}
+            }}
             classNames='description'
-            mountOnEnter={true}
+            onEntered={() => setShowDescription(true)}
+            onExited={() => setShowDescription(false)}
             unmountOnExit={true}
           >
-            {renderDescription(data)}
+            <div>
+              {renderDescription(data, showDescription)}
+            </div>
           </CSSTransition>
         </div>
       </div>

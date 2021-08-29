@@ -12,8 +12,8 @@ const experienceData = [
     startDate: new Date(2017, 9),
     endDate: new Date(2020, 7),
     description: [
-      'Courses in programming, mathematics, algorithmics,\n computer architecture.fffffffffffffffffffffffffffffffffffffffffffffffffff',
-      'more blabla'
+      'Courses in programming, mathematics, algorithmics, computer architecture.',
+      'Tags : OCaml, Python, C, C++, Unix'
     ],
     color: '#0000ff',
     position: 'center'
@@ -21,11 +21,12 @@ const experienceData = [
   {
     company: 'EPITA',
     logo: epita,
-    title: 'Master in Image Processing',
+    title: 'Master in Image Processing and Computer Graphics',
     startDate: new Date(2020, 9, 1),
     endDate: new Date(2022, 7),
     description: [
-      'bla bla bla'
+      'Courses in ',
+      'Tags: C++, Python, OpenGL'
     ],
     color: '#0000ff',
     position: 'center'
@@ -37,7 +38,7 @@ const experienceData = [
     startDate: new Date(2018, 7, 1),
     endDate: new Date(2018, 8, 31),
     description: [
-      'bla bla bla'
+      'Renovation of Latresnes\' church with 10 other international students.'
     ],
     color: '#ffaa00',
     position: 'bottom'
@@ -49,7 +50,8 @@ const experienceData = [
     startDate: new Date(2019, 1, 1),
     endDate: new Date(2019, 5),
     description: [
-      'bla bla bla'
+      'Courses in Machine Learning, signal compression and Software Engineering.',
+      '3rd out of 105 teams at the university\'s Kaggle competition.'
     ],
     color: '#aa00ff',
     position: 'top'
@@ -61,7 +63,9 @@ const experienceData = [
     startDate: new Date(2019, 5, 1),
     endDate: new Date(2019, 8, 31),
     description: [
-      'bla bla bla'
+      'Benchmarking of the DiViMe speech processing tool.',
+      'Implementation of the automation word count estimation algorithm (Räsänen, Okko, et al., 2019).',
+      'Tags: MATLAB, Python, Docker'
     ],
     color: '#ff0000',
     position: 'bottom'
@@ -73,7 +77,10 @@ const experienceData = [
     startDate: new Date(2020, 9, 1),
     endDate: new Date(2021, 2, 31),
     description: [
-      'bla bla bla'
+      'Improvement of Factonics\' ML deployment platform.',
+      'Development of a Named-entity recognition program specific to the French health system.',
+      'PoC for a newsletter recommendation system on behalf of BPI France.',
+      'Tags: Python, AWS, Docker'
     ],
     color: '#ffff00',
     position: 'bottom'
@@ -85,7 +92,8 @@ const experienceData = [
     startDate: new Date(2021, 3, 15),
     endDate: new Date(2022, 2, 31),
     description: [
-      'bla bla bla'
+      'bla bla bla',
+      ''
     ],
     color: '#00ff00',
     position: 'bottom'
