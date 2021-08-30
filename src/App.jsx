@@ -1,41 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Switch } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-
 
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
 import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Topbar from './components/topbar/Topbar';
+import Switch from './components/switch/Switch';
 import './app.scss'
 
 function App() {
 
   // FIXME: wrong colors
   const [ lightMode, setLightMode ] = useState(false)
-  const LightSwitch = withStyles({
-    switchBase: {
-      // Controls default (unchecked) color for the thumb
-      color: "#fff"
-    },
-    colorSecondary: {
-      "&$checked": {
-        // Controls checked color for the thumb
-        color: "#fff"
-      }
-    },
-    track: {
-      // Controls default (unchecked) color for the track
-      opacity: 0.2,
-      backgroundColor: "#fff",
-      "$checked$checked + &": {
-        // Controls checked color for the track
-        opacity: 0.7,
-        backgroundColor: "#fff"
-      }
-    }
-  })(Switch);
 
   const [ scrollPos, setScrollPos ] = useState(0)
   
@@ -65,7 +41,7 @@ function App() {
 
   useEffect(() => {
     const newActivePage = [false, false, false, false]
-    newActivePage[Math.floor(scrollPos / height)] = true 
+    newActivePage[Math.floor((scrollPos + height / 2) / height)] = true 
     setActivePage(newActivePage)
   }, [height, scrollPos])
 
@@ -79,7 +55,7 @@ function App() {
       />
 
       <div className='lightModeSwitch'>
-        <LightSwitch checked={lightMode} onChange={()=>setLightMode(!lightMode)} />
+        <Switch lightMode={lightMode} setLightMode={setLightMode}/>
       </div>
       
       <div className='sections'>
