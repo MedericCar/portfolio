@@ -11,7 +11,7 @@ export default function Experience() {
         <h1 id='title'>Experience</h1>
         <div id='description'>
           <p>
-            Hi, I am currently in my final year at EPITA, a French engineering school
+            I am currently in my final year at EPITA, a French engineering school
             specialized in Computer Science, and will be graduating in 2022.
           </p>
           <p>

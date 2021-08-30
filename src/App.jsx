@@ -38,11 +38,18 @@ function App() {
   }, [])
 
   const [ activePage, setActivePage ] = useState([false, false, false, false])
-
   useEffect(() => {
+    const sections = [ 'intro', 'experience', 'projects', 'contact' ]
     const newActivePage = [false, false, false, false]
-    newActivePage[Math.floor((scrollPos + height / 2) / height)] = true 
-    setActivePage(newActivePage)
+    const i = Math.floor((scrollPos) / height)
+
+    const scrolling = scrollPos % height !== 0
+    if (!scrolling) {
+      window.location.hash = (`#${sections[i]}`)
+      newActivePage[i] = true;
+      setActivePage(newActivePage)
+    }
+
   }, [height, scrollPos])
 
   return (

@@ -60,10 +60,9 @@
         transition: all .5s;
       }
 
-      a:hover::after{
-        width: 100%;
-        transition: width .3s;
-      }
+      //a:hover::after{
+      //  width: 100%;
+      //}
 
       a.active::after{
         width: 100%;

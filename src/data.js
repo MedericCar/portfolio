@@ -77,9 +77,9 @@ const experienceData = [
     startDate: new Date(2020, 9, 1),
     endDate: new Date(2021, 2, 31),
     description: [
-      <p>Improvement of Factonics' <b>ML deployment platform</b>.</p>,
-      <p>Development of a <b>Named-entity recognition program</b> specific to the French health system.</p>,
-      <p>PoC for a <b>newsletter recommendation system</b> on behalf of <i>BPI France</i>.</p>,
+      <p>Improvement of Factonics' <b>ML deployment</b> platform.</p>,
+      <p>Development of a <b>Named-entity recognition </b>program specific to the French health system.</p>,
+      <p>PoC for a <b>newsletter recommendation</b> system on behalf of <i>BPI France</i>.</p>,
       <p>Tags: <b>Python, AWS, Docker</b></p>
     ],
     color: 'var(--orange)',
