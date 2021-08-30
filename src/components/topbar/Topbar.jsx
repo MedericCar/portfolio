@@ -1,11 +1,14 @@
-import React, { useState }from 'react'
-import { CSSTransition } from "react-transition-group";
+import React from 'react'
+import { CSSTransition } from 'react-transition-group';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import MailIcon from '@material-ui/icons/Mail';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import './topbar.scss'
 
 //FIXME: can refacto
 export default function Topbar({ toShow, activePage, setActivePage }) {
-
 
   return (
     <CSSTransition
@@ -17,7 +20,15 @@ export default function Topbar({ toShow, activePage, setActivePage }) {
         <div className='wrapper'>
           
           <div className='left'>
-            <h1 color='secondary'>Médéric Carriat</h1>
+            <a href='#intro'><h1 color='secondary'>MC</h1></a>
+          </div>
+
+          <div className='center'>
+          
+            <a href='https://github.com/MedericCar' title='Github'><GitHubIcon/></a>
+            <a href='mailto: carriatmederic@gmail.com' title='Mail'><MailIcon/></a>
+            <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'><LinkedInIcon/></a>
+            <a href='TODO' title='Resume'><AccountCircleIcon/></a>
           </div>
 
           <div className='right'>

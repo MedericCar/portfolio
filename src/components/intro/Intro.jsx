@@ -9,7 +9,7 @@ export default function Intro() {
       
       <div className='info'>
         <h1>Médéric Carriat</h1>
-        <h4>Sofware Engineering student</h4>
+        <h4>Software Engineering student</h4>
       </div>
 
       <p>Looking for an <b>end-of-study internship</b> starting in <b>February 2022</b>.</p>

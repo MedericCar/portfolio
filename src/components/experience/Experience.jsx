@@ -8,7 +8,16 @@ export default function Experience() {
 
   return (
     <div className='experience' id='experience'>
-      <h1 id='title'>Experience</h1>
+        <h1 id='title'>Experience</h1>
+        <div id='description'>
+          <p>
+            Hi, I am currently in my final year at EPITA, a French engineering school
+            specialized in Computer Science, and will be graduating in 2022.
+          </p>
+          <p>
+            This is what I have been up to the last 5 years.
+          </p>
+        </div>
       <Timeline experience={experienceData}/>
     </div>
   )

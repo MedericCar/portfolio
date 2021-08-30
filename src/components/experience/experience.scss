@@ -2,18 +2,30 @@
 
   #title{
     position: relative;
-    width: fit-content;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
+    width: fit-content;
     font-size: 50px;
+    font-weight: 600;
+  }
+
+  #description{
+    position: relative;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
   }
 
   .timeline {
     position: relative;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, 0%);
   }
 
   .experience-description{

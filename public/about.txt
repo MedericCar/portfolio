@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Open Sans
+- Font Author: Digitized data copyright  2010-2011, Google Corporation.
+- Font Source: http://fonts.gstatic.com/s/opensans/v23/mem8YaGs126MiZpBA-U1UpcaXcl0Aw.ttf
+- Font License: Apache License, version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.html)

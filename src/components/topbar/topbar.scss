@@ -18,16 +18,38 @@
     align-items: center;
     justify-content: space-between;
 
+
     .left{
-      font-size: 15px;
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 20px;
+
+      h1{
+        font-weight: 800;
+      }
+    }
+
+    .center{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      > * {
+        padding: 0% 2%;
+      }
     }
 
     .right{
-      width: 22%;
-      height: 100%;
+      flex: 1;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-end;
       text-align: center;
+
+      > * {
+        padding: 0% 2%;
+      }
       
       a::after{
         content: '';
