@@ -116,7 +116,7 @@ const projectsData = [
       {
         text: 'C++',
         color: 'var(--blue)',
-        bgColor: 'var(--bg-blue)',
+        backgroundColor: 'var(--bg-blue)',
       },
     ]
   },
@@ -133,7 +133,12 @@ const projectsData = [
       {
         text: 'C++',
         color: 'var(--blue)',
-        bgColor: 'var(--bg-blue)',
+        backgroundColor: 'var(--bg-blue)',
+      },
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
       },
     ]
   }

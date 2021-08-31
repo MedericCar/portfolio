@@ -1,6 +1,14 @@
 import React from "react"
 import './projectCard.scss'
 
+const Tag = ({ data }) => {
+  return (
+    <div className='tag' style={{ color: data.color, backgroundColor: data.backgroundColor }}>
+      {data.text}
+    </div>
+  )
+}
+
 export default function ProjectCard({ data }) {
   return (
     <div className='project-card'>
@@ -8,7 +16,7 @@ export default function ProjectCard({ data }) {
       <div className='text'>
         <h3>{data.title}</h3>
         <div className='tags'>
-          tags
+          {data.tags.map((el) => <Tag data={el}/>)}
         </div>
         <p className='description'>
           {data.description}

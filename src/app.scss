@@ -10,11 +10,17 @@
     --gray3: #969696;
     --gray4: #e8e8e8;
     --blue: #0084FF;
+    --bg-blue: #E6F3FF;
     --green: #00BA34;
+    --bg-green: #E6F8EB;
     --orange: #F98600;
+    --bg-orange: #FFF5E8;
     --red: #E92C2C;
+    --bg-red: #FFEBEB;
     --purple: #9a28e6;
+    --bg-purple: #dbcfe2;
     --yellow: #ffdf00;
+    --bg-yellow: #fffbe1;
   }
   
   &.theme-dark {
@@ -24,11 +30,17 @@
     --gray3: #707070;
     --gray4: #292929;
     --blue: #168FFF;
+    --bg-blue: #E6F3FF;
     --green: #17CB49;
+    --bg-green: #E6F8EB;
     --orange: #FF9F2D;
+    --bg-orange: #FFF5E8;
     --red: #F74141;
+    --bg-red: #FFEBEB;
     --purple: #aa2efc;
+    --bg-purple: #dbcfe2;
     --yellow: #e6d328;
+    --bg-yellow: #fffbe1;
   }
 
   background-color: var(--bg);
