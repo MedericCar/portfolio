@@ -7,6 +7,12 @@
   width: 260px;
   height: 280px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  transition: all 0.3s linear;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+
 
   .image{
     position: relative;
@@ -38,15 +44,6 @@
     .tags{
       display: flex;
       flex-direction: row;
-
-      .tag {
-        margin-right: 10px;
-        padding: 2px 5px;
-        border-radius: 10px;
-        font-size: 12px;
-        font-weight: 700;
-
-      }
     }
 
     .description {
@@ -55,6 +52,10 @@
       text-align: justify;
       text-justify: inter-word;
     }
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 
 }

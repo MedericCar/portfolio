@@ -23,6 +23,22 @@
     text-align: center;
   }
 
+  .filter-list{
+    position: relative;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    .tag{
+      transform: scale(1.1);
+      margin-right: 15px;
+    }
+  }
+
   .cards{
     position: relative;
     top: 15%;

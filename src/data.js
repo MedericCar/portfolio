@@ -111,6 +111,7 @@ const projectsData = [
   {
     title: 'Word count estimator',
     image: wce,
+    link: 'https://github.com/bootphon/word-count-estimator',
     description: (
       <p>Implementation of the <b><a href='https://www.sciencedirect.com/science/article/pii/S0167639318304205'>automatic word count estimation algorithm</a></b> (Räsänen, Okko, et al., 2019).</p>
     ),
@@ -141,6 +142,7 @@ const projectsData = [
         <p><b>Third team</b> out of 105.</p>
       </div>
     ),
+    link: 'https://www.kaggle.com/c/robotsurface/overview',
     tags: [
       {
         text: 'Python',
@@ -167,6 +169,7 @@ const projectsData = [
         <p>Semester long school project to build the <b>frontend of a Tiger compiler</b></p>
       </div>
     ),
+    link: 'https://assignments.lrde.epita.fr/index.html',
     tags: [
       {
         text: 'C++',
@@ -187,6 +190,7 @@ const projectsData = [
 
       <p><b>Stochastic methods</b> for real-time transparency in the <b>browser</b>.</p>
     ),
+    link: 'https://github.com/SabineHU/PFEE_Stochastic_Transparency',
     tags: [
       {
         text: 'JS',
@@ -218,6 +222,7 @@ const projectsData = [
         Path tracing in C++ for Physically Based Rendering. <b>CPU parallelized</b> and optimized with <b>Bounding Volume Hierarchy</b>.
       </p>
     ),
+    link: 'https://github.com/MedericCar/pathtracer',
     tags: [
       {
         text: 'C++',
@@ -236,9 +241,10 @@ const projectsData = [
     image: pathtracer,
     description: (
       <p>
-        Website serving as my online resume. Features a homepage animation of a deformed sphere using Perlin noise.
+        Website made from scratch in <b>functional React</b>. Features a <b>homepage animation</b> of a deformed sphere using Perlin noise.
       </p>
     ),
+    link: 'https://github.com/MedericCar/portfolio',
     tags: [
       {
         text: 'React',
