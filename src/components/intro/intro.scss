@@ -9,16 +9,17 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
+    text-align: center;
 
-  h1{
-    font-size: 80px;
-    font-weight: 600;
-  }
+    h1{
+      font-size: 70px;
+      font-weight: 400;
+    }
 
-  h4{
-    font-size: 30px;
-    font-weight: 400;
+    h4{
+      font-size: 30px;
+      font-weight: 300;
+    }
   }
 
   p{

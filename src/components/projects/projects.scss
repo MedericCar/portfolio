@@ -1,5 +1,6 @@
 .projects{
   background-color: var(--gray5);
+  box-sizing: border-box;
   
   #title{
     position: relative;
@@ -28,10 +29,33 @@
     left: 50%;
     transform: translate(-50%, 0%);
     width: 90%;
-    height: 75%;
-    display: flex;
-    align-items: flex-start ;
-    justify-content: center;
-    flex-wrap: wrap;
+    height: 70%;
+
+    .row{
+      display: flex;
+      align-items: flex-start ;
+      justify-content: center;
+    }
   }
+
+  $tabletBreakpoint: 991px;
+
+  @media (max-width: $tabletBreakpoint) {
+    .cards {
+      //display: flex;
+      //align-items: center;
+      //flex-direction: column;
+      //justify-content: space-between;
+
+      .row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .project-card {
+          width: 90%;
+        }
+      }
+    }
+  }
+
 }
