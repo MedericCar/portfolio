@@ -4,6 +4,11 @@ import factonics from './assets/factonics.png'
 import siemens from './assets/siemens.png'
 import concordia from './assets/concordia.png'
 import pathtracer from './assets/pathtracer.png'
+import wce from './assets/wce.png'
+import stoch from './assets/stoch3.png'
+import tau from './assets/tau.png'
+import tiger from './assets/tiger.jpg'
+
 
 const experienceData = [
   {
@@ -104,19 +109,104 @@ const experienceData = [
 
 const projectsData = [
   {
-    title: 'Path tracer',
-    image: pathtracer,
+    title: 'Word count estimator',
+    image: wce,
     description: (
-      <p>
-        Path tracing in C++ for Physically Based Rendering.
-        Parallelized on CPU and optimized with Bounding Volume Hierarchy.
-      </p>
+      <p>Implementation of the <b><a href='https://www.sciencedirect.com/science/article/pii/S0167639318304205'>automatic word count estimation algorithm</a></b> (Räsänen, Okko, et al., 2019).</p>
+    ),
+    tags: [
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
+      },
+      {
+        text: 'ML',
+        color: 'var(--red)',
+        backgroundColor: 'var(--bg-red)',
+      },
+      {
+        text: '2019',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
+      },
+    ]
+  },
+  {
+    title: 'Robot Surface Detection',
+    image: tau,
+    description: (
+      <div>
+        <p><b>Kaggle competition</b> : recognize floor surfaces using data collected from Inertial Sensors.</p>
+        <p><b>Third team</b> out of 105.</p>
+      </div>
+    ),
+    tags: [
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
+      },
+      {
+        text: 'ML',
+        color: 'var(--red)',
+        backgroundColor: 'var(--bg-red)',
+      },
+      {
+        text: '2019',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
+      },
+    ]
+  },
+  {
+    title: 'Tiger Compiler',
+    image: tiger,
+    description: (
+      <div>
+        <p>Semester long school project to build the <b>frontend of a Tiger compiler</b></p>
+      </div>
     ),
     tags: [
       {
         text: 'C++',
         color: 'var(--blue)',
         backgroundColor: 'var(--bg-blue)',
+      },
+      {
+        text: '2020',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
+      },
+    ]
+  },
+  {
+    title: 'Real-time transparency',
+    image: stoch,
+    description: (
+
+      <p><b>Stochastic methods</b> for real-time transparency in the <b>browser</b>.</p>
+    ),
+    tags: [
+      {
+        text: 'JS',
+        color: 'var(--orange)',
+        backgroundColor: 'var(--bg-orange)',
+      },
+      {
+        text: 'ThreeJS',
+        color: 'var(--cyan)',
+        backgroundColor: 'var(--bg-cyan)',
+      },
+      {
+        text: 'GLSL',
+        color: 'var(--pink)',
+        backgroundColor: 'var(--bg-pink)',
+      },
+      {
+        text: '2021',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
       },
     ]
   },
@@ -125,8 +215,7 @@ const projectsData = [
     image: pathtracer,
     description: (
       <p>
-        Path tracing in C++ for Physically Based Rendering.
-        Parallelized on CPU and optimized with Bounding Volume Hierarchy.
+        Path tracing in C++ for Physically Based Rendering. <b>CPU parallelized</b> and optimized with <b>Bounding Volume Hierarchy</b>.
       </p>
     ),
     tags: [
@@ -136,12 +225,43 @@ const projectsData = [
         backgroundColor: 'var(--bg-blue)',
       },
       {
-        text: 'Python',
-        color: 'var(--green)',
-        backgroundColor: 'var(--bg-green)',
+        text: '2021',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
       },
     ]
-  }
+  },
+  {
+    title: 'Personal website',
+    image: pathtracer,
+    description: (
+      <p>
+        Website serving as my online resume. Features a homepage animation of a deformed sphere using Perlin noise.
+      </p>
+    ),
+    tags: [
+      {
+        text: 'React',
+        color: 'var(--purple)',
+        backgroundColor: 'var(--bg-purple)',
+      },
+      {
+        text: 'ThreeJS',
+        color: 'var(--cyan)',
+        backgroundColor: 'var(--bg-cyan)',
+      },
+      {
+        text: 'GLSL',
+        color: 'var(--pink)',
+        backgroundColor: 'var(--bg-pink)',
+      },
+      {
+        text: '2021',
+        color: 'var(--gray)',
+        backgroundColor: 'var(--bg-gray)',
+      },
+    ]
+  },
 ]
 
 export { experienceData, projectsData }

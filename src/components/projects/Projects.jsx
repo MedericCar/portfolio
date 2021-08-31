@@ -4,6 +4,12 @@ import { projectsData } from '../../data'
 import './projects.scss'
 
 export default function Projects() {
+  projectsData.sort((a, b) => {
+    const yearA = parseInt(a.tags[a.tags.length - 1].text)
+    const yearB = parseInt(b.tags[b.tags.length - 1].text)
+    return yearA < yearB 
+  })
+
   return (
     <div className='projects' id='projects'>
       <h1 id='title'>Projects</h1>
