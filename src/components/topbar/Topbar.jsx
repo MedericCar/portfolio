@@ -7,8 +7,27 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import './topbar.scss'
 
+const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
+  const newActivePage = [false, false, false, false]
+  newActivePage[idx] = true
+
+  return (
+    <a
+      href={href} 
+      onClick={() => {
+        setActivePage(newActivePage)
+        setLinkClick(true)
+        setTimeout(() => setLinkClick(false), 1000)
+      }}
+      className={`${activePage[idx] ? 'active' : ''}`}
+    >
+      {text}
+    </a>
+  )
+}
+
 //FIXME: can refacto
-export default function Topbar({ toShow, activePage, setActivePage }) {
+export default function Topbar({ toShow, activePage, setActivePage, setLinkClick }) {
 
   return (
     <CSSTransition
@@ -32,34 +51,38 @@ export default function Topbar({ toShow, activePage, setActivePage }) {
           </div>
 
           <div className='right'>
-            <a
-              href='#intro' 
-              onClick={() => setActivePage([true, false, false, false])}
-              className={`${activePage[0] ? 'active' : ''}`}
-            >
-              Home
-            </a>
-            <a
+            <Link
+              idx={0} 
+              href='#intro'
+              text='Home'
+              activePage={activePage}
+              setActivePage={setActivePage}
+              setLinkClick={setLinkClick}
+            />
+            <Link
+              idx={1} 
               href='#experience'
-              onClick={() => setActivePage([false, true, false, false])}
-              className={`${activePage[1] ? 'active' : ''}`}
-            >
-              Experience
-            </a>
-            <a 
+              text='Experience'
+              activePage={activePage}
+              setActivePage={setActivePage}
+              setLinkClick={setLinkClick}
+            />
+            <Link
+              idx={2} 
               href='#projects'
-              onClick={() => setActivePage([false, false, true, false])}
-              className={`${activePage[2] ? 'active' : ''}`}
-            >
-              Projects
-            </a>
-            <a
+              text='Projects'
+              activePage={activePage}
+              setActivePage={setActivePage}
+              setLinkClick={setLinkClick}
+            />
+            <Link
+              idx={3} 
               href='#contact'
-              onClick={() => setActivePage([false, false, false, true])}
-              className={`${activePage[3] ? 'active' : ''}`}
-            >
-              Contact
-            </a>
+              text='Contact'
+              activePage={activePage}
+              setActivePage={setActivePage}
+              setLinkClick={setLinkClick}
+            />
           </div>
         </div>
       </div>

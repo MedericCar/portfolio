@@ -33,9 +33,7 @@ export default function TimelineElement({ data, idx }) {
         width: data.width,
         left: data.startPos
       }}
-      onMouseEnter={() => {
-        setSelected(idx)
-        console.log(idx)}}
+      onMouseEnter={() => setSelected(idx)}
       onMouseLeave={() => setSelected(-1)}
     >
       <div 

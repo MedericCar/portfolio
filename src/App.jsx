@@ -10,55 +10,63 @@ import './app.scss'
 
 function App() {
 
-  // FIXME: wrong colors
   const [ lightMode, setLightMode ] = useState(false)
 
+  // Update scroll position and direction
   const [ scrollPos, setScrollPos ] = useState(0)
+  const [ scrollDir, setScrollDir ] = useState(null)
   
   useEffect(() => {
     const sections = document.getElementsByClassName('sections')[0]
     const handleScroll = () => {
         const position = sections.scrollTop
+        const dir = (position - scrollPos < 0) ? 'down' : 'up'
         setScrollPos(position)
+        setScrollDir(dir)
     }
     sections.addEventListener('scroll', handleScroll, { passive: true })
-
-    return () => {
-        sections.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+    return () => sections.removeEventListener('scroll', handleScroll)
+  }, [scrollPos])
 
 
-  const [height, setHeight] = React.useState(window.innerHeight);
+  // Update window height on resize
+  const [ winHeight, setWinHeight ] = React.useState(window.innerHeight);
 
   useEffect(() => {
-    const handleWindowResize = () => setHeight(window.innerHeight)
+    const handleWindowResize = () => setWinHeight(window.innerHeight)
     window.addEventListener("resize", handleWindowResize)
     return () => window.removeEventListener("resize", handleWindowResize)
   }, [])
 
+  // Update active page and URL based on scrolling
   const [ activePage, setActivePage ] = useState([false, false, false, false])
+  const [ linkClick, setLinkClick ] = useState(false)
+
   useEffect(() => {
     const sections = [ 'intro', 'experience', 'projects', 'contact' ]
-    const newActivePage = [false, false, false, false]
-    const i = Math.floor((scrollPos) / height)
 
-    const scrolling = scrollPos % height !== 0
-    if (!scrolling) {
+    const scrolling = scrollPos % winHeight !== 0
+    if (scrolling && !linkClick) {
+      const i = (scrollDir === 'up') 
+        ? Math.ceil(scrollPos / winHeight)
+        : Math.floor(scrollPos / winHeight)
       window.location.hash = (`#${sections[i]}`)
+      const newActivePage = [false, false, false, false]
       newActivePage[i] = true;
+
       setActivePage(newActivePage)
     }
 
-  }, [height, scrollPos])
-
+  }, [winHeight, scrollDir, scrollPos, linkClick])
+  
   return (
     <div className={`app ${lightMode ? 'theme-dark' : 'theme-light'}`}>
       
       <Topbar
-        toShow={scrollPos >= height / 2}
+        toShow={scrollPos >= winHeight / 2}
         activePage={activePage}
         setActivePage={setActivePage}
+        setLinkClick={setLinkClick}
       />
 
       <div className='lightModeSwitch'>
