@@ -1,3 +1,37 @@
 .projects{
-  background-color: lightskyblue;
+  background-color: var(--gray5);
+  
+  #title{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: fit-content;
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  #description{
+    position: relative;
+    top: 11%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  .cards{
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

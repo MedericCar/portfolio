@@ -43,20 +43,15 @@ function App() {
   const [ linkClick, setLinkClick ] = useState(false)
 
   useEffect(() => {
-    const sections = [ 'intro', 'experience', 'projects', 'contact' ]
-
     const scrolling = scrollPos % winHeight !== 0
     if (scrolling && !linkClick) {
       const i = (scrollDir === 'up') 
         ? Math.ceil(scrollPos / winHeight)
         : Math.floor(scrollPos / winHeight)
-      window.location.hash = (`#${sections[i]}`)
       const newActivePage = [false, false, false, false]
       newActivePage[i] = true;
-
       setActivePage(newActivePage)
     }
-
   }, [winHeight, scrollDir, scrollPos, linkClick])
   
   return (

@@ -39,7 +39,7 @@ export default function TimelineElement({ data, idx }) {
       <div 
         className='info'
         style={{
-          width: '250px'
+          width: '250px'  // keep to potentially change to dynamic sizing
         }}
       >
 

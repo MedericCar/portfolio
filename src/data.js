@@ -3,6 +3,7 @@ import ens from './assets/ens.png'
 import factonics from './assets/factonics.png'
 import siemens from './assets/siemens.png'
 import concordia from './assets/concordia.png'
+import pathtracer from './assets/pathtracer.png'
 
 const experienceData = [
   {
@@ -101,4 +102,41 @@ const experienceData = [
   },
 ]
 
-export default experienceData
+const projectsData = [
+  {
+    title: 'Path tracer',
+    image: pathtracer,
+    description: (
+      <p>
+        Path tracing in C++ for Physically Based Rendering.
+        Parallelized on CPU and optimized with Bounding Volume Hierarchy.
+      </p>
+    ),
+    tags: [
+      {
+        text: 'C++',
+        color: 'var(--blue)',
+        bgColor: 'var(--bg-blue)',
+      },
+    ]
+  },
+  {
+    title: 'Path tracer',
+    image: pathtracer,
+    description: (
+      <p>
+        Path tracing in C++ for Physically Based Rendering.
+        Parallelized on CPU and optimized with Bounding Volume Hierarchy.
+      </p>
+    ),
+    tags: [
+      {
+        text: 'C++',
+        color: 'var(--blue)',
+        bgColor: 'var(--bg-blue)',
+      },
+    ]
+  }
+]
+
+export { experienceData, projectsData }

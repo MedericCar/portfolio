@@ -1,0 +1,46 @@
+.project-card{
+
+  //background-color:var(--gray4);
+  border-radius: 10px;
+  padding: 20px 30px;
+  width: 220px;
+  height: 300px;
+
+  .image{
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 100%;
+    height: 130px;
+    -webkit-border-radius: 10px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 10px;
+    -moz-background-clip: padding;
+    border-radius: 15px;
+    background-clip: padding-box;
+    background-size: cover;
+    background-position: center bottom 25%;
+  }
+
+  .text{
+    padding-top: 5px;
+    
+    > * {
+      padding: 3px 3px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+
+  }
+
+  .description {
+    font-size: 12px;
+    font-weight: 200;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
