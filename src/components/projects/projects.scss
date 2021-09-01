@@ -17,10 +17,11 @@
     top: 11%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: fit-content;
-    font-size: 16px;
-    font-weight: 200;
+    width: 70%;
+    font-size: 17px;
+    font-weight: 400;
     text-align: center;
+    color: var(--gray2)
   }
 
   .filter-list{
@@ -32,10 +33,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    height: 35px;
 
     .tag{
-      transform: scale(1.1);
       margin-right: 15px;
+      text-align: center;
+      vertical-align: middle;
     }
   }
 

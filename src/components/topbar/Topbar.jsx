@@ -62,7 +62,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
             <Link
               idx={1} 
               href='#experience'
-              text='Experience'
+              text='About'
               activePage={activePage}
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}

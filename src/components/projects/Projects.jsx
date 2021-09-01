@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ProjectCard from './ProjectCard'
 import Tag from '../tag/Tag'
 import { projectsData } from '../../data'
@@ -12,10 +12,18 @@ const Row = ({ data }) => {
   )
 }
 
-const FilterList = ({ tags }) => {
+const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
+
+  const updateSelectedTags = (t) => {
+    const selectedTagsCopy = Object.assign({}, selectedTags)
+    selectedTagsCopy[t.text] = !selectedTags[t.text]
+    setSelectedTags(selectedTagsCopy)
+    console.log(selectedTags)
+  }
+
   return (
     <div className='filter-list'>
-      {tags.map((el) => <Tag data={el}/>)}
+      {tags.map((t) => <Tag data={t} onClick={() => updateSelectedTags(t)}/>)}
     </div>
   )
 }
@@ -23,24 +31,34 @@ const FilterList = ({ tags }) => {
 export default function Projects() {
 
   const getTags = (data) => {
-    let tags = data.map(el => el.tags)
-    tags = [].concat.apply([], tags)
+    let totTags = data.map(el => el.tags)
+    totTags = [].concat.apply([], totTags)
 
-    let labels = []
-    tags = tags.filter(el => {
-      if (!labels.includes(el.text)) {
-        labels.push(el.text)
+    let totLabels = []
+    totTags = totTags.filter(el => {
+      if (!totLabels.includes(el.text)) {
+        totLabels.push(el.text)
         return true;
       }
       return false;
     })
 
-    return { tags, labels }
+    return { totTags, totLabels }
   }
 
-  const [ selectedTags, setSelectedTags ] = useState({})
-  const { tags, labels } = getTags(projectsData)
-  console.log(tags)
+  const { totTags, totLabels } = getTags(projectsData)
+  totTags.sort((a, b) => a.text < b.text)
+
+  const [ selectedTags, setSelectedTags ] =
+    useState(Object.fromEntries(totLabels.map(l => [l, true])))
+
+  const [ selectedYears, setSelectedYears ] = useState([])
+  useEffect(() => {
+    setSelectedYears(Object.keys(selectedTags)
+                           .filter(t => selectedTags[t] && parseInt(t)))
+  }, [selectedTags])
+
+  console.log(selectedYears)
 
   const chunk = (arr, size) => {
     let result = []
@@ -49,6 +67,17 @@ export default function Projects() {
       result.push(chunk)
     }
     return result 
+  }
+
+  const renderCards = (data) => {
+    const filteredData = data.filter(p => {
+      const projectLabels = p.tags.map(t => t.text)
+      if (selectedYears && !projectLabels.some(l => selectedYears.includes(l))) {
+        return false
+      }
+      return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))
+    })
+    return (chunk(filteredData, 3).map((el) => <Row data={el}/>))
   }
 
   projectsData.sort((a, b) => {
@@ -65,9 +94,13 @@ export default function Projects() {
           Here is a list of projects I have done on my personal time or for work/studies.
         </p>
       </div>
-      <FilterList tags={tags}/>
+      <FilterList 
+        tags={totTags}
+        selectedTags={selectedTags}
+        setSelectedTags={setSelectedTags}
+      />
       <div className='cards'>
-        {chunk(projectsData, 3).map((el) => <Row data={el}/>)}
+        {renderCards(projectsData)}
       </div>
     </div>
   )

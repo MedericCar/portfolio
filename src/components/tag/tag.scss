@@ -4,4 +4,20 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: 700;
+  border: 1px solid transparent;
+  transition: border 0.3s linear, transform 0.1s linear;
+
+  &.active {
+    border: 1px currentColor solid;
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
+
+  &.inactive{
+    border: 1px currentColor transparent;
+    &:hover{
+      transform: translateY(-2px);
+    }
+  }
 }
