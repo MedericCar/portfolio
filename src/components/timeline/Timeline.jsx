@@ -63,7 +63,7 @@ const computeTimelineLayout = (experience, tmStart, tmEnd) => {
 }
 
 
-export default function Timeline({ experience }) {
+export default function Timeline({ experience, darkTheme }) {
 
   const [ tmStart, tmEnd ] = getTimelineBounds(experience)
   computeTimelineLayout(experience, tmStart, tmEnd)
@@ -72,7 +72,7 @@ export default function Timeline({ experience }) {
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement data={el} idx={idx}/>
+          <TimelineElement data={el} idx={idx} darkTheme={darkTheme}/>
         ))
       }
     </div>

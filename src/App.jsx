@@ -10,7 +10,7 @@ import './app.scss'
 
 function App() {
 
-  const [ lightMode, setLightMode ] = useState(false)
+  const [ darkTheme, setDarkTheme ] = useState(false)
 
   // Update scroll position and direction
   const [ scrollPos, setScrollPos ] = useState(0)
@@ -53,9 +53,10 @@ function App() {
       setActivePage(newActivePage)
     }
   }, [winHeight, scrollDir, scrollPos, linkClick])
+
   
   return (
-    <div className={`app ${lightMode ? 'theme-dark' : 'theme-light'}`}>
+    <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
       <Topbar
         toShow={scrollPos >= winHeight / 2}
@@ -65,12 +66,12 @@ function App() {
       />
 
       <div className='lightModeSwitch'>
-        <Switch lightMode={lightMode} setLightMode={setLightMode}/>
+        <Switch darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
       </div>
       
       <div className='sections'>
         <Intro/>
-        <Experience/>
+        <Experience darkTheme={darkTheme}/>
         <Projects/>
         <Contact/>
       </div>

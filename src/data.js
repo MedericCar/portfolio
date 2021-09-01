@@ -21,7 +21,7 @@ const experienceData = [
       <p>Courses in programming, mathematics, algorithmics, computer architecture.</p>,
       <p>Tags : <b>OCaml, Python, C, C++, Unix</b></p>
     ],
-    color: 'var(--blue)',
+    color: 'blue',
     position: 'center'
   },
   {
@@ -33,7 +33,7 @@ const experienceData = [
     description: [
       <p>Renovation of Latresnes' church with 10 other international students.</p>
     ],
-    color: 'var(--red)',
+    color: 'red',
     position: 'bottom'
   },
   {
@@ -46,7 +46,7 @@ const experienceData = [
       <p>Courses in Machine Learning, Signal Compression and Software Engineering.</p>,
       <p><b>3rd out of 105 teams</b> at the university's <u><a href='https://www.kaggle.com/c/robotsurface/overview'>Kaggle competition</a></u>.</p>
     ],
-    color: 'var(--purple)',
+    color: 'purple',
     position: 'top'
   },
   {
@@ -60,7 +60,7 @@ const experienceData = [
       <p>Implementation of the <u><a href='https://www.sciencedirect.com/science/article/pii/S0167639318304205'>automatic word count estimation algorithm</a></u> (Räsänen, Okko, et al., 2019).</p>,
       <p>Tags: <b>MATLAB, Python, Docker</b></p>
     ],
-    color: 'var(--yellow)',
+    color: 'yellow',
     position: 'bottom'
   },
   {
@@ -73,7 +73,7 @@ const experienceData = [
       <p>Courses in Image Processing, Computer Vision and Computer Graphics.</p>,
       <p>Tags: <b>C++, Python, OpenGL, CUDA</b></p>
     ],
-    color: 'var(--blue)',
+    color: 'blue',
     position: 'center'
   },
   {
@@ -88,7 +88,7 @@ const experienceData = [
       <p>PoC for a <b>newsletter recommendation</b> system on behalf of <i>BPI France</i>.</p>,
       <p>Tags: <b>Python, AWS, Docker</b></p>
     ],
-    color: 'var(--orange)',
+    color: 'orange',
     position: 'bottom'
   },
   {
@@ -102,7 +102,7 @@ const experienceData = [
       <p>Implementation of <u><a href='https://luebke.us/publications/StochasticTransparency_I3D2010.pdf'>Stochastic Transparency</a></u> (Enderton, Eric, et al., 2010) with ThreeJS.</p>,
       <p>Tags: <b>Typescript, GLSL, ThreeJS</b></p>
     ],
-    color: 'var(--green)',
+    color: 'green',
     position: 'bottom'
   },
 ]

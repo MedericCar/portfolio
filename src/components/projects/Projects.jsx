@@ -18,7 +18,6 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
     const selectedTagsCopy = Object.assign({}, selectedTags)
     selectedTagsCopy[t.text] = !selectedTags[t.text]
     setSelectedTags(selectedTagsCopy)
-    console.log(selectedTags)
   }
 
   return (
@@ -57,8 +56,6 @@ export default function Projects() {
     setSelectedYears(Object.keys(selectedTags)
                            .filter(t => selectedTags[t] && parseInt(t)))
   }, [selectedTags])
-
-  console.log(selectedYears)
 
   const chunk = (arr, size) => {
     let result = []

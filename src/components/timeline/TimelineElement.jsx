@@ -1,8 +1,9 @@
+import { ContactSupportOutlined } from '@material-ui/icons';
 import React, { useState } from 'react'
 import { CSSTransition } from "react-transition-group";
 import './timelineElement.scss'
 
-export default function TimelineElement({ data, idx }) {
+export default function TimelineElement({ data, idx, darkTheme }) {
 
   const renderDate = () => {
     const startYear = data.startDate.getFullYear() 
@@ -29,7 +30,7 @@ export default function TimelineElement({ data, idx }) {
     <div 
       className={`timeline-element ${data.position}`}
       style={{ 
-        background : data.color,
+        background : `var(--${darkTheme ? 'bg-' : ''}${data.color})`,
         width: data.width,
         left: data.startPos
       }}
