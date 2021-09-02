@@ -4,10 +4,11 @@ import Tag from '../tag/Tag'
 import { projectsData } from '../../data'
 import './projects.scss'
 
-const Row = ({ data }) => {
+const Row = ({ data, showCards }) => {
+  console.log(showCards)
   return (
     <div className='row'>
-      {data.map((el) => <ProjectCard data={el}/>)}
+      {data.map((el) => <ProjectCard key={el.id} data={el} show={showCards}/>)}
     </div>
   )
 }
@@ -22,7 +23,7 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   return (
     <div className='filter-list'>
-      {tags.map((t) => <Tag data={t} onClick={() => updateSelectedTags(t)}/>)}
+      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)}/>)}
     </div>
   )
 }
@@ -52,10 +53,15 @@ export default function Projects() {
     useState(Object.fromEntries(totLabels.map(l => [l, true])))
 
   const [ selectedYears, setSelectedYears ] = useState([])
+  const [ showCards , setShowCards ] = useState(true) 
+  const animLength = 300 
   useEffect(() => {
+    setShowCards(false)
+    setTimeout(() => setShowCards(true), animLength)
     setSelectedYears(Object.keys(selectedTags)
                            .filter(t => selectedTags[t] && parseInt(t)))
   }, [selectedTags])
+
 
   const chunk = (arr, size) => {
     let result = []
@@ -74,7 +80,7 @@ export default function Projects() {
       }
       return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))
     })
-    return (chunk(filteredData, 3).map((el) => <Row data={el}/>))
+    return (chunk(filteredData, 3).map((el, idx) => <Row key={idx} data={el} showCards={showCards}/>))
   }
 
   projectsData.sort((a, b) => {

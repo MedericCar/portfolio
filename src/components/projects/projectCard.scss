@@ -1,20 +1,16 @@
 .project-card{
 
- // background-color:#fff;
- // color: #1c1c1c;
   background-color:var(--gray4);
-  //background-color:#1F1E27;
   border-radius: 15px;
   margin: 10px 30px;
   width: 260px;
   height: 280px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  transition: all 0.3s linear;
+  transition: transform 0.3s linear;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
-
 
   .image{
     position: relative;
@@ -41,7 +37,6 @@
       font-size: 16px;
       font-weight: 600;
       color: var(--gray1);
-
     }
 
     .tags{
@@ -61,4 +56,16 @@
     transform: scale(1.05);
   }
 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

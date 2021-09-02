@@ -72,7 +72,7 @@ export default function Timeline({ experience, darkTheme }) {
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement data={el} idx={idx} darkTheme={darkTheme}/>
+          <TimelineElement key={idx} data={el} idx={idx} darkTheme={darkTheme}/>
         ))
       }
     </div>

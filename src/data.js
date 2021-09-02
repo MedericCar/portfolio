@@ -109,6 +109,7 @@ const experienceData = [
 
 const projectsData = [
   {
+    id: 0,
     title: 'Word count estimator',
     image: wce,
     link: 'https://github.com/bootphon/word-count-estimator',
@@ -134,6 +135,7 @@ const projectsData = [
     ]
   },
   {
+    id: 1,
     title: 'Robot Surface Detection',
     image: tau,
     description: (
@@ -162,6 +164,7 @@ const projectsData = [
     ]
   },
   {
+    id: 2,
     title: 'Tiger Compiler',
     image: tiger,
     description: (
@@ -184,6 +187,7 @@ const projectsData = [
     ]
   },
   {
+    id: 3,
     title: 'Real-time transparency',
     image: stoch,
     description: (
@@ -215,6 +219,7 @@ const projectsData = [
     ]
   },
   {
+    id: 4,
     title: 'Path tracer',
     image: pathtracer,
     description: (
@@ -237,6 +242,7 @@ const projectsData = [
     ]
   },
   {
+    id: 5,
     title: 'Personal website',
     image: pathtracer,
     description: (
