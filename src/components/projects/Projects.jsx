@@ -47,7 +47,7 @@ export default function Projects() {
   }
 
   const { totTags, totLabels } = getTags(projectsData)
-  totTags.sort((a, b) => a.text < b.text)
+  totTags.sort((a, b) => -a.text.localeCompare(b.text))
 
   const [ selectedTags, setSelectedTags ] =
     useState(Object.fromEntries(totLabels.map(l => [l, true])))
@@ -86,7 +86,7 @@ export default function Projects() {
   projectsData.sort((a, b) => {
     const yearA = parseInt(a.tags[a.tags.length - 1].text)
     const yearB = parseInt(b.tags[b.tags.length - 1].text)
-    return yearA < yearB 
+    return yearA < yearB ? 1 : -1
   })
 
   return (

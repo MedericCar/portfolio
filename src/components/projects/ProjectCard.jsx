@@ -6,7 +6,7 @@ import './projectCard.scss'
 export default function ProjectCard({ data, show }) {
 
   if (!show) {
-    return null
+    return <div className='project-card' style={{ display: 'none' }}></div>
   }
 
   return (
