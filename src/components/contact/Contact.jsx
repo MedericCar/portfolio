@@ -63,14 +63,17 @@ export default function Contact() {
 
   return (
     <div className='contact' id='contact'>
-    <h1>Contact me</h1>
-    <p>If you have an opportunity for me, feel free to leave a message !</p>
-    <form onSubmit={handleSubmit}>
-      <input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
-      <input type='text' placeholder='Email' value={mail} onChange={(e) => setMail(e.target.value)}/>
-      <textarea placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)}/>
-      {renderSendButton(sent)}
-    </form>
+      <div className='form-wrapper'>
+        <h1>Contact me</h1>
+        <p>If you have an opportunity for me, feel free to leave a message !</p>
+        <form onSubmit={handleSubmit}>
+          <input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
+          <input type='text' placeholder='Email' value={mail} onChange={(e) => setMail(e.target.value)}/>
+          <textarea placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)}/>
+          {renderSendButton(sent)}
+        </form>
+      </div>
+      <p id='footer'>© {new Date().getFullYear()} Médéric Carriat</p>
     </div>
   )
 }

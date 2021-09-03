@@ -1,60 +1,74 @@
 .contact{
 
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-  h1{
-    font-size: 45px;
-  }
-
-  p{
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--gray2);
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-   
-
-
-  form{
-    width: 70%;
-    height: 400px;
+  .form-wrapper{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 
-    > * {
-      background-color: var(--gray4);
+    h1{
+      font-size: 45px;
+    }
+
+    p{
+      font-size: 16px;
+      font-weight: 400;
       color: var(--gray2);
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
+    
 
-    input{
-      width: 300px;
-      height: 30px;
-      font-size: 14px;
-      border: none;
-      padding-left: 10px;
-    }
 
-    textarea{
-      width: 300px;
-      height: 200px;
-      font-size: 14px;
-      border: none;
-      padding-left: 10px;
-      padding-top: 10px;
-    }
+    form{
+      width: 70%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
 
-    button{
-      width: 150px;
-      height: 30px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+      > * {
+        background-color: var(--gray4);
+        color: var(--gray2);
+      }
+
+      input{
+        width: 300px;
+        height: 30px;
+        font-size: 14px;
+        border: none;
+        padding-left: 10px;
+      }
+
+      textarea{
+        width: 300px;
+        height: 200px;
+        font-size: 14px;
+        border: none;
+        padding-left: 10px;
+        padding-top: 10px;
+      }
+
+      button{
+        width: 150px;
+        height: 30px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
     }
+  }
+
+  #footer{
+    position: absolute;
+    bottom: calc(-3 * 100vh);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
   }
 }
