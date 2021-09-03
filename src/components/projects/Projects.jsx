@@ -5,7 +5,6 @@ import { projectsData } from '../../data'
 import './projects.scss'
 
 const Row = ({ data, showCards }) => {
-  console.log(showCards)
   return (
     <div className='row'>
       {data.map((el) => <ProjectCard key={el.id} data={el} show={showCards}/>)}
@@ -60,6 +59,12 @@ export default function Projects() {
     setTimeout(() => setShowCards(true), animLength)
     setSelectedYears(Object.keys(selectedTags)
                            .filter(t => selectedTags[t] && parseInt(t)))
+
+    projectsData.sort((a, b) => {
+      const yearA = parseInt(a.tags[a.tags.length - 1].text)
+      const yearB = parseInt(b.tags[b.tags.length - 1].text)
+      return yearA < yearB ? 1 : -1
+    })
   }, [selectedTags])
 
 
@@ -82,12 +87,6 @@ export default function Projects() {
     })
     return (chunk(filteredData, 3).map((el, idx) => <Row key={idx} data={el} showCards={showCards}/>))
   }
-
-  projectsData.sort((a, b) => {
-    const yearA = parseInt(a.tags[a.tags.length - 1].text)
-    const yearB = parseInt(b.tags[b.tags.length - 1].text)
-    return yearA < yearB ? 1 : -1
-  })
 
   return (
     <div className='projects' id='projects'>

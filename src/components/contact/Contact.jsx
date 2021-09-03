@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import emailjs, { init } from 'emailjs-com'
+import emailjs from 'emailjs-com'
 import './contact.scss'
 
 
@@ -50,7 +50,6 @@ export default function Contact() {
           }, function(error) {
             console.log('FAILED...', error);
           })
-     
 
       setName('');
       setMail('');

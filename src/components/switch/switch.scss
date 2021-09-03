@@ -2,10 +2,12 @@
   Title:- Simple CSS Switch / Toggle
   Author:- Aaron Iker
   Made With:- HTML CSS
+
+  Only changed some color properties.
 */
 
 .switch {
-  --line: #555555;
+  --line: var(--gray3);
   --dot: #F7F8FF;
   --circle: #b6b6b6;
   --duration: .3s;
