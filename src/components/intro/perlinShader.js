@@ -144,7 +144,7 @@ const PerlinShader = {
       pos.xyz /= pos.w;
       pos.w = 1.0 / pos.w;
       //pos.xyz *= vec3(2);
-      pos.xyz += vec3(3);
+      pos.xyz += vec3(15);
       pos.xy *= vec2(1000);
     
       maxDelta = amplitude;

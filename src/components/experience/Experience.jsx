@@ -14,11 +14,11 @@ export default function Experience({ darkTheme }) {
       <h1 id='title'>Hi, I'm Médéric</h1>
       <div id='description'>
         <p>
-          I'm a student at <a href="https://www.epita.fr/">EPITA</a> currently 
-          in the last year of my Master in Image Processing & Computer Graphics.
+          Student at <a href="https://www.epita.fr/">EPITA</a> currently 
+          in the last year of my Master in Image Processing & Computer Graphics,
+          I am looking for a 6 month internship starting in February.
           Although my studies are quite specific, I am generally interested in 
-          Computer Science and Software Engineering and I always strive to learn more.
-          This is what I have been up to the last 5 years.
+          Computer Science and Software Engineering but I always strive to learn more.
         </p>
       </div>
       <Timeline experience={experienceData} darkTheme={darkTheme}/>

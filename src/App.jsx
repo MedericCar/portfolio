@@ -39,7 +39,7 @@ function App() {
   }, [])
 
   // Update active page and URL based on scrolling
-  const [ activePage, setActivePage ] = useState([false, false, false, false])
+  const [ activePage, setActivePage ] = useState([true, false, false, false])
   const [ linkClick, setLinkClick ] = useState(false)
 
   useEffect(() => {
@@ -54,7 +54,21 @@ function App() {
     }
   }, [winHeight, scrollDir, scrollPos, linkClick])
 
-  
+  useEffect(() => {
+    const handleRefresh = (event) => {
+      const i = Math.floor(scrollPos / winHeight)
+      const newActivePage = [false, false, false, false]
+      newActivePage[i] = true;
+      setActivePage(newActivePage)
+    }
+    window.addEventListener('load', handleRefresh)
+
+    return () => window.removeEventListener('load', handleRefresh)
+
+  }, [winHeight, scrollPos])
+
+  console.log(scrollPos, activePage)
+
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
@@ -70,7 +84,7 @@ function App() {
       </div>
       
       <div className='sections'>
-        <Intro darkTheme={darkTheme}/>
+        <Intro darkTheme={darkTheme} active={activePage[0]}/>
         <Experience darkTheme={darkTheme}/>
         <Projects/>
         <Contact/>
