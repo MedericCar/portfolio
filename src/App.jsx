@@ -70,7 +70,7 @@ function App() {
       </div>
       
       <div className='sections'>
-        <Intro/>
+        <Intro darkTheme={darkTheme}/>
         <Experience darkTheme={darkTheme}/>
         <Projects/>
         <Contact/>
