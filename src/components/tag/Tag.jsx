@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import './tag.scss'
 
-export default function Tag({ data, onClick }) {
-  const [ active, setActive ] = useState(onClick ? true : false)
+export default function Tag({ data, onClick, defaultVal }) {
+  const [ active, setActive ] = useState(defaultVal)
   return (
     <div 
-      className={`tag ${onClick ? (active ? 'active' : 'inactive') : ''}`}
+      className={`tag ${(active ? 'active' : 'inactive')}`}
       style={{ color: data.color, backgroundColor: data.backgroundColor, cursor: onClick ? 'pointer' : 'default' }}
       onClick={() => {
         if (onClick) {

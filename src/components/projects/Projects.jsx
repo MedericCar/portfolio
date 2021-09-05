@@ -20,9 +20,16 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
     setSelectedTags(selectedTagsCopy)
   }
 
+  const anyTagData = {
+    text: 'All',
+    color: 'var(--gray2)',
+    backgroundColor: 'var(--gray5)',
+  }
+
   return (
     <div className='filter-list'>
-      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)}/>)}
+      <Tag key={-1} data={anyTagData} onClick={() => updateSelectedTags(anyTagData)} defaultVal={true}/>
+      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)} defaultVal={selectedTags[t.text]}/>)}
     </div>
   )
 }
@@ -48,8 +55,9 @@ export default function Projects() {
   const { totTags, totLabels } = getTags(projectsData)
   totTags.sort((a, b) => -a.text.localeCompare(b.text))
 
-  const [ selectedTags, setSelectedTags ] =
-    useState(Object.fromEntries(totLabels.map(l => [l, true])))
+  let tags = Object.fromEntries(totLabels.map(l => [l, false]))
+  tags = { ...tags, 'All': true }
+  const [ selectedTags, setSelectedTags ] = useState(tags)
 
   const [ selectedYears, setSelectedYears ] = useState([])
   const [ showCards , setShowCards ] = useState(true) 
@@ -80,7 +88,21 @@ export default function Projects() {
   const renderCards = (data) => {
     const filteredData = data.filter(p => {
       const projectLabels = p.tags.map(t => t.text)
-      if (selectedYears && !projectLabels.some(l => selectedYears.includes(l))) {
+      const textLabels = Object.keys(selectedTags).filter(t => selectedTags[t] && !parseInt(t))
+
+      if (selectedTags['All']) {
+        return true
+      }
+
+      console.log(textLabels)
+
+      // Only years -> overlook text tags
+      if (textLabels.length === 0) {
+        return projectLabels.some(l => selectedTags[l])
+      }
+
+      // Years + text -> filter by year first than by text
+      if (selectedYears.length !== 0 && !projectLabels.some(l => selectedYears.includes(l))) {
         return false
       }
       return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))

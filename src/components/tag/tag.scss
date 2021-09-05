@@ -4,18 +4,18 @@
   border-radius: 10px;
   font-size: 12px;
   font-weight: 700;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: border 0.3s linear, transform 0.1s linear, background-color .5s ease, color .5s ease;
 
   &.active {
-    border: 1px currentColor solid;
+    border: 2px currentColor solid;
     &:hover{
       transform: translateY(-2px);
     }
   }
 
   &.inactive{
-    border: 1px currentColor transparent;
+    border: 2px currentColor transparent;
     &:hover{
       transform: translateY(-2px);
     }

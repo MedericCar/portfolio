@@ -31,12 +31,17 @@ function App() {
 
   // Update window height on resize
   const [ winHeight, setWinHeight ] = React.useState(window.innerHeight);
+  const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth < 991);
 
   useEffect(() => {
-    const handleWindowResize = () => setWinHeight(window.innerHeight)
+    const handleWindowResize = () => {
+      setWinHeight(window.innerHeight)
+      setSmallWindow(window.innerWidth <= 991)
+    }
     window.addEventListener("resize", handleWindowResize)
     return () => window.removeEventListener("resize", handleWindowResize)
   }, [])
+
 
   // Update active page and URL based on scrolling
   const [ activePage, setActivePage ] = useState([true, false, false, false])
@@ -83,7 +88,7 @@ function App() {
       
       <div className='sections'>
         <Intro darkTheme={darkTheme} active={scrollPos < 3/2 * winHeight}/>
-        <Experience darkTheme={darkTheme}/>
+        <Experience darkTheme={darkTheme} smallWindow={smallWindow}/>
         <Projects/>
         <Contact/>
       </div>

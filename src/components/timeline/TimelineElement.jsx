@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { CSSTransition } from "react-transition-group";
 import './timelineElement.scss'
 
-export default function TimelineElement({ data, idx, darkTheme }) {
+export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
 
 
   const renderDate = () => {
@@ -26,13 +26,7 @@ export default function TimelineElement({ data, idx, darkTheme }) {
   const [ selected, setSelected ] = useState(-1)
   const [ showDescription, setShowDescription ] = useState(false)
 
-  const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleWindowResize = () => setSmallWindow(window.innerWidth <= 991)
-    window.addEventListener("resize", handleWindowResize)
-    return () => window.removeEventListener("resize", handleWindowResize)
-  }, [])
+  console.log(smallWindow)
 
   const style = !smallWindow
     ? { width: data.width, left: data.startPos }

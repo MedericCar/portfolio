@@ -2,8 +2,8 @@
 
   #title{
     width: fit-content;
-    position: absolute;
-    top: calc(110vh);
+    position: relative;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -10%);
     font-size: 50px;
@@ -12,11 +12,11 @@
   }
 
   #description{
-    position: absolute;
-    top: calc(155vh);
+    position: relative;
+    top: 11%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75%;
+    transform: translate(-50%, 0%);
+    width: 87%;
     font-size: 17px;
     font-weight: 400;
     text-align: center;
@@ -24,21 +24,15 @@
   }
 
   .timeline {
-
-    //position: absolute;
-    //top: calc(155vh);
-    //left: 50%;
-    //transform: translate(-50%, -50%);
-    
     position: relative;
     left: 50%;
     top: 45%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -45%);
+    
     background-color: blue;
     width: 87%;
-    height: 15px;
+    height: 0;
   }
-
 
 
   $tabletBreakpoint: 991px;
@@ -46,13 +40,13 @@
   @media (max-width: $tabletBreakpoint) {
     
     #title{
-      font-size: 40px;
+      font-size: 30px;
     }
 
     #description{
       text-justify: inter-word;
       text-align: justify;
-      font-size: 16px;
+      font-size: 14px;
 
       p{
         margin-top: 10px;
@@ -60,8 +54,11 @@
     }
 
     .timeline {
-      background-color: var(--bg);
-      width: 20px;
+      position: relative;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -40%);
+      width: 0;
       height: 60%;
     }
   }

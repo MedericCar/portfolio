@@ -4,6 +4,7 @@ import factonics from './assets/factonics.png'
 import siemens from './assets/siemens.png'
 import concordia from './assets/concordia.png'
 import pathtracer from './assets/pathtracer.png'
+import website from './assets/website.png'
 import wce from './assets/wce.png'
 import stoch from './assets/stoch3.png'
 import tau from './assets/tau.png'
@@ -244,10 +245,10 @@ const projectsData = [
   {
     id: 5,
     title: 'Personal website',
-    image: pathtracer,
+    image: website,
     description: (
       <p>
-        Website made from scratch in <b>functional React</b>. Features a <b>homepage animation</b> of a deformed sphere using Perlin noise.
+        Website made from scratch in <b>functional React</b>. Features a <b>homepage 3D animation</b>.
       </p>
     ),
     link: 'https://github.com/MedericCar/portfolio',

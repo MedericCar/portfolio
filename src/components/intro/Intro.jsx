@@ -18,7 +18,7 @@ export default function Intro({ darkTheme, active }) {
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setClearColor(darkTheme ? 0x17151F : 0xf7f7f7,  1)
+    renderer.setClearColor(darkTheme ? 0x000 : 0xf7f7f7,  1)
 
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
