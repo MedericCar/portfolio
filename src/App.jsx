@@ -67,8 +67,6 @@ function App() {
 
   }, [winHeight, scrollPos])
 
-  console.log(scrollPos, activePage)
-
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
@@ -84,7 +82,7 @@ function App() {
       </div>
       
       <div className='sections'>
-        <Intro darkTheme={darkTheme} active={activePage[0]}/>
+        <Intro darkTheme={darkTheme} active={scrollPos < winHeight}/>
         <Experience darkTheme={darkTheme}/>
         <Projects/>
         <Contact/>

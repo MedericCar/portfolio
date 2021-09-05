@@ -1,23 +1,18 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from "three"
-import { PerlinShader } from './perlinShader'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Color, Vector4 } from 'three';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
 export default function Intro({ darkTheme, active }) {
   const mountRef = useRef(null);
+  const [ requestId, setRequestId ] = useState(null)
 
   useEffect(() => {
 
     const curr = mountRef.current
-
-    if (!active) return () => {
-      console.log('removing scene')
-      console.log(curr)
-      if (renderer) curr.removeChild(renderer.domElement);
-    }
 
     var startTime = Date.now();
     var scene = new THREE.Scene();
@@ -63,12 +58,18 @@ export default function Intro({ darkTheme, active }) {
     camera.position.z = 5
 
     var animate = function () {
-      if (!active) return
-      requestAnimationFrame(animate);
+      if (!active) { 
+        cancelAnimationFrame(requestId)
+        setRequestId(null)
+        return
+      }
+
+      setRequestId(requestAnimationFrame(animate));
+
       var elapsedMilliseconds = Date.now() - startTime;
       sphere.material.uniforms.time.value = elapsedMilliseconds / 1000. / 2;
       renderer.render(scene, camera);
-    };
+    }
 
     let onWindowResize = function () {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -78,10 +79,11 @@ export default function Intro({ darkTheme, active }) {
 
     window.addEventListener("resize", onWindowResize, false);
 
-    if (active) animate();
+    animate()
 
     return () => curr.removeChild(renderer.domElement);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkTheme, active]);
 
   return (
