@@ -39,7 +39,7 @@ const experienceData = [
   {
     company: 'Tampere University',
     logo: epita,
-    title: 'Exchange semester',
+    title: 'Exchange semester in Finland',
     startDate: new Date(2019, 1, 1),
     endDate: new Date(2019, 5),
     description: [

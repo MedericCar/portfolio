@@ -49,11 +49,17 @@ export default function Intro({ darkTheme, active }) {
       }
     })
 
-    var sphere = new THREE.Mesh(geometry, material);
-    sphere.rotateX(-1.1)
-    sphere.position.z = 2
-    sphere.position.y = -1.15
-    scene.add(sphere)
+    var plane1 = new THREE.Mesh(geometry, material);
+    plane1.rotateX(-1.1)
+    plane1.position.z = 2
+    plane1.position.y = -1.15
+    scene.add(plane1)
+    
+    var plane2 = new THREE.Mesh(geometry, material);
+    plane2.rotateX(1.1)
+    plane2.position.z = 2
+    plane2.position.y = 1.15
+    scene.add(plane2)
 
     camera.position.z = 5
 
@@ -67,7 +73,8 @@ export default function Intro({ darkTheme, active }) {
       setRequestId(requestAnimationFrame(animate));
 
       var elapsedMilliseconds = Date.now() - startTime;
-      sphere.material.uniforms.time.value = elapsedMilliseconds / 1000. / 2;
+      plane1.material.uniforms.time.value = elapsedMilliseconds / 1000. / 2;
+      plane1.material.uniforms.time.value %= 1000;
       renderer.render(scene, camera);
     }
 

@@ -61,11 +61,19 @@
   $tabletBreakpoint: 991px;
 
   @media (max-width: $tabletBreakpoint) {
+
+    .filter-list{
+      width: 90%;
+      height: 35px;
+
+      .tag{
+        font-size: 10px;
+      }
+    }
+
+
     .cards {
-      //display: flex;
-      //align-items: center;
-      //flex-direction: column;
-      //justify-content: space-between;
+      width: 70%;
 
       .row {
         flex-direction: column;

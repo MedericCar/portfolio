@@ -19,7 +19,7 @@
     font-size: 17px;
     font-weight: 400;
     text-align: center;
-    color: var(--gray2)
+    color: var(--gray2);
   }
 
   .timeline {
@@ -28,5 +28,35 @@
     top: 45%;
     transform: translate(-50%, 0%);
     width: 87%;
+  }
+
+  $tabletBreakpoint: 991px;
+
+  @media (max-width: $tabletBreakpoint) {
+    
+    #title{
+      font-size: 40px;
+    }
+
+    #description{
+      text-justify: inter-word;
+      text-align: justify;
+      font-size: 16px;
+
+      p{
+        margin-top: 10px;
+      }
+    }
+
+    .timeline {
+      position: relative;
+      background-color: var(--bg);
+      left: 50%;
+      top: 12%;
+      transform: translate(-50%, 0%);
+      width: 20px;
+      height: 60%;
+    }
+    
   }
 }

@@ -1,9 +1,9 @@
-import { ContactSupportOutlined } from '@material-ui/icons';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CSSTransition } from "react-transition-group";
 import './timelineElement.scss'
 
 export default function TimelineElement({ data, idx, darkTheme }) {
+
 
   const renderDate = () => {
     const startYear = data.startDate.getFullYear() 
@@ -26,13 +26,24 @@ export default function TimelineElement({ data, idx, darkTheme }) {
   const [ selected, setSelected ] = useState(-1)
   const [ showDescription, setShowDescription ] = useState(false)
 
+  const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => setSmallWindow(window.innerWidth <= 991)
+    window.addEventListener("resize", handleWindowResize)
+    return () => window.removeEventListener("resize", handleWindowResize)
+  }, [])
+
+  const style = !smallWindow
+    ? { width: data.width, left: data.startPos }
+    : { height: data.width, top: data.startPos }
+
   return (
     <div 
       className={`timeline-element ${data.position}`}
       style={{ 
+        ...style,
         background : `var(--${darkTheme ? 'bg-' : ''}${data.color})`,
-        width: data.width,
-        left: data.startPos
       }}
       onMouseEnter={() => setSelected(idx)}
       onMouseLeave={() => setSelected(-1)}
@@ -40,7 +51,7 @@ export default function TimelineElement({ data, idx, darkTheme }) {
       <div 
         className='info'
         style={{
-          width: '250px'  // keep to potentially change to dynamic sizing
+          //width: !smallWindow ? '250px' : '130px'  // keep to potentially change to dynamic sizing
         }}
       >
 
@@ -49,7 +60,7 @@ export default function TimelineElement({ data, idx, darkTheme }) {
           <h5>{renderDate()}</h5>
           <p className='title'>{data.title}</p>
           <CSSTransition
-            in={selected === idx}
+            in={selected === idx && !smallWindow}
             timeout={{
               enter: 300,
               exit: 200,
