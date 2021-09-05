@@ -5,7 +5,7 @@ import './contact.scss'
 
 const renderSendButton = (sent) => {
   if (sent) {
-    return <button disabled style={{cursor:'default', color: 'var(--green)', backgroundColor: 'var(--bg-green)', border: '1px var(--green) solid'}}>Sent !</button>
+    return <button disabled style={{cursor:'default', color: 'var(--green)', backgroundColor: 'var(--bg-green)', border: '1px var(--green) solid'}}>Thank you !</button>
   } else {
     return <button type='submit'>Send</button>
   }
@@ -21,13 +21,14 @@ const isValidEmail = email => {
 export default function Contact() {
 
   const [ name, setName ] = useState('')
+  const [ company, setCompany ] = useState('')
   const [ mail, setMail ] = useState('')
   const [ message, setMessage ] = useState('')
   const [ sent, setSent ] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (name && mail && message) {
+    if (name && company && mail && message) {
 
       if (!isValidEmail(mail)) {
         alert('Please enter a valid email.')
@@ -39,6 +40,7 @@ export default function Contact() {
             const userId = 'user_9U9sUmHvHS3HJaGwi8WGv';
             const templateParams = {
                 name,
+                company,
                 mail,
                 message
             };
@@ -52,6 +54,7 @@ export default function Contact() {
           })
 
       setName('');
+      setCompany('');
       setMail('');
       setMessage('');
       setSent(true);
@@ -67,6 +70,7 @@ export default function Contact() {
         <p>If you have an opportunity for me, feel free to leave a message !</p>
         <form onSubmit={handleSubmit}>
           <input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>
+          <input type='text' placeholder='Company' value={company} onChange={(e) => setCompany(e.target.value)}/>
           <input type='text' placeholder='Email' value={mail} onChange={(e) => setMail(e.target.value)}/>
           <textarea placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)}/>
           {renderSendButton(sent)}

@@ -1,20 +1,21 @@
 .experience{
 
   #title{
-    position: relative;
-    top: 10%;
+    width: fit-content;
+    position: absolute;
+    top: calc(110vh);
     left: 50%;
     transform: translate(-50%, -10%);
-    width: fit-content;
     font-size: 50px;
     font-weight: 600;
+    z-index: 10;
   }
 
   #description{
-    position: relative;
-    top: 11%;
+    position: absolute;
+    top: calc(155vh);
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
     width: 75%;
     font-size: 17px;
     font-weight: 400;
@@ -23,12 +24,22 @@
   }
 
   .timeline {
+
+    //position: absolute;
+    //top: calc(155vh);
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    
     position: relative;
     left: 50%;
     top: 45%;
     transform: translate(-50%, 0%);
+    background-color: blue;
     width: 87%;
+    height: 15px;
   }
+
+
 
   $tabletBreakpoint: 991px;
 
@@ -49,14 +60,10 @@
     }
 
     .timeline {
-      position: relative;
       background-color: var(--bg);
-      left: 50%;
-      top: 12%;
-      transform: translate(-50%, 0%);
       width: 20px;
       height: 60%;
     }
-    
   }
+
 }
