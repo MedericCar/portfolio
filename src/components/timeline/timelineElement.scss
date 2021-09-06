@@ -12,7 +12,7 @@
     position: absolute;
     left: 7px;
     color: var(--gray1);
-    height: 100px;
+    height: 130px;
     width: 250px;
     word-wrap: break-word;
     display: flex;
@@ -82,7 +82,7 @@
 
   &:hover{
     .info{
-      height: calc(100px + 150px);
+      height: calc(130px + 150px);
     }
   }
 
@@ -90,13 +90,13 @@
     top: -25px;
 
     .info{
-      height: calc(100px - 25px);
+      height: calc(130px - 25px);
       bottom: 0px;
     }
     
     &:hover{
       .info{
-        height: calc(100px - 25px + 150px);
+        height: calc(130px - 25px + 150px);
       }
     }
 
@@ -160,7 +160,7 @@
 
       .info{
         justify-content: flex-start;
-        left: -115px;
+        left: -130px;
         top: 5px;
       }
 
