@@ -1,3 +1,5 @@
+@import './utils.scss';
+
 .app{
 
   &.theme-light {
@@ -72,7 +74,7 @@
 
   .sections{
     width: 100vw;
-    height: 100vh;
+    height: vh(100);
     position: relative;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;

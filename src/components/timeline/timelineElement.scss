@@ -80,7 +80,7 @@
 
   &:hover{
     .info{
-      height: calc(130px + 150px);
+      height: calc(130px + 120px);
     }
   }
 
@@ -94,7 +94,7 @@
     
     &:hover{
       .info{
-        height: calc(130px - 25px + 150px);
+        height: calc(130px - 25px + 80px);
       }
     }
 
@@ -103,6 +103,11 @@
   &.center{
     .info{
       bottom: 0px;
+    }
+    &:hover{
+      .info{
+        height: calc(130px + 80px);
+      }
     }
   }
   
@@ -158,7 +163,7 @@
 
       .info{
         justify-content: flex-start;
-        left: -130px;
+        left: -127px;
         top: 5px;
       }
 

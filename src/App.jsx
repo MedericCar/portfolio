@@ -35,12 +35,15 @@ function App() {
   // Update window height and type on resize
   const [ winHeight, setWinHeight ] = React.useState(window.innerHeight);
   const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth < 991);
+  console.log(window.innerHeight)
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
 
   useEffect(() => {
     const handleWindowResize = () => {
       setWinHeight(window.innerHeight)
       setSmallWindow(window.innerWidth <= 991)
       document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+      console.log(window.innerHeight/100)
     }
     window.addEventListener("resize", handleWindowResize)
     
