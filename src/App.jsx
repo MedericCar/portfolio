@@ -10,6 +10,7 @@ import './app.scss'
 
 function App() {
 
+
   const [ darkTheme, setDarkTheme ] = useState(false)
 
   // Update scroll position and direction
@@ -39,6 +40,7 @@ function App() {
     const handleWindowResize = () => {
       setWinHeight(window.innerHeight)
       setSmallWindow(window.innerWidth <= 991)
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
     }
     window.addEventListener("resize", handleWindowResize)
     

@@ -6,9 +6,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
-export default function Intro({ darkTheme, active }) {
+var renderer = new THREE.WebGLRenderer({ antialias: true });
 
-  console.log(active)
+export default function Intro({ darkTheme, active }) {
 
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
@@ -21,7 +21,6 @@ export default function Intro({ darkTheme, active }) {
     var startTime = Date.now();
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setClearColor(darkTheme ? 0x000 : 0xf7f7f7,  1)
 
     renderer.setSize(window.innerWidth, window.innerHeight);
