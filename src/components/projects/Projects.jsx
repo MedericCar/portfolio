@@ -4,10 +4,10 @@ import Tag from '../tag/Tag'
 import { projectsData } from '../../data'
 import './projects.scss'
 
-const Row = ({ data, showCards }) => {
+const Row = ({ data, showCards, selectedTags }) => {
   return (
     <div className='row'>
-      {data.map((el) => <ProjectCard key={el.id} data={el} show={showCards}/>)}
+      {data.map((el) => <ProjectCard key={el.id} data={el} show={showCards} selectedTags={selectedTags}/>)}
     </div>
   )
 }
@@ -15,8 +15,27 @@ const Row = ({ data, showCards }) => {
 const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   const updateSelectedTags = (t) => {
-    const selectedTagsCopy = Object.assign({}, selectedTags)
+    let selectedTagsCopy = Object.assign({}, selectedTags)
+
+    // If tag is updated to active, unset All
+    if (!selectedTags[t]) {
+      selectedTagsCopy['All'] = false
+    }
+
     selectedTagsCopy[t.text] = !selectedTags[t.text]
+    setSelectedTags(selectedTagsCopy)
+  }
+
+  const updateAllTag = (t) => {
+    let selectedTagsCopy = Object.assign({}, selectedTags)
+
+    // If All is updated to active, unset every other tag
+    if (!selectedTags['All']) {
+      Object.keys(selectedTags).forEach(t => selectedTagsCopy[t] = false)
+    }
+
+    console.log(selectedTagsCopy)
+    selectedTagsCopy['All'] = !selectedTags['All']
     setSelectedTags(selectedTagsCopy)
   }
 
@@ -28,7 +47,7 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   return (
     <div className='filter-list'>
-      <Tag key={-1} data={anyTagData} onClick={() => updateSelectedTags(anyTagData)} defaultVal={true}/>
+      <Tag key={-1} data={anyTagData} onClick={() => updateAllTag(anyTagData)} defaultVal={selectedTags['All']}/>
       {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)} defaultVal={selectedTags[t.text]}/>)}
     </div>
   )
@@ -65,6 +84,7 @@ export default function Projects() {
   useEffect(() => {
     setShowCards(false)
     setTimeout(() => setShowCards(true), animLength)
+
     setSelectedYears(Object.keys(selectedTags)
                            .filter(t => selectedTags[t] && parseInt(t)))
 
@@ -88,7 +108,8 @@ export default function Projects() {
   const renderCards = (data) => {
     const filteredData = data.filter(p => {
       const projectLabels = p.tags.map(t => t.text)
-      const textLabels = Object.keys(selectedTags).filter(t => selectedTags[t] && !parseInt(t))
+      const textLabels = Object.keys(selectedTags)
+                               .filter(t => selectedTags[t] && !parseInt(t))
 
       if (selectedTags['All']) {
         return true
@@ -107,7 +128,7 @@ export default function Projects() {
       }
       return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))
     })
-    return (chunk(filteredData, 3).map((el, idx) => <Row key={idx} data={el} showCards={showCards}/>))
+    return (chunk(filteredData, 3).map((el, idx) => <Row key={idx} data={el} showCards={showCards} selectedTags={selectedTags}/>))
   }
 
   return (

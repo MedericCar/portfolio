@@ -3,7 +3,7 @@ import Tag from "../tag/Tag"
 import './projectCard.scss'
 
 
-export default function ProjectCard({ data, show }) {
+export default function ProjectCard({ data, show, selectedTags }) {
 
   if (!show) {
     return <div className='project-card' style={{ display: 'none' }}></div>
@@ -16,7 +16,7 @@ export default function ProjectCard({ data, show }) {
         <div className='text'>
           <h3>{data.title}</h3>
           <div className='tags'>
-            {data.tags.map((el, idx) => <Tag key={idx} data={el}/>)}
+            {data.tags.map((t, idx) => <Tag key={idx} data={t} defaultVal={selectedTags[t.text] || selectedTags['All']}/>)}
           </div>
           <p className='description'>
             {data.description}
