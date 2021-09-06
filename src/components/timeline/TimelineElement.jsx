@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CSSTransition } from "react-transition-group";
 import './timelineElement.scss'
 
-export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
+export default function TimelineElement({ data, idx, darkTheme, isTablet }) {
 
 
   const renderDate = () => {
@@ -26,7 +26,7 @@ export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
   const [ selected, setSelected ] = useState(-1)
   const [ showDescription, setShowDescription ] = useState(false)
 
-  const style = !smallWindow
+  const style = !isTablet
     ? { width: data.width, left: data.startPos }
     : { height: data.width, top: data.startPos }
 
@@ -43,7 +43,7 @@ export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
       <div 
         className='info'
         style={{
-          //width: !smallWindow ? '250px' : '130px'  // keep to potentially change to dynamic sizing
+          //width: !isTablet ? '250px' : '130px'  // keep to potentially change to dynamic sizing
         }}
       >
 
@@ -52,7 +52,7 @@ export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
           <h5>{renderDate()}</h5>
           <p className='title'>{data.title}</p>
           <CSSTransition
-            in={selected === idx && !smallWindow}
+            in={selected === idx && !isTablet}
             timeout={{
               enter: 300,
               exit: 200,

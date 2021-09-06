@@ -68,7 +68,7 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
   )
 }
 
-export default function Projects() {
+export default function Projects({ isTablet }) {
 
   const getTags = (data) => {
     let totTags = data.map(el => el.tags)
@@ -149,7 +149,7 @@ export default function Projects() {
 
   const renderCards = (data) => {
     const filteredData = data.filter(p => projectFilter(p))
-    const chunks = chunk(filteredData, 3)
+    const chunks = chunk(filteredData, isTablet ? 2 : 3)
     return (
       chunks.map((el, idx) => <Row 
                                 key={idx}

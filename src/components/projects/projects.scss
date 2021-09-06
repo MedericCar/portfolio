@@ -1,3 +1,5 @@
+@import '../../utils.scss';
+
 .projects{
   box-sizing: border-box;
   
@@ -16,12 +18,12 @@
     top: 11%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 70%;
+    width: 80%;
     font-size: 17px;
     font-weight: 400;
     text-align: center;
     color: var(--gray2);
-    transition: color 1s ease;
+    transition: color 1s linear;
   }
 
   .filter-list{
@@ -45,11 +47,11 @@
 
   .cards{
     position: relative;
-    top: 15%;
+    top: 14%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 90%;
-    height: 70%;
+    width: 95%;
+    height: vh(70);
 
     .row{
       display: flex;
@@ -63,6 +65,44 @@
 
   @media (max-width: $tabletBreakpoint) {
 
+    #title{
+      font-size: 36px;
+    }
+
+    #description{
+      font-size: 16px;
+    }
+
+    .filter-list{
+      width: 90%;
+      height: 50px;
+      flex-wrap: wrap;
+
+    }
+
+    .cards {
+      top: vh(225);
+      width: 90%;
+      height: vh(75);
+
+      .row {
+        align-items: center;
+        justify-content: center;
+        .project-card {
+          width: 240px;
+
+        }
+      }
+    }
+  }
+
+
+  $phoneBreakpoint: 481px;
+
+  @media (max-width: $phoneBreakpoint) {
+    @media (max-height: 640px) {
+      background-color: blue;
+    }
     #title{
       font-size: 30px;
     }
@@ -83,8 +123,9 @@
 
 
     .cards {
-      width: 75%;
-      height: 65%;
+      width: 96%;
+      height: vh(60);
+      top: vh(240);
 
       .row {
         flex-direction: column;
@@ -92,6 +133,7 @@
         justify-content: center;
         .project-card {
           width: 90%;
+          height: 265px;
 
           .tags{
             .tag{
@@ -102,5 +144,6 @@
       }
     }
   }
+
 
 }

@@ -128,11 +128,6 @@ const projectsData = [
         color: 'var(--red)',
         backgroundColor: 'var(--bg-red)',
       },
-      {
-        text: '2019',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
-      },
     ]
   },
   {
@@ -157,11 +152,6 @@ const projectsData = [
         color: 'var(--red)',
         backgroundColor: 'var(--bg-red)',
       },
-      {
-        text: '2019',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
-      },
     ]
   },
   {
@@ -179,11 +169,6 @@ const projectsData = [
         text: 'C++',
         color: 'var(--blue)',
         backgroundColor: 'var(--bg-blue)',
-      },
-      {
-        text: '2020',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
       },
     ]
   },
@@ -212,11 +197,6 @@ const projectsData = [
         color: 'var(--pink)',
         backgroundColor: 'var(--bg-pink)',
       },
-      {
-        text: '2021',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
-      },
     ]
   },
   {
@@ -234,11 +214,6 @@ const projectsData = [
         text: 'C++',
         color: 'var(--blue)',
         backgroundColor: 'var(--bg-blue)',
-      },
-      {
-        text: '2021',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
       },
     ]
   },
@@ -267,11 +242,6 @@ const projectsData = [
         text: 'GLSL',
         color: 'var(--pink)',
         backgroundColor: 'var(--bg-pink)',
-      },
-      {
-        text: '2021',
-        color: 'var(--gray)',
-        backgroundColor: 'var(--bg-gray)',
       },
     ]
   },

@@ -26,8 +26,8 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
   )
 }
 
-const Socials = ({ smallWindow }) => {
-  if (smallWindow) return null
+const Socials = ({ isPhone }) => {
+  if (isPhone) return null
 
   return (
     <div className='socials'>
@@ -41,7 +41,7 @@ const Socials = ({ smallWindow }) => {
 }
 
 //FIXME: can refacto
-export default function Topbar({ toShow, activePage, setActivePage, setLinkClick, smallWindow }) {
+export default function Topbar({ toShow, activePage, setActivePage, setLinkClick, isPhone }) {
 
   return (
     <CSSTransition
@@ -56,7 +56,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
             <a href='#intro'><h1 color='secondary'>MC</h1></a>
           </div>
 
-          <Socials smallWindow={smallWindow}/> 
+          <Socials isPhone={isPhone}/> 
 
           <div className='right'>
             <Link

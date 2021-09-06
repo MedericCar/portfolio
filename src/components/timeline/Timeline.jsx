@@ -64,7 +64,7 @@ const computeTimelineLayout = (experience, tmStart, tmEnd) => {
 }
 
 
-export default function Timeline({ experience, darkTheme, smallWindow }) {
+export default function Timeline({ experience, darkTheme, isTablet }) {
 
   const [ tmStart, tmEnd ] = getTimelineBounds(experience)
   computeTimelineLayout(experience, tmStart, tmEnd)
@@ -78,7 +78,7 @@ export default function Timeline({ experience, darkTheme, smallWindow }) {
             data={el}
             idx={idx}
             darkTheme={darkTheme}
-            smallWindow={smallWindow}
+            isTablet={isTablet}
           />
         ))
       }

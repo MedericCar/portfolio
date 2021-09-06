@@ -20,6 +20,7 @@ function App() {
   useEffect(() => {
     const sections = document.getElementsByClassName('sections')[0]
     const handleScroll = () => {
+        console.log(scrollPos)
         const position = sections.scrollTop
         const dir = (position - scrollPos < 0) ? 'down' : 'up'
         setScrollPos(position)
@@ -34,14 +35,15 @@ function App() {
 
   // Update window height and type on resize
   const [ winHeight, setWinHeight ] = React.useState(window.innerHeight);
-  const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth < 991);
-  console.log(window.innerHeight)
+  const [ isTablet, setIsTablet ] = React.useState(window.innerWidth <= 991 && window.innerWidth > 481);
+  const [ isPhone, setIsPhone ] = React.useState(window.innerWidth <= 481);
   document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
 
   useEffect(() => {
     const handleWindowResize = () => {
       setWinHeight(window.innerHeight)
-      setSmallWindow(window.innerWidth <= 991)
+      setIsTablet(window.innerWidth <= 991 && window.innerWidth > 481)
+      setIsPhone(window.innerWidth <= 481)
       document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
       console.log(window.innerHeight/100)
     }
@@ -91,7 +93,7 @@ function App() {
         activePage={activePage}
         setActivePage={setActivePage}
         setLinkClick={setLinkClick}
-        smallWindow={smallWindow}
+        isPhone={isPhone}
       />
 
       <div className='lightModeSwitch'>
@@ -100,8 +102,8 @@ function App() {
       
       <div className='sections'>
         <Intro darkTheme={darkTheme} active={scrollPos < winHeight}/>
-        <Experience darkTheme={darkTheme} smallWindow={smallWindow}/>
-        <Projects/>
+        <Experience darkTheme={darkTheme} isTablet={isPhone || isTablet}/>
+        <Projects isTablet={isTablet}/>
         <Contact/>
       </div>
     

@@ -1,13 +1,17 @@
 .topbar{
+
   width: 100%;
-  height: 70px;
+  height: fit-content;
   position: fixed;
   opacity: 0;
   top: 0;
   z-index: 2;
   display: flex;
   align-items: center;
-
+  //box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  //box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  //box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  
   .wrapper{
     width: 100%;
     padding: 10px 20px;
@@ -95,9 +99,9 @@
     opacity: 1;
   }
 
-  $tabletBreakpoint: 991px;
+  $phoneBreakpoint: 481px;
 
-  @media (max-width: $tabletBreakpoint) {
+  @media (max-width: $phoneBreakpoint) {
 
     .wrapper{
       .left{
