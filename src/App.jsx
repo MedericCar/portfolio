@@ -25,11 +25,13 @@ function App() {
         setScrollDir(dir)
     }
     sections.addEventListener('scroll', handleScroll, { passive: true })
+   
     return () => sections.removeEventListener('scroll', handleScroll)
+  
   }, [scrollPos])
 
 
-  // Update window height on resize
+  // Update window height and type on resize
   const [ winHeight, setWinHeight ] = React.useState(window.innerHeight);
   const [ smallWindow, setSmallWindow ] = React.useState(window.innerWidth < 991);
 
@@ -39,14 +41,17 @@ function App() {
       setSmallWindow(window.innerWidth <= 991)
     }
     window.addEventListener("resize", handleWindowResize)
+    
     return () => window.removeEventListener("resize", handleWindowResize)
+  
   }, [])
 
 
-  // Update active page and URL based on scrolling
+  // Update active page based on scroll position
   const [ activePage, setActivePage ] = useState([true, false, false, false])
   const [ linkClick, setLinkClick ] = useState(false)
 
+  // On scrolling
   useEffect(() => {
     const scrolling = scrollPos % winHeight !== 0
     if (scrolling && !linkClick) {
@@ -59,6 +64,7 @@ function App() {
     }
   }, [winHeight, scrollDir, scrollPos, linkClick])
 
+  // On refresh
   useEffect(() => {
     const handleRefresh = (event) => {
       const i = Math.floor(scrollPos / winHeight)

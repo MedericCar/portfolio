@@ -4,8 +4,15 @@ import './contact.scss'
 
 
 const renderSendButton = (sent) => {
+  const disabledStyle = {
+    cursor:'default',
+    color: 'var(--green)',
+    backgroundColor: 'var(--bg-green)',
+    border: '1px var(--green) solid'
+  }
+
   if (sent) {
-    return <button disabled style={{cursor:'default', color: 'var(--green)', backgroundColor: 'var(--bg-green)', border: '1px var(--green) solid'}}>Thank you !</button>
+    return <button disabled style={disabledStyle}>Thank you !</button>
   } else {
     return <button type='submit'>Send</button>
   }

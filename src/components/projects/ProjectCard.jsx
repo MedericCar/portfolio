@@ -16,7 +16,14 @@ export default function ProjectCard({ data, show, selectedTags }) {
         <div className='text'>
           <h3>{data.title}</h3>
           <div className='tags'>
-            {data.tags.map((t, idx) => <Tag key={idx} data={t} active={selectedTags[t.text] || selectedTags['All']}/>)}
+            {
+              data.tags.map((t, idx) => <Tag
+                                          key={idx}
+                                          data={t}
+                                          active={selectedTags[t.text] || selectedTags['All']}
+                                        />
+              )
+            }
           </div>
           <p className='description'>
             {data.description}

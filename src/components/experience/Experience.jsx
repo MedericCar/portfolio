@@ -5,9 +5,9 @@ import './experience.scss'
 
 export default function Experience({ darkTheme, smallWindow }) {
 
-  let age = Date.now() - new Date(1998, 11, 19)
-  age /= 31557600000
-  age = Math.floor(age)
+  //let age = Date.now() - new Date(1998, 11, 19)
+  //age /= 31557600000
+  //age = Math.floor(age)
 
   return (
     <div className='experience' id='experience'>

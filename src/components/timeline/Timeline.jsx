@@ -2,6 +2,7 @@ import React from 'react'
 import TimelineElement from './TimelineElement'
 import './timeline.scss'
 
+// Get starting and ending dates of the timeline 
 const getTimelineBounds = (experience) => {
   const min = experience.reduce((prev, curr) => {
     return prev.startDate > curr.startDate ? curr : prev
@@ -72,7 +73,13 @@ export default function Timeline({ experience, darkTheme, smallWindow }) {
     <div className='timeline' id='timeline'>
       {
         experience.map((el, idx) => (
-          <TimelineElement key={idx} data={el} idx={idx} darkTheme={darkTheme} smallWindow={smallWindow}/>
+          <TimelineElement 
+            key={idx} 
+            data={el}
+            idx={idx}
+            darkTheme={darkTheme}
+            smallWindow={smallWindow}
+          />
         ))
       }
     </div>

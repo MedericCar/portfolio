@@ -6,7 +6,7 @@ import concordia from './assets/concordia.png'
 import pathtracer from './assets/pathtracer.png'
 import website from './assets/website.png'
 import wce from './assets/wce.png'
-import stoch from './assets/stoch3.png'
+import stoch from './assets/stoch.png'
 import tau from './assets/tau.png'
 import tiger from './assets/tiger.jpg'
 

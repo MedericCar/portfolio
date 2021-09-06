@@ -4,6 +4,7 @@ import Tag from '../tag/Tag'
 import { projectsData } from '../../data'
 import './projects.scss'
 
+// Row component for the flex table
 const Row = ({ data, showCards, selectedTags }) => {
   return (
     <div className='row'>
@@ -12,12 +13,13 @@ const Row = ({ data, showCards, selectedTags }) => {
   )
 }
 
+// Filter list component
 const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   const updateSelectedTags = (t) => {
     let selectedTagsCopy = Object.assign({}, selectedTags)
 
-    // If tag is updated to active, unset All
+    // If tag is updated to active, unset the All tag
     if (!selectedTags[t]) {
       selectedTagsCopy['All'] = false
     }
@@ -29,7 +31,7 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
   const updateAllTag = (t) => {
     let selectedTagsCopy = Object.assign({}, selectedTags)
 
-    // If All is updated to active, unset every other tag
+    // If All tag is updated to active, unset every other tag
     if (!selectedTags['All']) {
       Object.keys(selectedTags).forEach(t => selectedTagsCopy[t] = false)
     }
@@ -46,8 +48,22 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   return (
     <div className='filter-list'>
-      <Tag key={-1} data={anyTagData} onClick={() => updateAllTag(anyTagData)} active={selectedTags['All']}/>
-      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)} active={selectedTags[t.text]}/>)}
+      <Tag 
+        key={-1}
+        data={anyTagData}
+        onClick={() => updateAllTag(anyTagData)}
+        active={selectedTags['All']}
+      />
+      {
+        tags.map((t, idx) => {
+          return <Tag
+                   key={idx}
+                   data={t}
+                   onClick={() => updateSelectedTags(t)}
+                   active={selectedTags[t.text]}
+                 />
+        })
+      }
     </div>
   )
 }
@@ -75,12 +91,14 @@ export default function Projects() {
 
   let tags = Object.fromEntries(totLabels.map(l => [l, false]))
   tags = { ...tags, 'All': true }
-  const [ selectedTags, setSelectedTags ] = useState(tags)
 
+  const [ selectedTags, setSelectedTags ] = useState(tags)
   const [ selectedYears, setSelectedYears ] = useState([])
   const [ showCards , setShowCards ] = useState(true) 
-  const animLength = 300 
+  
+  // On tags update, launch animation, update years and sort new data
   useEffect(() => {
+    const animLength = 300 
     setShowCards(false)
     setTimeout(() => setShowCards(true), animLength)
 
@@ -92,9 +110,11 @@ export default function Projects() {
       const yearB = parseInt(b.tags[b.tags.length - 1].text)
       return yearA < yearB ? 1 : -1
     })
+
   }, [selectedTags])
 
 
+  // Cut a list in chunks of given size
   const chunk = (arr, size) => {
     let result = []
     for (let i = 0; i < arr.length; i += size) {
@@ -104,28 +124,41 @@ export default function Projects() {
     return result 
   }
 
+  const projectFilter = (project) => {
+    const projectLabels = project.tags.map(t => t.text)
+    const textTags = Object.keys(selectedTags)
+                              .filter(t => selectedTags[t] && !parseInt(t))
+
+    // Filter none if All tag is set
+    if (selectedTags['All']) {
+      return true
+    }
+
+    // Only years -> overlook text tags
+    if (textTags.length === 0) {
+      return projectLabels.some(l => selectedTags[l])
+    }
+
+    // Years + text -> filter by year first than by text
+    if (selectedYears.length !== 0 && !projectLabels.some(l => selectedYears.includes(l))) {
+      return false
+    }
+    return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))
+
+  }
+
   const renderCards = (data) => {
-    const filteredData = data.filter(p => {
-      const projectLabels = p.tags.map(t => t.text)
-      const textLabels = Object.keys(selectedTags)
-                               .filter(t => selectedTags[t] && !parseInt(t))
-
-      if (selectedTags['All']) {
-        return true
-      }
-
-      // Only years -> overlook text tags
-      if (textLabels.length === 0) {
-        return projectLabels.some(l => selectedTags[l])
-      }
-
-      // Years + text -> filter by year first than by text
-      if (selectedYears.length !== 0 && !projectLabels.some(l => selectedYears.includes(l))) {
-        return false
-      }
-      return projectLabels.some(l => selectedTags[l] && !selectedYears.includes(l))
-    })
-    return (chunk(filteredData, 3).map((el, idx) => <Row key={idx} data={el} showCards={showCards} selectedTags={selectedTags}/>))
+    const filteredData = data.filter(p => projectFilter(p))
+    const chunks = chunk(filteredData, 3)
+    return (
+      chunks.map((el, idx) => <Row 
+                                key={idx}
+                                data={el} 
+                                showCards={showCards}
+                                selectedTags={selectedTags}
+                              />
+      )
+    )
   }
 
   return (

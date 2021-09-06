@@ -136,14 +136,10 @@ const PerlinShader = {
     
     void main()
     {
-      vec3 Normal = normalize(normal);
-      //vec3 Normal = (normal);
-    
       // Conversion to clip
       vec4 pos = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
       pos.xyz /= pos.w;
       pos.w = 1.0 / pos.w;
-      //pos.xyz *= vec3(2);
       pos.xyz += vec3(15);
       pos.xy *= vec2(1000);
     
@@ -151,11 +147,8 @@ const PerlinShader = {
       delta = noise(pos.x*freq, pos.y*freq, time) * amplitude;
       //delta = noise(pos.x*freq, pos.y*freq, time) * amplitude;
     
-      vec3 FragWorldPosDisplaced = vec3(modelMatrix * vec4(position + Normal * delta, 1.0));
-      //vec3 FragWorldPosDisplaced = mat3(modelMatrix) * (position);// + Normal);
-      //vec3 FragWorldPosDisplaced = mat3(modelMatrix) * (position + 100);
+      vec3 FragWorldPosDisplaced = vec3(modelMatrix * vec4(position + normal * delta, 1.0));
       gl_Position = projectionMatrix * viewMatrix * vec4(FragWorldPosDisplaced, 1.0);
-      //gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     }
     `,
 
