@@ -6,7 +6,7 @@
   width: 260px;
   height: 280px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, background-color 1s ease, color 1s ease;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -37,6 +37,7 @@
       font-size: 16px;
       font-weight: 600;
       color: var(--gray1);
+      transition: color 1s ease;
     }
 
     .tags{

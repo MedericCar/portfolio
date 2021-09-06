@@ -21,6 +21,7 @@
     font-weight: 400;
     text-align: center;
     color: var(--gray2);
+    transition: color 1s ease;
   }
 
   .timeline {
@@ -29,7 +30,6 @@
     top: 45%;
     transform: translate(-50%, -45%);
     
-    background-color: blue;
     width: 87%;
     height: 0;
   }

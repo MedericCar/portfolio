@@ -20,7 +20,8 @@
     font-size: 17px;
     font-weight: 400;
     text-align: center;
-    color: var(--gray2)
+    color: var(--gray2);
+    transition: color 1s ease;
   }
 
   .filter-list{
@@ -82,7 +83,7 @@
 
 
     .cards {
-      width: 70%;
+      width: 75%;
       height: 65%;
 
       .row {

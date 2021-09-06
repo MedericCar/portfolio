@@ -23,6 +23,7 @@
       font-size: 17px;
       font-weight: 400;
       text-align: center;
+      transition: color 1s ease;
       color: var(--gray2);
       margin-top: 10px;
       margin-bottom: 20px;
@@ -41,6 +42,7 @@
       > * {
         background-color: var(--gray4);
         color: var(--gray2);
+        transition: background-color 1s ease, color 1s ease;
       }
 
       input{
@@ -52,7 +54,7 @@
       }
 
       textarea{
-        width: 300px;
+        width: 310px;
         height: 200px;
         font-size: 14px;
         border: none;
