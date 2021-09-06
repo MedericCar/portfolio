@@ -94,7 +94,7 @@ function App() {
       </div>
       
       <div className='sections'>
-        <Intro darkTheme={darkTheme} active={scrollPos < 3/2 * winHeight}/>
+        <Intro darkTheme={darkTheme} active={scrollPos < winHeight}/>
         <Experience darkTheme={darkTheme} smallWindow={smallWindow}/>
         <Projects/>
         <Contact/>

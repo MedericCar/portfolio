@@ -8,6 +8,8 @@ import './intro.scss'
 
 export default function Intro({ darkTheme, active }) {
 
+  console.log(active)
+
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
   const [ requestId, setRequestId ] = useState(null)
