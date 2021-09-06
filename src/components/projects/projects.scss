@@ -75,15 +75,14 @@
 
     .filter-list{
       width: 90%;
-      height: 50px;
+      height: 55px;
       flex-wrap: wrap;
 
     }
 
     .cards {
-      top: vh(225);
       width: 90%;
-      height: vh(75);
+      height: fit-content;
 
       .row {
         align-items: center;
@@ -96,36 +95,11 @@
     }
   }
 
-
   $phoneBreakpoint: 481px;
 
   @media (max-width: $phoneBreakpoint) {
-    @media (max-height: 640px) {
-      background-color: blue;
-    }
-    #title{
-      font-size: 30px;
-    }
-
-    #description{
-      font-size: 14px;
-    }
-
-    .filter-list{
-      width: 90%;
-      height: 50px;
-      flex-wrap: wrap;
-
-      .tag{
-        font-size: 10px;
-      }
-    }
-
 
     .cards {
-      width: 96%;
-      height: vh(60);
-      top: vh(240);
 
       .row {
         flex-direction: column;
