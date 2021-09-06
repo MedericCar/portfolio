@@ -47,8 +47,8 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   return (
     <div className='filter-list'>
-      <Tag key={-1} data={anyTagData} onClick={() => updateAllTag(anyTagData)} defaultVal={selectedTags['All']}/>
-      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)} defaultVal={selectedTags[t.text]}/>)}
+      <Tag key={-1} data={anyTagData} onClick={() => updateAllTag(anyTagData)} active={selectedTags['All']}/>
+      {tags.map((t, idx) => <Tag key={idx} data={t} onClick={() => updateSelectedTags(t)} active={selectedTags[t.text]}/>)}
     </div>
   )
 }
