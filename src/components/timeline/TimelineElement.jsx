@@ -17,7 +17,7 @@ export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
     if (showDescription) {
       return (
         <ul>
-          {data.description.map((el => <li>{el}</li>))}
+          {data.description.map((el, idx) => <li key={idx}>{el}</li>)}
         </ul>
       )
     }
@@ -25,8 +25,6 @@ export default function TimelineElement({ data, idx, darkTheme, smallWindow }) {
 
   const [ selected, setSelected ] = useState(-1)
   const [ showDescription, setShowDescription ] = useState(false)
-
-  console.log(smallWindow)
 
   const style = !smallWindow
     ? { width: data.width, left: data.startPos }

@@ -114,8 +114,6 @@ export default function Projects() {
         return true
       }
 
-      console.log(textLabels)
-
       // Only years -> overlook text tags
       if (textLabels.length === 0) {
         return projectLabels.some(l => selectedTags[l])
