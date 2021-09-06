@@ -62,9 +62,18 @@
 
   @media (max-width: $tabletBreakpoint) {
 
+    #title{
+      font-size: 30px;
+    }
+
+    #description{
+      font-size: 14px;
+    }
+
     .filter-list{
       width: 90%;
-      height: 35px;
+      height: 50px;
+      flex-wrap: wrap;
 
       .tag{
         font-size: 10px;
@@ -74,6 +83,7 @@
 
     .cards {
       width: 70%;
+      height: 65%;
 
       .row {
         flex-direction: column;
@@ -81,6 +91,12 @@
         justify-content: center;
         .project-card {
           width: 90%;
+
+          .tags{
+            .tag{
+              font-size: 10px;
+            }
+          }
         }
       }
     }

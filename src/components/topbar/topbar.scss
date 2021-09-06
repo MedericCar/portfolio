@@ -13,7 +13,7 @@
 
   .wrapper{
     width: 100%;
-    padding: 10px 30px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,7 +30,7 @@
       }
     }
 
-    .center{
+    .socials{
       flex: 1;
       display: flex;
       justify-content: center;
@@ -46,9 +46,10 @@
       display: flex;
       justify-content: flex-end;
       text-align: center;
+      font-weight: 500;
 
       > * {
-        padding: 0% 2%;
+        padding-left: 3%;
       }
       
       a::after{
@@ -96,4 +97,28 @@
   &.topbar-enter-done {
     opacity: 1;
   }
+
+  $tabletBreakpoint: 991px;
+
+  @media (max-width: $tabletBreakpoint) {
+
+    .wrapper{
+      .left{
+        flex: none;
+        font-size: 15px;
+      }
+
+      .center{
+        flex:0;
+      }
+
+      .right{
+        flex: 1;
+        font-size: 14px;
+      }
+
+    }
+      
+  }
+    
 }

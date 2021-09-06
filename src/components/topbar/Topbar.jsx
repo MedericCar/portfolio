@@ -26,8 +26,22 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
   )
 }
 
+const Socials = ({ smallWindow }) => {
+  if (smallWindow) return null
+
+  return (
+    <div className='socials'>
+      <a href='https://github.com/MedericCar' title='Github'><GitHubIcon/></a>
+      <a href='mailto: carriatmederic@gmail.com' title='Mail'><MailIcon/></a>
+      <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'><LinkedInIcon/></a>
+      <a href='TODO' title='Resume'><AccountCircleIcon/></a>
+    </div>
+  )
+
+}
+
 //FIXME: can refacto
-export default function Topbar({ toShow, activePage, setActivePage, setLinkClick }) {
+export default function Topbar({ toShow, activePage, setActivePage, setLinkClick, smallWindow }) {
 
   return (
     <CSSTransition
@@ -42,13 +56,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
             <a href='#intro'><h1 color='secondary'>MC</h1></a>
           </div>
 
-          <div className='center'>
-          
-            <a href='https://github.com/MedericCar' title='Github'><GitHubIcon/></a>
-            <a href='mailto: carriatmederic@gmail.com' title='Mail'><MailIcon/></a>
-            <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'><LinkedInIcon/></a>
-            <a href='TODO' title='Resume'><AccountCircleIcon/></a>
-          </div>
+          <Socials smallWindow={smallWindow}/> 
 
           <div className='right'>
             <Link

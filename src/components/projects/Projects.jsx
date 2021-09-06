@@ -34,7 +34,6 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
       Object.keys(selectedTags).forEach(t => selectedTagsCopy[t] = false)
     }
 
-    console.log(selectedTagsCopy)
     selectedTagsCopy['All'] = !selectedTags['All']
     setSelectedTags(selectedTagsCopy)
   }

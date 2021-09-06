@@ -80,6 +80,7 @@ function App() {
         activePage={activePage}
         setActivePage={setActivePage}
         setLinkClick={setLinkClick}
+        smallWindow={smallWindow}
       />
 
       <div className='lightModeSwitch'>
