@@ -31,15 +31,15 @@ const PerlinShader = {
 
   vertexShader: `
     #include <common>
+
+    in vec3 position;
+    in vec3 normal;
     
     varying float maxDelta;
     varying float delta;
       
     uniform int p[512]; 
-    uniform mat4 modelTransposeInv;
     uniform float time;
-    uniform float freq;
-    uniform float amplitude;
     
     // Permutation array, repeated to avoid overflow
     
@@ -53,23 +53,23 @@ const PerlinShader = {
     // in the cube with a random gradient vector (12 possibilities)
     float grad(int hash, float x, float y, float z)
     {
-      int val = hash & 15;
-      if (val == 0) return  x + y;
-      else if (val == 1) return -x + y;
-      else if (val == 2) return  x - y;
-      else if (val == 3) return -x - y;
-      else if (val == 4) return  x + z;
-      else if (val == 5) return -x + z;
-      else if (val == 6) return  x - z;
-      else if (val == 7) return -x - z;
-      else if (val == 8) return  y + z;
-      else if (val == 9) return -y + z;
-      else if (val == 10) return  y - z;
-      else if (val == 11) return -y - z;
-      else if (val == 12) return  y + x;
-      else if (val == 13) return -y + z;
-      else if (val == 14) return  y - x;
-      else if (val == 15) return -y - z;
+      float val = mod(float(hash), 15.0);
+      if (val == 0.0) return  x + y;
+      else if (val == 1.0) return -x + y;
+      else if (val == 2.0) return  x - y;
+      else if (val == 3.0) return -x - y;
+      else if (val == 4.0) return  x + z;
+      else if (val == 5.0) return -x + z;
+      else if (val == 6.0) return  x - z;
+      else if (val == 7.0) return -x - z;
+      else if (val == 8.0) return  y + z;
+      else if (val == 9.0) return -y + z;
+      else if (val == 10.0) return  y - z;
+      else if (val == 11.0) return -y - z;
+      else if (val == 12.0) return  y + x;
+      else if (val == 13.0) return -y + z;
+      else if (val == 14.0) return  y - x;
+      else if (val == 15.0) return -y - z;
       else return 0.0;
     }
     
@@ -78,9 +78,9 @@ const PerlinShader = {
     float noise(float x, float y, float z)
     {
       // Unit cube of the point (bounds are [i, i+1])
-      int ix = int(floor(x)) & 255;
-      int iy = int(floor(y)) & 255;
-      int iz = int(floor(z)) & 255;
+      int ix = int(mod(floor(x), 255.0));
+      int iy = int(mod(floor(y), 255.0));
+      int iz = int(mod(floor(z), 255.0));
     
       // Position in the cube (fractional part)
       float fx = x - float(ix);
@@ -134,6 +134,9 @@ const PerlinShader = {
     
     void main()
     {
+      float freq = 0.0075;
+      float amplitude = 0.2;
+
       // Conversion to clip
       vec4 pos = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0);
       pos.xyz /= pos.w;

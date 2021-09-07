@@ -40,16 +40,14 @@ export default function Intro({ darkTheme, active }) {
       color1 =  new Color(0x17a3db)
     }
 
-    var material = new THREE.ShaderMaterial({
-      glslVersion: THREE.GLSL3,
+    var material = new THREE.RawShaderMaterial({
+      glslVersion: THREE.GLSL1,
       wireframe: true,
       vertexShader: PerlinShader.vertexShader,
       fragmentShader: PerlinShader.fragmentShader,
       uniforms: {
         p: { value: PerlinShader.p },
         time: { value: 0 },
-        freq: { value: 0.0075 },
-        amplitude: { value: 0.2 },
         color1: { value: new Vector4(color1.r, color1.g, color1.b, 1)},
         color2: { value: new Vector4(color2.r, color2.g, color2.b, 1)},
       }
