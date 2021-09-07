@@ -42,9 +42,9 @@
 
   .arrow{
     position: absolute;
-    left: 50%;
-    top: vh(93);
-    transform: translate(-50%, 0%);
+    left: 48%;
+    bottom: vh(7);
+    transform: translate(-50%, -50%);
     animation: MoveUpDown 1s linear infinite;;
   }
 
