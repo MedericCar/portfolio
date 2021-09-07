@@ -35,7 +35,7 @@ const PerlinShader = {
     varying float maxDelta;
     varying float delta;
       
-    uniform int[512] p; 
+    uniform int p[512]; 
     uniform mat4 modelTransposeInv;
     uniform float time;
     uniform float freq;
@@ -53,26 +53,24 @@ const PerlinShader = {
     // in the cube with a random gradient vector (12 possibilities)
     float grad(int hash, float x, float y, float z)
     {
-      switch(hash & 15)
-      {
-        case 0: return  x + y;
-        case 1: return -x + y;
-        case 2: return  x - y;
-        case 3: return -x - y;
-        case 4: return  x + z;
-        case 5: return -x + z;
-        case 6: return  x - z;
-        case 7: return -x - z;
-        case 8: return  y + z;
-        case 9: return -y + z;
-        case 10: return  y - z;
-        case 11: return -y - z;
-        case 12: return  y + x;
-        case 13: return -y + z;
-        case 14: return  y - x;
-        case 15: return -y - z;
-        default: return 0.0;
-      }
+      int val = hash & 15;
+      if (val == 0) return  x + y;
+      else if (val == 1) return -x + y;
+      else if (val == 2) return  x - y;
+      else if (val == 3) return -x - y;
+      else if (val == 4) return  x + z;
+      else if (val == 5) return -x + z;
+      else if (val == 6) return  x - z;
+      else if (val == 7) return -x - z;
+      else if (val == 8) return  y + z;
+      else if (val == 9) return -y + z;
+      else if (val == 10) return  y - z;
+      else if (val == 11) return -y - z;
+      else if (val == 12) return  y + x;
+      else if (val == 13) return -y + z;
+      else if (val == 14) return  y - x;
+      else if (val == 15) return -y - z;
+      else return 0.0;
     }
     
     // Noise function based on pseudo-random gradient values

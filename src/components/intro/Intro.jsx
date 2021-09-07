@@ -41,6 +41,7 @@ export default function Intro({ darkTheme, active }) {
     }
 
     var material = new THREE.ShaderMaterial({
+      glslVersion: THREE.GLSL3,
       wireframe: true,
       vertexShader: PerlinShader.vertexShader,
       fragmentShader: PerlinShader.fragmentShader,
