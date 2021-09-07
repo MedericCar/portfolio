@@ -16,7 +16,7 @@ export default function Experience({ darkTheme, isTablet }) {
         <p>
           Student at <b><a href="https://www.epita.fr/">EPITA</a></b> currently 
           in the last year of the Image Processing & Computer Graphics Master,
-          I am looking for a <b>6-month internship</b> starting in <b>February</b>.
+          I am looking for a <b>6-month internship</b> starting in <b>February 2021</b>.
         </p>
         <p>
           This is what I've been up to the <b>last 5 years</b>.

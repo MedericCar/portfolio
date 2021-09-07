@@ -26,14 +26,16 @@ export default function Intro({ darkTheme, active }) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
+    console.log(darkTheme)
+
     let geometry, color1, color2
     let w = 12, h = 2
     if (darkTheme) {
-      geometry = new THREE.PlaneGeometry( w, h, 70, 50);
+      geometry = new THREE.PlaneGeometry(w, h, 70, 50);
       color2 = new Color(0x00d1ff)
       color1 = new Color(0x040b55)
     } else {
-      geometry = new THREE.PlaneGeometry( w, h, 70, 50);
+      geometry = new THREE.PlaneGeometry(w, h, 70, 50);
       color2 =  new Color(0x5233a8)
       color1 =  new Color(0x17a3db)
     }
@@ -77,7 +79,7 @@ export default function Intro({ darkTheme, active }) {
 
       var elapsedMilliseconds = Date.now() - startTime;
       plane1.material.uniforms.time.value = elapsedMilliseconds / 1000. / 2;
-      plane1.material.uniforms.time.value %= 1000;
+      plane1.material.uniforms.time.value %= 30;
       renderer.render(scene, camera);
     }
 
@@ -110,7 +112,7 @@ export default function Intro({ darkTheme, active }) {
         className='arrow'
         href='#experience'
       >
-        <ExpandMoreIcon/>
+        <ExpandMoreIcon fontSize='large'/>
       </a>
 
     </div>

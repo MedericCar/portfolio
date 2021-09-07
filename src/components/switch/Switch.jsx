@@ -1,5 +1,6 @@
 import React from "react"
 import './switch.scss'
+import WbIncandescentIcon from '@material-ui/icons/WbIncandescent';
 
 export default function Switch({ darkTheme, setDarkTheme }) {
   return (
@@ -9,9 +10,7 @@ export default function Switch({ darkTheme, setDarkTheme }) {
         defaultChecked={false}
         checked={darkTheme}
       />
-        <div>
-          <span></span>
-        </div>
+        <WbIncandescentIcon fontSize='medium'/>
     </div>
   )
 }
