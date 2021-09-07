@@ -40,7 +40,7 @@ export default function Intro({ darkTheme, active }) {
       color1 =  new Color(0x17a3db)
     }
 
-    var material = new THREE.RawShaderMaterial({
+    var material = new THREE.ShaderMaterial({
       glslVersion: THREE.GLSL1,
       wireframe: true,
       vertexShader: PerlinShader.vertexShader,
