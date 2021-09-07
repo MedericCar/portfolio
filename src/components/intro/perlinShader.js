@@ -30,18 +30,11 @@ const PerlinShader = {
   ],
 
   vertexShader: `
-    //varying vec3 position;
-    //varying vec3 normal;
     
     varying float maxDelta;
     varying float delta;
 
-  //  uniform mat4 modelMatrix;
-		//uniform mat4 viewMatrix;
-		//uniform mat4 projectionMatrix;
-		//uniform vec3 cameraPos;
-
-    uniform int p[490]; 
+    uniform int p[496]; 
     uniform float time;
     
     // Permutation array, repeated to avoid overflow
@@ -157,6 +150,7 @@ const PerlinShader = {
     `,
 
   fragmentShader : `
+    
     varying float maxDelta;
     varying float delta;
       
