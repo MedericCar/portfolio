@@ -79,11 +79,10 @@
     position: absolute;
     z-index: 0;
     bottom: vh(-299);
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 14px;
     padding-bottom: 3px;
-    width: fit-content;
+    width: 100%;
+    text-align: center;
   }
 
 
