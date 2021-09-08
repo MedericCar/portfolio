@@ -19,7 +19,7 @@
     justify-content: center;
     text-align: center;
     left: 50%;
-    top: 50%;
+    top: vh(50);
     transform: translate(-50%, -50%);
     width: 100vw;
     height: vh(40);
@@ -42,8 +42,8 @@
 
   .arrow{
     position: absolute;
-    left: 48%;
-    bottom: vh(7);
+    left: 47.5%;
+    top: vh(93);
     transform: translate(-50%, -50%);
     animation: MoveUpDown 1s linear infinite;;
   }

@@ -45,7 +45,6 @@ function App() {
       setIsTablet(window.innerWidth <= 991 && window.innerWidth > 481)
       setIsPhone(window.innerWidth <= 481)
       document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
-      console.log(window.innerHeight/100)
     }
     window.addEventListener("resize", handleWindowResize)
     
@@ -88,6 +87,7 @@ function App() {
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
+      {/*
       <Topbar
         toShow={scrollPos >= winHeight / 2}
         activePage={activePage}
@@ -95,6 +95,7 @@ function App() {
         setLinkClick={setLinkClick}
         isPhone={isPhone}
       />
+      */}
 
       <div className='lightModeSwitch'>
         <Switch darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>

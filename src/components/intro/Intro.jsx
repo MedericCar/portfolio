@@ -26,7 +26,6 @@ export default function Intro({ darkTheme, active }) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
 
-    console.log(darkTheme)
 
     let geometry, color1, color2
     let w = 12, h = 2
