@@ -43,7 +43,7 @@
   .arrow{
     display: inline-block;
     position: absolute;
-    font-size: 40px;
+    font-size: 27px;
     font-weight: 700;
     left: 47.5%;
     top: vh(90);
@@ -78,10 +78,8 @@
 
     .arrow{
       position: absolute;
-      left: 45.5%;
       top: vh(89);
-      font-size: 45px;
-      font-weight: 900;
+      font-size: 27px;
       animation: MoveLeftRight 1s linear infinite;;
     }
 

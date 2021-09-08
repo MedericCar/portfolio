@@ -111,8 +111,11 @@ export default function Intro({ darkTheme, active, isTablet }) {
         className='arrow'
         href='#experience'
       >
-        <span className='blue'>
-          {isTablet ? '→' : '↓'}
+        <span className=''>
+          {
+            isTablet
+              ? <i class="fas fa-arrow-right"></i>
+              : <i class="fas fa-arrow-down"></i>}
         </span>
       </a>
 

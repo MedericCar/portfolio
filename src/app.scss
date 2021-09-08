@@ -55,19 +55,19 @@
     --cyan: #ebffff;
     --bg-cyan: #00c5c5;
   }
-    &.theme-dark{
+    &.theme-light{
       .blue {
-        background: rgb(114,209,255);
-        background: linear-gradient(190deg, rgba(114,209,255,1) 0%, rgb(146, 162, 255) 100%); 
+        background: rgb(151, 218, 251);
+        background: linear-gradient(-190deg, rgb(151, 218, 251) 0%, rgb(109, 131, 255) 100%); 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
     }
 
-    &.theme-light{
+    &.theme-dark{
       .blue {
-      background: rgb(100,182,222);
-      background: linear-gradient(190deg, rgba(100,182,222,1) 0%, rgba(85,105,217,1) 100%);
+      background: rgb(105, 190, 233);
+      background: linear-gradient(-190deg, rgb(112, 205, 251) 0%, rgb(80, 99, 206) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       }
