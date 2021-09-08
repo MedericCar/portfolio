@@ -6,13 +6,18 @@
 </h1>
 <p align="center">Simple yet fully featured portfolio website.</p>
 
+<h2 align="center">
+  <img src="src/assets/example.gif" alt="example" width="100%" />
+  <br>
+</h2>
+
 ## ⭐ Features
 - Single page app with snap-scroll effect
 - 3D animation as homepage
 - Timeline to display experiences
 - Projects table with tags and filters
-- Light and dark themes <img alt="themes" src='src/assets/themes.png' width='30%'>
-- Fully responsive <img alt="responsiveness" src='src/assets/responsiveness.png' width='30%'>
+- Light and dark themes <img alt="themes" src='src/assets/themes.png' width='100%'>
+- Fully responsive <img alt="responsiveness" src='src/assets/responsiveness.png' width='100%'>
 - Made only with React and Sass, no library
 
 ## Getting started
