@@ -24,21 +24,28 @@
     width: 100vw;
     height: vh(40);
 
-    > * {
-      background: #1e3c72;  /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      
-      
-      
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    &.light-theme{
+      > * {
+        background: rgb(114,209,255);
+        background: linear-gradient(190deg, rgba(114,209,255,1) 0%, rgba(101,124,255,1) 100%); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
+    &.dark-theme{
+      > * {
+      background: rgb(100,182,222);
+      background: linear-gradient(190deg, rgba(100,182,222,1) 0%, rgba(85,105,217,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      }
+    }
+      
 
     h1{
-      font-size: 50px;
+      font-size: 60px;
       font-weight: 600;
     }
 
@@ -77,12 +84,12 @@
     .info{
         
       h1{
-        font-size: 40px;
+        font-size: 37px;
         font-weight: 600;
       }
 
       h4{
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 400;
       }
     }

@@ -101,7 +101,7 @@ export default function Intro({ darkTheme, active }) {
 
       <div id='c' ref={mountRef}></div>
       
-      <div className='info'>
+      <div className={`info ${darkTheme ? 'dark-theme' : 'light-theme'}`}>
         <h1>Médéric Carriat</h1>
         <h4>Software Engineer looking for a 6-month internship</h4>
       </div>
