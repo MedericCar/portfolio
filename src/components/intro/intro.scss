@@ -27,7 +27,7 @@
     &.light-theme{
       > * {
         background: rgb(114,209,255);
-        background: linear-gradient(190deg, rgba(114,209,255,1) 0%, rgba(101,124,255,1) 100%); 
+        background: linear-gradient(190deg, rgba(114,209,255,1) 0%, rgb(146, 162, 255) 100%); 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
