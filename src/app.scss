@@ -78,8 +78,12 @@
   .sections{
     display: flex;
     flex-direction: column;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    overflow: auto;
+    flex: none;
     width: 100vw;
-    height: vh(400);
+    height: vh(100);
     position: absolute;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
@@ -94,6 +98,7 @@
       width: 100vw;
       height: 100%;
       scroll-snap-align: start;
+      flex:none;
     }
   }
 
