@@ -11,7 +11,8 @@
 - 3D animation as homepage
 - Timeline to display experiences
 - Projects table with tags and filters
-- Fully responsive
+- Light and dark themes <img alt="themes" src='src/assets/themes.png' width='30%'>
+- Fully responsive <img alt="responsiveness" src='src/assets/responsiveness.png' width='30%'>
 - Made only with React and Sass, no library
 
 ## Getting started
