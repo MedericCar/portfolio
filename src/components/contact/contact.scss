@@ -24,7 +24,7 @@
       font-size: 19px;
       font-weight: 400;
       text-align: center;
-      transition: color 1s linear;
+      transition: color 0.5s linear;
       color: var(--gray2);
       margin-top: 10px;
       margin-bottom: 20px;
@@ -43,7 +43,7 @@
       > * {
         background-color: var(--gray4);
         color: var(--gray2);
-        transition: background-color 1s linear, color 1s linear;
+        transition: background-color 0.5s linear, color 0.5s linear;
       }
 
       input{

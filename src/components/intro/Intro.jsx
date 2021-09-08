@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from "three"
 import { Color, Vector4 } from 'three';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
 
-export default function Intro({ darkTheme, active }) {
+export default function Intro({ darkTheme, active, isTablet }) {
+
+  console.log(isTablet)
 
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
@@ -101,16 +102,18 @@ export default function Intro({ darkTheme, active }) {
 
       <div id='c' ref={mountRef}></div>
       
-      <div className={`info ${darkTheme ? 'dark-theme' : 'light-theme'}`}>
-        <h1>Médéric Carriat</h1>
-        <h4>Software Engineer looking for a 6-month internship</h4>
+      <div className='info'>
+        <h1 className='blue'>Médéric Carriat</h1>
+        <h4 className='blue'>Software Engineer looking for a 6-month internship</h4>
       </div>
 
       <a 
         className='arrow'
         href='#experience'
       >
-        <ExpandMoreIcon fontSize='large'/>
+        <span className='blue'>
+          {isTablet ? '→' : '↓'}
+        </span>
       </a>
 
     </div>

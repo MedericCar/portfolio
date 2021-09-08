@@ -163,7 +163,7 @@ export default function Projects({ isTablet }) {
 
   return (
     <div className='projects' id='projects'>
-      <h1 id='title'>Projects</h1>
+      <h1 id='title' className=''>A few <span className='blue'>projects</span></h1>
       <div id='description'>
         <p>
           Here is a list of projects I have done on my personal time or for work/studies.

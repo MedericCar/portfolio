@@ -11,15 +11,15 @@ export default function Experience({ darkTheme, isTablet }) {
 
   return (
     <div className='experience' id='experience'>
-      <h1 id='title'>Hi, I'm Médéric</h1>
+      <h1 id='title'>Hi, I'm <span className='blue'>Médéric</span></h1>
       <div id='description'>
         <p>
-          Student at <b><a href="https://www.epita.fr/">EPITA</a></b> currently 
+          Student at <a href="https://www.epita.fr/">EPITA</a> currently 
           in the last year of the Image Processing & Computer Graphics Master,
-          I am looking for a <b>6-month internship</b> starting in <b>February 2021</b>.
+          I am looking for a <b className='blue'>6-month internship</b> starting in <b className='blue'>February 2021</b>.
         </p>
         <p>
-          This is what I've been up to the <b>last 5 years</b>.
+          This is what I've been up to the last 5 years.
         </p>
       </div>
       <Timeline experience={experienceData} darkTheme={darkTheme} isTablet={isTablet}/>

@@ -73,7 +73,7 @@ export default function Contact() {
   return (
     <div className='contact' id='contact'>
       <div className='form-wrapper'>
-        <h1 id='title'>Contact me</h1>
+        <h1 id='title'><span className='blue'>Contact</span> me</h1>
         <p id='description'>If you have an opportunity for me, feel free to leave a message !</p>
         <form onSubmit={handleSubmit}>
           <input type='text' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)}/>

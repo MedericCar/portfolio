@@ -55,11 +55,28 @@
     --cyan: #ebffff;
     --bg-cyan: #00c5c5;
   }
+    &.theme-dark{
+      .blue {
+        background: rgb(114,209,255);
+        background: linear-gradient(190deg, rgba(114,209,255,1) 0%, rgb(146, 162, 255) 100%); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &.theme-light{
+      .blue {
+      background: rgb(100,182,222);
+      background: linear-gradient(190deg, rgba(100,182,222,1) 0%, rgba(85,105,217,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      }
+   }
 
   >*{
     background-color: var(--bg);
     color: var(--gray1);
-    transition: background-color 1s linear, color 1s linear;
+    transition: background-color 0.5s linear, color 0.5s linear;
   }
 
   a{

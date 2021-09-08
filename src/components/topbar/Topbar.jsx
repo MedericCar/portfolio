@@ -31,10 +31,18 @@ const Socials = ({ isPhone }) => {
 
   return (
     <div className='socials'>
-      <a href='https://github.com/MedericCar' title='Github'><GitHubIcon/></a>
-      <a href='mailto: carriatmederic@gmail.com' title='Mail'><MailIcon/></a>
-      <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'><LinkedInIcon/></a>
-      <a href='TODO' title='Resume'><AccountCircleIcon/></a>
+      <a href='https://github.com/MedericCar' title='Github'>
+        <i class="fab fa-github"></i>
+      </a>
+      <a href='mailto: carriatmederic@gmail.com' title='Mail'>
+        <i class="far fa-envelope"></i>
+      </a>
+      <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'>
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href='TODO' title='Resume'>
+        <i class="far fa-file"></i>
+      </a>
     </div>
   )
 
@@ -53,7 +61,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
         <div className='wrapper'>
           
           <div className='left'>
-            <a href='#intro'><h1 color='secondary'>MC</h1></a>
+            <a href='#intro'><h1 color='secondary'><b className='blue'>MC</b></h1></a>
           </div>
 
           <Socials isPhone={isPhone}/> 

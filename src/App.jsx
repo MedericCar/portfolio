@@ -123,7 +123,11 @@ function App() {
       </div>
       
       <div className='sections'>
-        <Intro darkTheme={darkTheme} active={(isPhone || isTablet) ? scrollPos < winWidth : scrollPos < winHeight}/>
+        <Intro 
+          darkTheme={darkTheme}
+          active={(isPhone || isTablet) ? scrollPos < winWidth : scrollPos < winHeight}
+          isTablet={isPhone || isTablet}
+        />
         <Experience darkTheme={darkTheme} isTablet={isPhone || isTablet}/>
         <Projects isTablet={isTablet}/>
         <Contact/>
