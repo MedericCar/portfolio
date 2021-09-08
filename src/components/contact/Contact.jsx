@@ -42,7 +42,7 @@ export default function Contact({ isPhone }) {
         alert('Please enter a valid email.')
         return
       }
-      // TODO - send mail
+      
       const serviceId = 'service_zc8fbku';
             const templateId = 'template_3bx52ox';
             const userId = 'user_9U9sUmHvHS3HJaGwi8WGv';
