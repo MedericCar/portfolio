@@ -166,7 +166,7 @@ export default function Projects({ isTablet }) {
       <h1 id='title' className=''>A few <span className='blue'>projects</span></h1>
       <div id='description'>
         <p>
-          Here is a list of projects I have done on my personal time or for work/studies.
+          Here is a list of projects I have done on my personal time or for work/studies
         </p>
       </div>
       <FilterList 
