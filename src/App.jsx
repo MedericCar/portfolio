@@ -87,7 +87,6 @@ function App() {
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
-      {/*
       <Topbar
         toShow={scrollPos >= winHeight / 2}
         activePage={activePage}
@@ -95,7 +94,6 @@ function App() {
         setLinkClick={setLinkClick}
         isPhone={isPhone}
       />
-      */}
 
       <div className='lightModeSwitch'>
         <Switch darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>

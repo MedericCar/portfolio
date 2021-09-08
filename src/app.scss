@@ -77,8 +77,7 @@
 
   .sections{
     display: flex;
-    flex-direction: column;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     overflow: auto;
     flex: none;
@@ -86,7 +85,7 @@
     height: vh(100);
     position: absolute;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: x mandatory;
     scrollbar-width: none; // for firefox
     &::-webkit-scrollbar{
       display: none;

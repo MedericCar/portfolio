@@ -83,6 +83,7 @@
     transform: translateX(-50%);
     font-size: 14px;
     padding-bottom: 3px;
+    width: fit-content;
   }
 
 
@@ -126,6 +127,9 @@
 
     #footer{
       font-size: 12px;
+      bottom: vh(1);
+      left: 350%;
+      transform: translateX(-50%);
     }
 
 
