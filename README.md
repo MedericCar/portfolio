@@ -2,7 +2,7 @@
   <img alt="Logo" src="src/assets/logo-round.png" width="20%" />
 </div>
 <h1 align="center">
-  medericcarriat.com
+  <a href='https://medericcarriat.com/'>medericcarriat.com</a>
 </h1>
 <p align="center">Simple yet fully featured portfolio website.</p>
 
