@@ -27,6 +27,8 @@
     --bg-pink: #f8e2f6;
     --cyan: #00c5c5;
     --bg-cyan: #d0fafa;
+    --gradient1: rgb(151, 218, 251);
+    --gradient2: rgb(109, 131, 255);
   }
   
   &.theme-dark {
@@ -54,24 +56,16 @@
     --bg-pink: #e47adb;
     --cyan: #ebffff;
     --bg-cyan: #00c5c5;
+    --gradient1: rgb(112, 205, 251);
+    --gradient2: rgb(80, 99, 206);
   }
-    &.theme-light{
-      .blue {
-        background: rgb(151, 218, 251);
-        background: linear-gradient(-190deg, rgb(151, 218, 251) 0%, rgb(109, 131, 255) 100%); 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
 
-    &.theme-dark{
-      .blue {
-      background: rgb(105, 190, 233);
-      background: linear-gradient(-190deg, rgb(112, 205, 251) 0%, rgb(80, 99, 206) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      }
-   }
+  .blue {
+    background: --var(--gradient1);
+    background: linear-gradient(-190deg, var(--gradient1) 0%, var(--gradient2) 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   >*{
     background-color: var(--bg);
@@ -104,11 +98,11 @@
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; // for firefox
+    -webkit-overflow-scrolling: auto;
     &::-webkit-scrollbar{
       display: none;
     }
 
-    -webkit-overflow-scrolling: touch;
 
     > *{
       width: 100vw;

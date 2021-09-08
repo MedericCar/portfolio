@@ -108,10 +108,10 @@ export default function Intro({ darkTheme, active, isTablet }) {
       </div>
 
       <a 
-        className='arrow'
+        className='arrow-container'
         href='#experience'
       >
-        <span className=''>
+        <span className='arrow'>
           {
             isTablet
               ? <i class="fas fa-arrow-right"></i>
