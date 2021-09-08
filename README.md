@@ -7,7 +7,7 @@
 <p align="center">Simple yet fully featured portfolio website.</p>
 
 <h2 align="center">
-  <img src="src/assets/example.gif" alt="example" width="100%" />
+  <img src="src/assets/example.gif" alt="example" width="70%" />
   <br>
 </h2>
 
@@ -16,8 +16,10 @@
 - 3D animation as homepage
 - Timeline to display experiences
 - Projects table with tags and filters
-- Light and dark themes <img alt="themes" src='src/assets/themes.png' width='100%'>
-- Fully responsive <img alt="responsiveness" src='src/assets/responsiveness.png' width='100%'>
+- Light and dark themes
+<div align="center"> <img alt="themes" src='src/assets/themes.png' width='70%'> <br></div>
+- Fully responsive
+<div align="center"><br> <img alt="responsiveness" src='src/assets/responsiveness.png' width='70%'> <br><br></div>
 - Made only with React and Sass, no library
 
 ## Getting started
