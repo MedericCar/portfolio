@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Socials from './Socials'
 import emailjs from 'emailjs-com'
 import './contact.scss'
 
@@ -25,7 +26,7 @@ const isValidEmail = email => {
 
 
 
-export default function Contact() {
+export default function Contact({ isPhone }) {
 
   const [ name, setName ] = useState('')
   const [ company, setCompany ] = useState('')
@@ -83,6 +84,7 @@ export default function Contact() {
           {renderSendButton(sent)}
         </form>
       </div>
+      { isPhone ? <Socials/> : '' }
       <p id='footer'>© {new Date().getFullYear()} Médéric Carriat</p>
     </div>
   )

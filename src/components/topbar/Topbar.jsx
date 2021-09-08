@@ -1,9 +1,6 @@
 import React from 'react'
 import { CSSTransition } from 'react-transition-group';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import MailIcon from '@material-ui/icons/Mail';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Socials from '../contact/Socials';
 
 import './topbar.scss'
 
@@ -24,28 +21,6 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
       {text}
     </a>
   )
-}
-
-const Socials = ({ isPhone }) => {
-  if (isPhone) return null
-
-  return (
-    <div className='socials'>
-      <a href='https://github.com/MedericCar' title='Github'>
-        <i class="fab fa-github"></i>
-      </a>
-      <a href='mailto: carriatmederic@gmail.com' title='Mail'>
-        <i class="far fa-envelope"></i>
-      </a>
-      <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'>
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href='TODO' title='Resume'>
-        <i class="far fa-file"></i>
-      </a>
-    </div>
-  )
-
 }
 
 //FIXME: can refacto

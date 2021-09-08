@@ -61,6 +61,8 @@ function App() {
   
   }, [scrollPos, isPhone, isTablet])
 
+  console.log(scrollPos)
+
   // Update active page based on scroll position
   const [ activePage, setActivePage ] = useState([true, false, false, false])
   const [ linkClick, setLinkClick ] = useState(false)
@@ -126,11 +128,11 @@ function App() {
         <Intro 
           darkTheme={darkTheme}
           active={(isPhone || isTablet) ? scrollPos < winWidth : scrollPos < winHeight}
-          isTablet={isPhone || isTablet}
+          smallViewport={isPhone || isTablet}
         />
-        <Experience darkTheme={darkTheme} isTablet={isPhone || isTablet}/>
+        <Experience darkTheme={darkTheme} smallViewport={isPhone || isTablet}/>
         <Projects isTablet={isTablet}/>
-        <Contact/>
+        <Contact isPhone={isPhone}/>
       </div>
     
     </div>

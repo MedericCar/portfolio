@@ -3,7 +3,7 @@ import { experienceData } from '../../data'
 import Timeline from '../timeline/Timeline'
 import './experience.scss'
 
-export default function Experience({ darkTheme, isTablet }) {
+export default function Experience({ darkTheme, smallViewport }) {
 
   //let age = Date.now() - new Date(1998, 11, 19)
   //age /= 31557600000
@@ -22,7 +22,7 @@ export default function Experience({ darkTheme, isTablet }) {
           This is what I've been up to the last 5 years.
         </p>
       </div>
-      <Timeline experience={experienceData} darkTheme={darkTheme} isTablet={isTablet}/>
+      <Timeline experience={experienceData} darkTheme={darkTheme} smallViewport={smallViewport}/>
     </div>
   )
 }

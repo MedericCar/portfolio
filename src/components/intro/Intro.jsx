@@ -6,9 +6,7 @@ import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
 
-export default function Intro({ darkTheme, active, isTablet }) {
-
-  console.log(isTablet)
+export default function Intro({ darkTheme, active, smallViewport }) {
 
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
@@ -113,7 +111,7 @@ export default function Intro({ darkTheme, active, isTablet }) {
       >
         <span className='arrow'>
           {
-            isTablet
+            smallViewport
               ? <i class="fas fa-arrow-right"></i>
               : <i class="fas fa-arrow-down"></i>}
         </span>

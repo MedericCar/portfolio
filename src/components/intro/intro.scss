@@ -43,22 +43,21 @@
   .arrow-container{
     
     position: absolute;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     left: 47.5%;
     top: vh(90);
-    width: 34px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     background: --var(--gradient1);
     background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 100%); 
-    border-radius: 15px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .arrow{
-      //display: inline-block;
-      animation: MoveUpDown 1s linear infinite;
+      //animation: MoveUpDown 1s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -96,26 +95,29 @@
     
       position: absolute;
       top: vh(89);
-      width: 47px;
-      height: 34px;
+      width: 30px;
+      height: 30px;
       flex-direction: column;
       background: --var(--gradient1);
       background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 100%); 
       flex-direction: row;
 
       .arrow{
-        font-size: 23px;
+        font-size: 18px;
         font-weight: 700;
-        animation: MoveLeftRight 1s linear infinite;
+        //animation: MoveLeftRight 1s linear infinite;
       }
     }
 
     @keyframes MoveLeftRight {
-      0%, 100% {
-        transform: translate(-3px, 0px);
+      0% {
+        transform: translateX(-2px);
       }
       50% {
-        transform: translate(3px, 0px);
+        transform: translateX(2px);
+      }
+      100% {
+
       }
     }
   }
