@@ -15,7 +15,7 @@ export default function Socials({ isPhone }) {
         <i class="fab fa-linkedin"></i>
       </a>
       <a href='https://resume.medericcarriat.com' title='Resume'>
-        <i class="far fa-file"></i>
+        <i class="far fa-id-card"></i>
       </a>
     </div>
   )
