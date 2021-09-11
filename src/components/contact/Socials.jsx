@@ -14,7 +14,7 @@ export default function Socials({ isPhone }) {
       <a href='https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-carriat-17705a181/' title='LinkedIn'>
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href='TODO' title='Resume'>
+      <a href='https://resume.medericcarriat.com' title='Resume'>
         <i class="far fa-file"></i>
       </a>
     </div>
