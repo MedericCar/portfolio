@@ -4,7 +4,7 @@ import Socials from '../contact/Socials';
 
 import './topbar.scss'
 
-const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
+const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhone, icon }) => {
   const newActivePage = [false, false, false, false]
   newActivePage[idx] = true
 
@@ -16,9 +16,14 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick }) => {
         setLinkClick(true)
         setTimeout(() => setLinkClick(false), 1000)
       }}
-      className={`${activePage[idx] ? 'active' : ''}`}
+      className={`link ${activePage[idx] ? 'active' : ''}`}
     >
-      {text}
+      <div id='icon' className={`${isPhone && activePage[idx] ? 'blue' : ''}`}>
+        {isPhone ? icon : ''}
+      </div>
+      <div id='text' className={`${isPhone && activePage[idx] ? 'blue' : ''}`}>
+        {text}
+      </div>
     </a>
   )
 }
@@ -49,6 +54,8 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               activePage={activePage}
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
+              isPhone={isPhone}
+              icon={<i class="fas fa-home"></i>}
             />
             <Link
               idx={1} 
@@ -57,6 +64,8 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               activePage={activePage}
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
+              isPhone={isPhone}
+              icon={<i class="fas fa-user"></i>}
             />
             <Link
               idx={2} 
@@ -65,6 +74,8 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               activePage={activePage}
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
+              isPhone={isPhone}
+              icon={<i class="fas fa-code-branch"></i>}
             />
             <Link
               idx={3} 
@@ -73,6 +84,8 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               activePage={activePage}
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
+              isPhone={isPhone}
+              icon={<i class="fas fa-paper-plane"></i>}
             />
           </div>
         </div>
