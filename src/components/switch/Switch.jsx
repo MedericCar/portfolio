@@ -9,9 +9,7 @@ export default function Switch({ darkTheme, setDarkTheme }) {
         defaultChecked={false}
         checked={darkTheme}
       />
-        <span className='blue'>
-          <i class="fas fa-adjust"></i>
-        </span>
+          <i class="fas fa-adjust blue"></i>
     </div>
   )
 }

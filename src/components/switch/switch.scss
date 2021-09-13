@@ -1,8 +1,15 @@
 .switch {
+  background-color: var(--bg);
   cursor: pointer;
-  font-size: 25px;
-  padding: 10px 10px;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding-top: 1px;
   input {
-      display: none;
+    display: none ;
   }
+
 }

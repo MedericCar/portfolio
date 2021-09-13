@@ -105,17 +105,19 @@ export default function Intro({ darkTheme, active, smallViewport }) {
         <h4 className='blue'>Software Engineer looking for a 6-month internship</h4>
       </div>
 
-      <a 
-        className='arrow-container'
-        href='#experience'
-      >
-        <span className='arrow'>
-          {
-            smallViewport
-              ? <i class="fas fa-arrow-right"></i>
-              : <i class="fas fa-arrow-down"></i>}
-        </span>
-      </a>
+      <div className='arrow-border'>
+        <a 
+          className='arrow-container'
+          href='#experience'
+        >
+          <span className='arrow blue'>
+            {
+              smallViewport
+                ? <i class="fas fa-arrow-right"></i>
+                : <i class="fas fa-arrow-down"></i>}
+          </span>
+        </a>
+      </div>
 
     </div>
   )
