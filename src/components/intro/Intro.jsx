@@ -6,7 +6,7 @@ import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
 
-export default function Intro({ darkTheme, active, smallViewport, setActivePage, setLinkClick }) {
+export default function Intro({ darkTheme, active, setActivePage }) {
 
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
@@ -99,8 +99,6 @@ export default function Intro({ darkTheme, active, smallViewport, setActivePage,
     const newActivePage = [false, false, false, false]
     newActivePage[1] = true
     setActivePage(newActivePage)
-    setLinkClick(true)
-    setTimeout(() => setLinkClick(false), 1000)
   }
 
   return (
@@ -120,10 +118,7 @@ export default function Intro({ darkTheme, active, smallViewport, setActivePage,
           onClick={updatePage}
         >
           <span className='arrow'>
-            {
-              smallViewport
-                ? <i class="fas fa-arrow-right blue"></i>
-                : <i class="fas fa-arrow-down blue"></i>}
+            <i class="fas fa-arrow-right blue"></i>
           </span>
         </a>
       </div>

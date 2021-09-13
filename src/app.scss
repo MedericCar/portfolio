@@ -102,26 +102,35 @@
 
   .sections{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     flex: none;
     width: 100vw;
     height: vh(100);
     position: absolute;
+    //overflow-x: scroll;
+    //overflow-y: hidden;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: x mandatory;
     scrollbar-width: none; // for firefox
     &::-webkit-scrollbar{
       display: none;
     }
 
-
     > *{
       width: 100vw;
       height: 100%;
-      scroll-snap-align: end;
-      scroll-snap-stop: always;
+      scroll-snap-align: center;
       flex:none;
+    }
+  }
+
+  $tabletBreakpoint: 991px;
+
+  @media (max-width: $tabletBreakpoint) {
+    .sections{
+      //overflow-x: visible;
+      //overflow-y: scroll;
     }
   }
 
@@ -134,15 +143,8 @@
     }
     .sections{
       scroll-behavior: auto;
-    }
-  }
-
-  $tabletBreakpoint: 991px;
-
-  @media (max-width: $tabletBreakpoint) {
-    .sections{
-      flex-flow: row nowrap;
-      scroll-snap-type: x mandatory;
+      //overflow-x: hidden;
+      //overflow-y: scroll;
     }
   }
 

@@ -30,7 +30,10 @@
     position: absolute;
     left: 50vw;
     top: vh(157);
-    transform: translate(-50%, 0%);
+    position: relative;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
     
     width: 87%;
     height: 0;

@@ -74,6 +74,8 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
 export default function Projects({ isTablet }) {
 
+  useEffect(() => {console.log('rendered')})
+
   const getTags = (data) => {
     let totTags = data.map(el => el.tags)
     totTags = [].concat.apply([], totTags)

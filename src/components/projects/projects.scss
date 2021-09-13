@@ -64,19 +64,24 @@
 
   @media (max-width: $phoneBreakpoint) {
     #title{
+      position: relative;
       top: 6%;
+      background-color: red;
     }
 
     #description{
+      position: relative;
       top: 7%;
     }
 
     .filter-list{
+      position: relative;
       top: 9%;
     }
 
     .cards {
       height: fit-content;
+      position: relative;
       top: 10%;
       margin-bottom: vh(20);
 

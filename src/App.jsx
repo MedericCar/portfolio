@@ -42,21 +42,14 @@ function App() {
   const handleScroll = useCallback(
     () => {
       const sections = document.getElementsByClassName('sections')[0]
-      let position, dir
-      if (isPhone || isTablet) {
-        position = sections.scrollLeft
-        dir = (position - scrollPos < 0) ? 'left' : (position - scrollPos > 0) ? 'right' : null
-      } else {
-        position = sections.scrollTop
-        dir = (position - scrollPos < 0) ? 'up' : (position - scrollPos > 0) ? 'down' : null
-      }
-
+      const position = sections.scrollLeft
+      const dir = (position - scrollPos < 0) ? 'left' : (position - scrollPos > 0) ? 'right' : null
       if (dir) {
         setScrollPos(position)
         setScrollDir(dir)
       }
 
-    }, [scrollPos, isPhone, isTablet]
+    }, [scrollPos]
   )
   
   useEffect(() => {
@@ -67,40 +60,11 @@ function App() {
 
   // Update active page based on scroll position
   const [ activePage, setActivePage ] = useState([true, false, false, false])
-  const [ linkClick, setLinkClick ] = useState(false)
-
-  // On scrolling
-  // TODO refactor code duplication
-  useEffect(() => {
-    if (isPhone || isTablet) {
-      const scrolling = scrollPos % winWidth !== 0
-      if (scrolling && !linkClick) {
-        const i = (scrollDir === 'right') 
-          ? Math.ceil(scrollPos / winWidth)
-          : Math.floor(scrollPos / winWidth)
-        const newActivePage = [false, false, false, false]
-        newActivePage[i] = true;
-        setActivePage(newActivePage)
-      }
-    } else {
-      const scrolling = scrollPos % winHeight !== 0
-      if (scrolling && !linkClick) {
-        const i = (scrollDir === 'down') 
-          ? Math.ceil(scrollPos / winHeight)
-          : Math.floor(scrollPos / winHeight)
-        const newActivePage = [false, false, false, false]
-        newActivePage[i] = true;
-        setActivePage(newActivePage)
-      }
-    }
-  }, [winHeight, winWidth, scrollDir, scrollPos, linkClick, isPhone, isTablet])
 
   // On refresh
   useEffect(() => {
     const handleRefresh = (event) => {
-      const i = (isPhone || isTablet) 
-        ? Math.floor(scrollPos / winWidth)
-        : Math.floor(scrollPos / winHeight)
+      const i = Math.floor(scrollPos / winWidth)
       const newActivePage = [false, false, false, false]
       newActivePage[i] = true;
       setActivePage(newActivePage)
@@ -117,10 +81,9 @@ function App() {
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
       <Topbar
-        toShow={(isPhone || isTablet) ? scrollPos >= winWidth / 2 : scrollPos >= winHeight / 2}
+        toShow={scrollPos >= winWidth / 2}
         activePage={activePage}
         setActivePage={setActivePage}
-        setLinkClick={setLinkClick}
         isPhone={isPhone}
       />
 
@@ -131,10 +94,8 @@ function App() {
       <div className='sections'>
         <Intro 
           darkTheme={darkTheme}
-          active={(isPhone || isTablet) ? scrollPos < winWidth : scrollPos < winHeight}
-          smallViewport={isPhone || isTablet}
+          active={scrollPos < winWidth}
           setActivePage={setActivePage}
-          setLinkClick={setLinkClick}
         />
         <Experience darkTheme={darkTheme} smallViewport={isPhone || isTablet}/>
         <Projects isTablet={isTablet}/>

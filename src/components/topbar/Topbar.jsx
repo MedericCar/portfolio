@@ -4,7 +4,7 @@ import Socials from '../contact/Socials';
 
 import './topbar.scss'
 
-const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhone, icon }) => {
+const Link = ({ idx, href, text, activePage, setActivePage, isPhone, icon }) => {
   const newActivePage = [false, false, false, false]
   newActivePage[idx] = true
   //icon.props.className = icon.props.class.concat(' blue')
@@ -13,11 +13,7 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhon
   return (
     <a
       href={href} 
-      onClick={() => {
-        setActivePage(newActivePage)
-        setLinkClick(true)
-        setTimeout(() => setLinkClick(false), 1000)
-      }}
+      onClick={() => setActivePage(newActivePage)}
       className={`link ${activePage[idx] ? 'active' : ''}`}
     >
       <span id='icon'>
@@ -31,7 +27,7 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhon
 }
 
 //FIXME: can refacto
-export default function Topbar({ toShow, activePage, setActivePage, setLinkClick, isPhone }) {
+export default function Topbar({ toShow, activePage, setActivePage, isPhone }) {
 
   return (
     <CSSTransition
@@ -55,7 +51,6 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               text='Home'
               activePage={activePage}
               setActivePage={setActivePage}
-              setLinkClick={setLinkClick}
               isPhone={isPhone}
               icon={<i class={`fas fa-home ${isPhone && activePage[0] ? 'blue' : ''}`}></i>}
             />
@@ -65,7 +60,6 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               text='About'
               activePage={activePage}
               setActivePage={setActivePage}
-              setLinkClick={setLinkClick}
               isPhone={isPhone}
               icon={<i class={`fas fa-user ${isPhone && activePage[1] ? 'blue' : ''}`}></i>}
             />
@@ -75,7 +69,6 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               text='Projects'
               activePage={activePage}
               setActivePage={setActivePage}
-              setLinkClick={setLinkClick}
               isPhone={isPhone}
               icon={<i class={`fas fa-code-branch ${isPhone && activePage[2] ? 'blue' : ''}`}></i>}
             />
@@ -85,7 +78,6 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               text='Contact'
               activePage={activePage}
               setActivePage={setActivePage}
-              setLinkClick={setLinkClick}
               isPhone={isPhone}
               icon={<i class={`fas fa-paper-plane ${isPhone && activePage[3] ? 'blue' : ''}`}></i>}
             />
