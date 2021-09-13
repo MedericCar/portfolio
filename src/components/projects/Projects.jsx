@@ -18,13 +18,17 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
   const updateSelectedTags = (t) => {
     let selectedTagsCopy = Object.assign({}, selectedTags)
+    selectedTagsCopy[t.text] = !selectedTags[t.text]
 
     // If tag is updated to active, unset the All tag
-    if (!selectedTags[t]) {
+    if (!selectedTags[t.text]) {
       selectedTagsCopy['All'] = false
+    } else {
+      if (!Object.values(selectedTagsCopy).some(val => val === true)) {
+        selectedTagsCopy['All'] = true
+      }
     }
 
-    selectedTagsCopy[t.text] = !selectedTags[t.text]
     setSelectedTags(selectedTagsCopy)
   }
 
@@ -33,14 +37,14 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
 
     // If All tag is updated to active, unset every other tag
     if (!selectedTags['All']) {
-      Object.keys(selectedTags).forEach(t => selectedTagsCopy[t] = false)
+      Object.keys(selectedTags).forEach(k => selectedTagsCopy[k] = false)
     }
 
     selectedTagsCopy['All'] = !selectedTags['All']
     setSelectedTags(selectedTagsCopy)
   }
 
-  const anyTagData = {
+  const allTagData = {
     text: 'All',
     color: 'var(--gray2)',
     backgroundColor: 'var(--gray5)',
@@ -50,8 +54,8 @@ const FilterList = ({ tags, selectedTags, setSelectedTags }) => {
     <div className='filter-list'>
       <Tag 
         key={-1}
-        data={anyTagData}
-        onClick={() => updateAllTag(anyTagData)}
+        data={allTagData}
+        onClick={() => updateAllTag(allTagData)}
         active={selectedTags['All']}
       />
       {
