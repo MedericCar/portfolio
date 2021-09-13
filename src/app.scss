@@ -100,7 +100,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    overflow: auto;
     flex: none;
     width: 100vw;
     height: vh(100);
@@ -108,7 +107,6 @@
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; // for firefox
-    -webkit-overflow-scrolling: auto;
     &::-webkit-scrollbar{
       display: none;
     }

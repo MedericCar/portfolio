@@ -8,8 +8,6 @@ import Topbar from './components/topbar/Topbar';
 import Switch from './components/switch/Switch';
 import './app.scss'
 
-let ac = -1
-
 function App() {
 
   const [ darkTheme, setDarkTheme ] = useState(false)
@@ -34,7 +32,7 @@ function App() {
     
     return () => window.removeEventListener("resize", handleWindowResize)
   
-  }, [])
+  }, [isPhone])
 
 
   // Update scroll position and direction
@@ -42,20 +40,22 @@ function App() {
   const [ scrollDir, setScrollDir ] = useState(null)
 
   const handleScroll = useCallback(
-      () => {
+    () => {
       const sections = document.getElementsByClassName('sections')[0]
+      let position, dir
       if (isPhone || isTablet) {
-        const position = sections.scrollLeft
-        const dir = (position - scrollPos < 0) ? 'left' : 'right'
-        setScrollPos(position)
-        setScrollDir(dir)
-
+        position = sections.scrollLeft
+        dir = (position - scrollPos < 0) ? 'left' : (position - scrollPos > 0) ? 'right' : null
       } else {
-        const position = sections.scrollTop
-        const dir = (position - scrollPos < 0) ? 'down' : 'up'
+        position = sections.scrollTop
+        dir = (position - scrollPos < 0) ? 'up' : (position - scrollPos > 0) ? 'down' : null
+      }
+
+      if (dir) {
         setScrollPos(position)
         setScrollDir(dir)
       }
+
     }, [scrollPos, isPhone, isTablet]
   )
   
@@ -85,7 +85,7 @@ function App() {
     } else {
       const scrolling = scrollPos % winHeight !== 0
       if (scrolling && !linkClick) {
-        const i = (scrollDir === 'up') 
+        const i = (scrollDir === 'down') 
           ? Math.ceil(scrollPos / winHeight)
           : Math.floor(scrollPos / winHeight)
         const newActivePage = [false, false, false, false]
@@ -112,6 +112,8 @@ function App() {
     return () => window.removeEventListener('load', handleRefresh)
 
   }, [winHeight, winWidth, scrollPos, isPhone, isTablet, handleScroll])
+
+  console.log(scrollPos, activePage, scrollDir)
 
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
