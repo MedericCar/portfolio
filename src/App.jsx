@@ -37,7 +37,6 @@ function App() {
 
   // Update scroll position and direction
   const [ scrollPos, setScrollPos ] = useState(0)
-  const [ scrollDir, setScrollDir ] = useState(null)
 
   const handleScroll = useCallback(
     () => {
@@ -46,7 +45,6 @@ function App() {
       const dir = (position - scrollPos < 0) ? 'left' : (position - scrollPos > 0) ? 'right' : null
       if (dir) {
         setScrollPos(position)
-        setScrollDir(dir)
       }
 
     }, [scrollPos]
@@ -63,12 +61,14 @@ function App() {
 
   // On refresh
   useEffect(() => {
+
     const handleRefresh = (event) => {
       const i = Math.floor(scrollPos / winWidth)
       const newActivePage = [false, false, false, false]
       newActivePage[i] = true;
       setActivePage(newActivePage)
     }
+    
     window.addEventListener('load', handleRefresh)
 
     handleScroll()
