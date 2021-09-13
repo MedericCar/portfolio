@@ -68,7 +68,7 @@
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-fill-color: transparent;
   }
 
   >*{
@@ -97,7 +97,7 @@
     font-weight: 700;
     padding: 1rem;
     background: linear-gradient(190deg, var(--gradient1), var(--gradient2));
-    padding: 3px;
+    padding: 2px;
   }
 
   .sections{

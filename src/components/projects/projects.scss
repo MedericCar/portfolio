@@ -2,6 +2,7 @@
 
 .projects{
   box-sizing: border-box;
+  will-change: transform;
   
   #title{
     position: relative;
@@ -66,7 +67,6 @@
     #title{
       position: relative;
       top: 6%;
-      background-color: red;
     }
 
     #description{
@@ -132,6 +132,10 @@
         justify-content: center;
         .project-card {
           width: 240px;
+          
+          &:hover {
+            transform: none;
+          }
 
         }
       }
