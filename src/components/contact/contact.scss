@@ -85,6 +85,15 @@
     text-align: center;
   }
 
+  $phoneBreakpoint: 481px;
+
+  @media (max-width: $phoneBreakpoint) {
+    .socials{
+      position: absolute;
+      top: 18px;
+      width: 100%;
+    }
+  }
 
   $tabletBreakpoint: 991px;
 

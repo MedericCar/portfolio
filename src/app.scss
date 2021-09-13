@@ -122,6 +122,15 @@
     }
   }
 
+  $phoneBreakpoint: 481px;
+
+  @media (max-width: $phoneBreakpoint) {
+    .lightModeSwitch{
+      bottom: 0;
+      top: 10px;
+    }
+  }
+
   $tabletBreakpoint: 991px;
 
   @media (max-width: $tabletBreakpoint) {

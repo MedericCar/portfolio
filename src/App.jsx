@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
@@ -7,6 +7,8 @@ import Projects from './components/projects/Projects';
 import Topbar from './components/topbar/Topbar';
 import Switch from './components/switch/Switch';
 import './app.scss'
+
+let ac = -1
 
 function App() {
 
@@ -38,10 +40,10 @@ function App() {
   // Update scroll position and direction
   const [ scrollPos, setScrollPos ] = useState(0)
   const [ scrollDir, setScrollDir ] = useState(null)
-  
-  useEffect(() => {
-    const sections = document.getElementsByClassName('sections')[0]
-    const handleScroll = () => {
+
+  const handleScroll = useCallback(
+      () => {
+      const sections = document.getElementsByClassName('sections')[0]
       if (isPhone || isTablet) {
         const position = sections.scrollLeft
         const dir = (position - scrollPos < 0) ? 'left' : 'right'
@@ -54,14 +56,14 @@ function App() {
         setScrollPos(position)
         setScrollDir(dir)
       }
-    }
-    sections.addEventListener('scroll', handleScroll, { passive: true })
-   
-    return () => sections.removeEventListener('scroll', handleScroll)
+    }, [scrollPos, isPhone, isTablet]
+  )
   
-  }, [scrollPos, isPhone, isTablet])
-
-  console.log(scrollPos)
+  useEffect(() => {
+    const sections = document.getElementsByClassName('sections')[0]
+    sections.addEventListener('scroll', handleScroll, { passive: true })
+    return () => sections.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
 
   // Update active page based on scroll position
   const [ activePage, setActivePage ] = useState([true, false, false, false])
@@ -105,9 +107,11 @@ function App() {
     }
     window.addEventListener('load', handleRefresh)
 
+    handleScroll()
+
     return () => window.removeEventListener('load', handleRefresh)
 
-  }, [winHeight, winWidth, scrollPos, isPhone, isTablet])
+  }, [winHeight, winWidth, scrollPos, isPhone, isTablet, handleScroll])
 
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>

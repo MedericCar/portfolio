@@ -98,8 +98,20 @@
   $phoneBreakpoint: 481px;
 
   @media (max-width: $phoneBreakpoint) {
+    #title{
+      top: 6%;
+    }
+
+    #description{
+      top: 7%;
+    }
+
+    .filter-list{
+      top: 9%;
+    }
 
     .cards {
+      top: 10%;
 
       .row {
         flex-direction: column;
