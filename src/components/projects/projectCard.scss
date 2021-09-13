@@ -11,6 +11,7 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
+  will-change: transform;
 
   .image{
     position: relative;

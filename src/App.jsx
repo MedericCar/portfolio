@@ -113,8 +113,6 @@ function App() {
 
   }, [winHeight, winWidth, scrollPos, isPhone, isTablet, handleScroll])
 
-  console.log(scrollPos, activePage, scrollDir)
-
   return (
     <div className={`app ${darkTheme ? 'theme-dark' : 'theme-light'}`}>
       
@@ -135,6 +133,8 @@ function App() {
           darkTheme={darkTheme}
           active={(isPhone || isTablet) ? scrollPos < winWidth : scrollPos < winHeight}
           smallViewport={isPhone || isTablet}
+          setActivePage={setActivePage}
+          setLinkClick={setLinkClick}
         />
         <Experience darkTheme={darkTheme} smallViewport={isPhone || isTablet}/>
         <Projects isTablet={isTablet}/>

@@ -6,7 +6,7 @@ import { PerlinShader } from './perlinShader'
 import './intro.scss'
 
 
-export default function Intro({ darkTheme, active, smallViewport }) {
+export default function Intro({ darkTheme, active, smallViewport, setActivePage, setLinkClick }) {
 
   // Use ref because need to directly manipulate DOM
   const mountRef = useRef(null);
@@ -95,6 +95,14 @@ export default function Intro({ darkTheme, active, smallViewport }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [darkTheme, active]);
 
+  const updatePage = () => {
+    const newActivePage = [false, false, false, false]
+    newActivePage[1] = true
+    setActivePage(newActivePage)
+    setLinkClick(true)
+    setTimeout(() => setLinkClick(false), 1000)
+  }
+
   return (
     <div className='intro' id='intro'>
 
@@ -109,12 +117,13 @@ export default function Intro({ darkTheme, active, smallViewport }) {
         <a 
           className='arrow-container'
           href='#experience'
+          onClick={updatePage}
         >
-          <span className='arrow blue'>
+          <span className='arrow'>
             {
               smallViewport
-                ? <i class="fas fa-arrow-right"></i>
-                : <i class="fas fa-arrow-down"></i>}
+                ? <i class="fas fa-arrow-right blue"></i>
+                : <i class="fas fa-arrow-down blue"></i>}
           </span>
         </a>
       </div>

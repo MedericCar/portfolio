@@ -7,6 +7,8 @@ import './topbar.scss'
 const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhone, icon }) => {
   const newActivePage = [false, false, false, false]
   newActivePage[idx] = true
+  //icon.props.className = icon.props.class.concat(' blue')
+  //icon.props.className =' blue'
 
   return (
     <a
@@ -18,9 +20,9 @@ const Link = ({ idx, href, text, activePage, setActivePage, setLinkClick, isPhon
       }}
       className={`link ${activePage[idx] ? 'active' : ''}`}
     >
-      <div id='icon' className={`${isPhone && activePage[idx] ? 'blue' : ''}`}>
+      <span id='icon'>
         {isPhone ? icon : ''}
-      </div>
+      </span>
       <div id='text' className={`${isPhone && activePage[idx] ? 'blue' : ''}`}>
         {text}
       </div>
@@ -55,7 +57,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
               isPhone={isPhone}
-              icon={<i class="fas fa-home"></i>}
+              icon={<i class={`fas fa-home ${isPhone && activePage[0] ? 'blue' : ''}`}></i>}
             />
             <Link
               idx={1} 
@@ -65,7 +67,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
               isPhone={isPhone}
-              icon={<i class="fas fa-user"></i>}
+              icon={<i class={`fas fa-user ${isPhone && activePage[1] ? 'blue' : ''}`}></i>}
             />
             <Link
               idx={2} 
@@ -75,7 +77,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
               isPhone={isPhone}
-              icon={<i class="fas fa-code-branch"></i>}
+              icon={<i class={`fas fa-code-branch ${isPhone && activePage[2] ? 'blue' : ''}`}></i>}
             />
             <Link
               idx={3} 
@@ -85,7 +87,7 @@ export default function Topbar({ toShow, activePage, setActivePage, setLinkClick
               setActivePage={setActivePage}
               setLinkClick={setLinkClick}
               isPhone={isPhone}
-              icon={<i class="fas fa-paper-plane"></i>}
+              icon={<i class={`fas fa-paper-plane ${isPhone && activePage[3] ? 'blue' : ''}`}></i>}
             />
           </div>
         </div>
