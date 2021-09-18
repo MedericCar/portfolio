@@ -7,8 +7,6 @@ import './topbar.scss'
 const Link = ({ idx, href, text, activePage, setActivePage, isPhone, icon }) => {
   const newActivePage = [false, false, false, false]
   newActivePage[idx] = true
-  //icon.props.className = icon.props.class.concat(' blue')
-  //icon.props.className =' blue'
 
   return (
     <a
@@ -39,7 +37,9 @@ export default function Topbar({ toShow, activePage, setActivePage, isPhone }) {
         <div className='wrapper'>
           
           <div className='left'>
-            <a href='#intro'><h1 color='secondary'><b className='blue'>MC</b></h1></a>
+            <a href='#intro' onClick={() => setActivePage([true, false, false, false])}>
+              <h1 color='secondary'><b className='blue'>MC</b></h1>
+            </a>
           </div>
 
           <Socials isPhone={isPhone}/> 

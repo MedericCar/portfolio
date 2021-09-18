@@ -6,6 +6,7 @@ import Experience from './components/experience/Experience';
 import Projects from './components/projects/Projects';
 import Topbar from './components/topbar/Topbar';
 import Switch from './components/switch/Switch';
+import NavArrows from './components/navArrows/NavArrows';
 import './app.scss'
 
 function App() {
@@ -82,6 +83,12 @@ function App() {
       
       <Topbar
         toShow={scrollPos >= winWidth / 2}
+        activePage={activePage}
+        setActivePage={setActivePage}
+        isPhone={isPhone}
+      />
+
+      <NavArrows
         activePage={activePage}
         setActivePage={setActivePage}
         isPhone={isPhone}

@@ -1,0 +1,28 @@
+.nav-arrows{
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 0;
+  z-index: 200;
+
+  > *{
+    font-size: 35px;
+    width: fit-content;
+  }
+
+  .left{
+    position: fixed;
+    margin-left: 1.5%;
+    top: 50%;
+    //transform: translateY(-50%);
+  }
+
+  .right{
+    position: fixed;
+    margin-right: 1.5%;
+    top: 50%;
+    right: 0%;
+    //transform: translateY(-50%);
+  }
+
+}
