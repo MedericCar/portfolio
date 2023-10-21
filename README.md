@@ -6,10 +6,9 @@
 </h1>
 <p align="center">Simple yet fully featured portfolio website.</p>
 
-<h2 align="center">
-  <img src="output.gif" alt="example" width="70%" />
-  <br>
-</h2>
+<p align="center">
+<img src="output.gif" alt="example" width="70%" />
+</p>
 
 ## ⭐ Features
 - Single page app with snap-scroll effect
