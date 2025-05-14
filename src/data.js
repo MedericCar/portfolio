@@ -9,7 +9,9 @@ import wce from './assets/wce.png'
 import stoch from './assets/stoch.png'
 import tau from './assets/tau.png'
 import tiger from './assets/tiger.jpg'
-
+import phil from './assets/phil.png'
+import jidi from './assets/jidi.png'
+import uxcelerate from './assets/uxcelerate.png'
 
 const experienceData = [
   {
@@ -254,6 +256,90 @@ const projectsData = [
         text: 'GLSL',
         color: 'var(--pink)',
         backgroundColor: 'var(--bg-pink)',
+      },
+    ]
+  },
+  {
+    id: 6,
+    title: 'Cohere Hackathon',
+    image: phil,
+    description: (
+      <p>
+        AI assistant to guide user's in <b>choosing a charity</b> for donations.
+      </p>
+    ),
+    link: 'https://lablab.ai/event/cohere-coral-hackathon/philai/phil-ai?_gl=1*1cwryf4*_up*MQ..*_ga*NzkyNDIzNzE1LjE3NDcyNjE2MjQ.*_ga_0DKXC1L0Y7*czE3NDcyNjE2MjQkbzEkZzAkdDE3NDcyNjE2MjQkajAkbDAkaDE3MzAxMjY0ODQ.',
+    tags: [
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
+      },
+      {
+        text: 'React',
+        color: 'var(--purple)',
+        backgroundColor: 'var(--bg-purple)',
+      },
+      {
+        text: 'LangChain',
+        color: 'var(--cyan)',
+        backgroundColor: 'var(--bg-cyan)',
+      },
+    ]
+  },
+  {
+    id: 7,
+    title: 'Mistral AI Paris Hackathon',
+    image: jidi,
+    description: (
+      <p>
+        AI Trip Planner that creates an <b>itinerary</b> based on the user's preferences and interests.
+      </p>
+    ),
+    link: 'https://www.linkedin.com/posts/m%C3%A9d%C3%A9ric-carriat-17705a181_ever-wondered-if-ai-could-plan-your-perfect-activity-7201560910849540100-4G4a?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrmaWsBGIOMCTRG5jgm0LSiglDKScmw0No',
+    tags: [
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
+      },
+      {
+        text: 'React',
+        color: 'var(--purple)',
+        backgroundColor: 'var(--bg-purple)',
+      },
+      {
+        text: 'LangChain',
+        color: 'var(--cyan)',
+        backgroundColor: 'var(--bg-cyan)',
+      },
+    ]
+  },
+  {
+    id: 8,
+    title: 'Anthropic London Hackathon',
+    image: uxcelerate,
+    description: (
+      <p>
+        Browser extension using <b>Claude</b> to optimize the user experience on <b>government websites</b>.
+      </p>
+    ),
+    link: 'https://devpost.com/software/uxcelerate',
+    tags: [
+      {
+        text: 'Python',
+        color: 'var(--green)',
+        backgroundColor: 'var(--bg-green)',
+      },
+      {
+        text: 'React',
+        color: 'var(--purple)',
+        backgroundColor: 'var(--bg-purple)',
+      },
+      {
+        text: 'LangChain',
+        color: 'var(--cyan)',
+        backgroundColor: 'var(--bg-cyan)',
       },
     ]
   },
