@@ -111,11 +111,11 @@ const experienceData = [
   {
     company: 'Salesforce',
     logo: siemens,
-    title: 'Software Engineer in Conversational Search',
+    title: 'Software Engineer in Conversational Search and AI Agents',
     startDate: new Date(2022, 8), // February 2022
     endDate: new Date(), // Current date (ongoing)
     description: [
-      <p>Working on Conversational Search and AI agents.</p>,
+      <p>Tags: <b>Python, Java</b></p>
     ],
     color: 'cyan',
     position: 'center'
