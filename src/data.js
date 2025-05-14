@@ -106,6 +106,18 @@ const experienceData = [
     color: 'green',
     position: 'bottom'
   },
+  {
+    company: 'Salesforce',
+    logo: siemens,
+    title: 'Software Engineer in Conversational Search',
+    startDate: new Date(2022, 8), // February 2022
+    endDate: new Date(), // Current date (ongoing)
+    description: [
+      <p>Working on Conversational Search and AI agents.</p>,
+    ],
+    color: 'cyan',
+    position: 'center'
+  },
 ]
 
 const projectsData = [

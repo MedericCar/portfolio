@@ -108,7 +108,7 @@ export default function Intro({ darkTheme, active, setActivePage }) {
       
       <div className='info'>
         <h1 className='blue'>Médéric Carriat</h1>
-        <h4 className='blue'>Software Engineer looking for a 6-month internship</h4>
+        <h4 className='blue'>Software Engineer at Salesforce</h4>
       </div>
 
       <div className='arrow-border'>
