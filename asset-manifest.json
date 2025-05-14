@@ -1,30 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe9a4eec.chunk.css",
-    "main.js": "/static/js/main.434dd2cb.chunk.js",
-    "main.js.map": "/static/js/main.434dd2cb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5ebc510a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5ebc510a.js.map",
-    "static/js/2.0e18e71d.chunk.js": "/static/js/2.0e18e71d.chunk.js",
-    "static/js/2.0e18e71d.chunk.js.map": "/static/js/2.0e18e71d.chunk.js.map",
+    "main.css": "/static/css/main.53156dbf.css",
+    "main.js": "/static/js/main.38d73478.js",
+    "static/media/website.png": "/static/media/website.9319c4d9093acb451259.png",
+    "static/media/concordia.png": "/static/media/concordia.586d2affd956e4c43491.png",
+    "static/media/stoch.png": "/static/media/stoch.8e4b04f6b8fd30e7d872.png",
+    "static/media/pathtracer.png": "/static/media/pathtracer.7fb61344dad1f9f23e7c.png",
+    "static/media/epita.png": "/static/media/epita.f88f36c334601a8fc401.png",
+    "static/media/tau.png": "/static/media/tau.8b7e67b68b3f97b2c7d7.png",
+    "static/media/wce.png": "/static/media/wce.a743c1d03feab327c6ac.png",
+    "static/media/siemens.png": "/static/media/siemens.4aa8efa4e3c6192ce40e.png",
+    "static/media/tiger.jpg": "/static/media/tiger.09d00f4c169a44286c95.jpg",
+    "static/media/uxcelerate.png": "/static/media/uxcelerate.4ab4faa91db84c586bc1.png",
+    "static/media/ens.png": "/static/media/ens.c48c41c39413deacbf91.png",
+    "static/media/jidi.png": "/static/media/jidi.d8a3877a810d278cc61f.png",
+    "static/media/phil.png": "/static/media/phil.2405aff79c9a299f164f.png",
     "index.html": "/index.html",
-    "static/css/main.fe9a4eec.chunk.css.map": "/static/css/main.fe9a4eec.chunk.css.map",
-    "static/js/2.0e18e71d.chunk.js.LICENSE.txt": "/static/js/2.0e18e71d.chunk.js.LICENSE.txt",
-    "static/media/concordia.586d2aff.png": "/static/media/concordia.586d2aff.png",
-    "static/media/ens.c48c41c3.png": "/static/media/ens.c48c41c3.png",
-    "static/media/epita.f88f36c3.png": "/static/media/epita.f88f36c3.png",
-    "static/media/pathtracer.7fb61344.png": "/static/media/pathtracer.7fb61344.png",
-    "static/media/siemens.4aa8efa4.png": "/static/media/siemens.4aa8efa4.png",
-    "static/media/stoch.8e4b04f6.png": "/static/media/stoch.8e4b04f6.png",
-    "static/media/tau.8b7e67b6.png": "/static/media/tau.8b7e67b6.png",
-    "static/media/tiger.09d00f4c.jpg": "/static/media/tiger.09d00f4c.jpg",
-    "static/media/wce.a743c1d0.png": "/static/media/wce.a743c1d0.png",
-    "static/media/website.9319c4d9.png": "/static/media/website.9319c4d9.png"
+    "main.53156dbf.css.map": "/static/css/main.53156dbf.css.map",
+    "main.38d73478.js.map": "/static/js/main.38d73478.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ebc510a.js",
-    "static/js/2.0e18e71d.chunk.js",
-    "static/css/main.fe9a4eec.chunk.css",
-    "static/js/main.434dd2cb.chunk.js"
+    "static/css/main.53156dbf.css",
+    "static/js/main.38d73478.js"
   ]
 }
